@@ -1,0 +1,2832 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "closeMarket",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract ERC20",
+              "name": "payoutToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ERC20",
+              "name": "quoteToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "callbackAddr",
+              "type": "address"
+            },
+            {
+              "internalType": "bool",
+              "name": "capacityInQuote",
+              "type": "bool"
+            },
+            {
+              "internalType": "uint256",
+              "name": "capacity",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "formattedInitialPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "formattedMinimumPrice",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint32",
+              "name": "debtBuffer",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint48",
+              "name": "vesting",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint48",
+              "name": "conclusion",
+              "type": "uint48"
+            },
+            {
+              "internalType": "uint32",
+              "name": "depositInterval",
+              "type": "uint32"
+            },
+            {
+              "internalType": "int8",
+              "name": "scaleAdjustment",
+              "type": "int8"
+            }
+          ],
+          "internalType": "struct IBondAuctioneer.MarketParams",
+          "name": "params_",
+          "type": "tuple"
+        }
+      ],
+      "name": "createMarket",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "currentCapacity",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAggregator",
+      "outputs": [
+        {
+          "internalType": "contract IBondAggregator",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMarketInfoForPurchase",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "callbackAddr",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ERC20",
+          "name": "payoutToken",
+          "type": "address"
+        },
+        {
+          "internalType": "contract ERC20",
+          "name": "quoteToken",
+          "type": "address"
+        },
+        {
+          "internalType": "uint48",
+          "name": "vesting",
+          "type": "uint48"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxPayout",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getTeller",
+      "outputs": [
+        {
+          "internalType": "contract IBondTeller",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "isInstantSwap",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "isLive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "marketPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "referrer_",
+          "type": "address"
+        }
+      ],
+      "name": "maxAmountAccepted",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "ownerOf",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "referrer_",
+          "type": "address"
+        }
+      ],
+      "name": "payoutFor",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        }
+      ],
+      "name": "pullOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut_",
+          "type": "uint256"
+        }
+      ],
+      "name": "purchaseBond",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "payout",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "newOwner_",
+          "type": "address"
+        }
+      ],
+      "name": "pushOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "status_",
+          "type": "bool"
+        }
+      ],
+      "name": "setAllowNewMarkets",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "creator_",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "status_",
+          "type": "bool"
+        }
+      ],
+      "name": "setCallbackAuthStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint32[6]",
+          "name": "defaults_",
+          "type": "uint32[6]"
+        }
+      ],
+      "name": "setDefaults",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint32[3]",
+          "name": "intervals_",
+          "type": "uint32[3]"
+        }
+      ],
+      "name": "setIntervals",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "closeMarket(uint256)": "ae418095",
+    "createMarket((address,address,address,bool,uint256,uint256,uint256,uint32,uint48,uint48,uint32,int8))": "380b5bb1",
+    "currentCapacity(uint256)": "1c063a6c",
+    "getAggregator()": "3ad59dbc",
+    "getMarketInfoForPurchase(uint256)": "acc5570c",
+    "getTeller()": "9787d107",
+    "isInstantSwap(uint256)": "8b098db3",
+    "isLive(uint256)": "27507458",
+    "marketPrice(uint256)": "3adec5a7",
+    "maxAmountAccepted(uint256,address)": "c7bf8ca0",
+    "ownerOf(uint256)": "6352211e",
+    "payoutFor(uint256,uint256,address)": "bf48582b",
+    "pullOwnership(uint256)": "10b05317",
+    "purchaseBond(uint256,uint256,uint256)": "e007fa97",
+    "pushOwnership(uint256,address)": "bcf6cde8",
+    "setAllowNewMarkets(bool)": "5f77274e",
+    "setCallbackAuthStatus(address,bool)": "bbbdd95a",
+    "setDefaults(uint32[6])": "bd1f3a5e",
+    "setIntervals(uint256,uint32[3])": "699e17d9"
+  },
+  "ast": {
+    "absolutePath": "src/test/lib/bonds/interfaces/IBondAuctioneer.sol",
+    "id": 41860,
+    "exportedSymbols": {
+      "ERC20": [
+        22445
+      ],
+      "IBondAggregator": [
+        41654
+      ],
+      "IBondAuctioneer": [
+        41859
+      ],
+      "IBondTeller": [
+        42145
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:12649:46",
+    "nodes": [
+      {
+        "id": 41656,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:46",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 41658,
+        "nodeType": "ImportDirective",
+        "src": "63:47:46",
+        "absolutePath": "lib/solmate/src/tokens/ERC20.sol",
+        "file": "solmate/tokens/ERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 41860,
+        "sourceUnit": 22446,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 41657,
+              "name": "ERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 22445,
+              "src": "71:5:46",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 41660,
+        "nodeType": "ImportDirective",
+        "src": "111:46:46",
+        "absolutePath": "src/test/lib/bonds/interfaces/IBondTeller.sol",
+        "file": "./IBondTeller.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 41860,
+        "sourceUnit": 42146,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 41659,
+              "name": "IBondTeller",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 42145,
+              "src": "119:11:46",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 41662,
+        "nodeType": "ImportDirective",
+        "src": "158:54:46",
+        "absolutePath": "src/test/lib/bonds/interfaces/IBondAggregator.sol",
+        "file": "./IBondAggregator.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 41860,
+        "sourceUnit": 41655,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 41661,
+              "name": "IBondAggregator",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 41654,
+              "src": "166:15:46",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 41859,
+        "nodeType": "ContractDefinition",
+        "src": "214:12471:46",
+        "nodes": [
+          {
+            "id": 41689,
+            "nodeType": "StructDefinition",
+            "src": "4069:384:46",
+            "canonicalName": "IBondAuctioneer.MarketParams",
+            "members": [
+              {
+                "constant": false,
+                "id": 41665,
+                "mutability": "mutable",
+                "name": "payoutToken",
+                "nameLocation": "4105:11:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4099:17:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ERC20_$22445",
+                  "typeString": "contract ERC20"
+                },
+                "typeName": {
+                  "id": 41664,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 41663,
+                    "name": "ERC20",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 22445,
+                    "src": "4099:5:46"
+                  },
+                  "referencedDeclaration": 22445,
+                  "src": "4099:5:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$22445",
+                    "typeString": "contract ERC20"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41668,
+                "mutability": "mutable",
+                "name": "quoteToken",
+                "nameLocation": "4132:10:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4126:16:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_ERC20_$22445",
+                  "typeString": "contract ERC20"
+                },
+                "typeName": {
+                  "id": 41667,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 41666,
+                    "name": "ERC20",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 22445,
+                    "src": "4126:5:46"
+                  },
+                  "referencedDeclaration": 22445,
+                  "src": "4126:5:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$22445",
+                    "typeString": "contract ERC20"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41670,
+                "mutability": "mutable",
+                "name": "callbackAddr",
+                "nameLocation": "4160:12:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4152:20:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 41669,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4152:7:46",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41672,
+                "mutability": "mutable",
+                "name": "capacityInQuote",
+                "nameLocation": "4187:15:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4182:20:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 41671,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4182:4:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41674,
+                "mutability": "mutable",
+                "name": "capacity",
+                "nameLocation": "4220:8:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4212:16:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 41673,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4212:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41676,
+                "mutability": "mutable",
+                "name": "formattedInitialPrice",
+                "nameLocation": "4246:21:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4238:29:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 41675,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4238:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41678,
+                "mutability": "mutable",
+                "name": "formattedMinimumPrice",
+                "nameLocation": "4285:21:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4277:29:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 41677,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4277:7:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41680,
+                "mutability": "mutable",
+                "name": "debtBuffer",
+                "nameLocation": "4323:10:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4316:17:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 41679,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4316:6:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41682,
+                "mutability": "mutable",
+                "name": "vesting",
+                "nameLocation": "4350:7:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4343:14:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint48",
+                  "typeString": "uint48"
+                },
+                "typeName": {
+                  "id": 41681,
+                  "name": "uint48",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4343:6:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41684,
+                "mutability": "mutable",
+                "name": "conclusion",
+                "nameLocation": "4374:10:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4367:17:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint48",
+                  "typeString": "uint48"
+                },
+                "typeName": {
+                  "id": 41683,
+                  "name": "uint48",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4367:6:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41686,
+                "mutability": "mutable",
+                "name": "depositInterval",
+                "nameLocation": "4401:15:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4394:22:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint32",
+                  "typeString": "uint32"
+                },
+                "typeName": {
+                  "id": 41685,
+                  "name": "uint32",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4394:6:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint32",
+                    "typeString": "uint32"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 41688,
+                "mutability": "mutable",
+                "name": "scaleAdjustment",
+                "nameLocation": "4431:15:46",
+                "nodeType": "VariableDeclaration",
+                "scope": 41689,
+                "src": "4426:20:46",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_int8",
+                  "typeString": "int8"
+                },
+                "typeName": {
+                  "id": 41687,
+                  "name": "int8",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "4426:4:46",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_int8",
+                    "typeString": "int8"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "MarketParams",
+            "nameLocation": "4076:12:46",
+            "scope": 41859,
+            "visibility": "public"
+          },
+          {
+            "id": 41698,
+            "nodeType": "FunctionDefinition",
+            "src": "4649:78:46",
+            "documentation": {
+              "id": 41690,
+              "nodeType": "StructuredDocumentation",
+              "src": "4459:185:46",
+              "text": "@notice                 Creates a new bond market\n @param params_          Configuration data needed for market creation\n @return id              ID of new bond market"
+            },
+            "functionSelector": "380b5bb1",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createMarket",
+            "nameLocation": "4658:12:46",
+            "parameters": {
+              "id": 41694,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41693,
+                  "mutability": "mutable",
+                  "name": "params_",
+                  "nameLocation": "4691:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41698,
+                  "src": "4671:27:46",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_struct$_MarketParams_$41689_memory_ptr",
+                    "typeString": "struct IBondAuctioneer.MarketParams"
+                  },
+                  "typeName": {
+                    "id": 41692,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 41691,
+                      "name": "MarketParams",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 41689,
+                      "src": "4671:12:46"
+                    },
+                    "referencedDeclaration": 41689,
+                    "src": "4671:12:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_MarketParams_$41689_storage_ptr",
+                      "typeString": "struct IBondAuctioneer.MarketParams"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4670:29:46"
+            },
+            "returnParameters": {
+              "id": 41697,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41696,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41698,
+                  "src": "4718:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41695,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4718:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4717:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41704,
+            "nodeType": "FunctionDefinition",
+            "src": "4901:43:46",
+            "documentation": {
+              "id": 41699,
+              "nodeType": "StructuredDocumentation",
+              "src": "4733:163:46",
+              "text": "@notice                 Disable existing bond market\n @notice                 Must be market owner\n @param id_              ID of market to close"
+            },
+            "functionSelector": "ae418095",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "closeMarket",
+            "nameLocation": "4910:11:46",
+            "parameters": {
+              "id": 41702,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41701,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "4930:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41704,
+                  "src": "4922:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41700,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "4922:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "4921:13:46"
+            },
+            "returnParameters": {
+              "id": 41703,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "4943:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41716,
+            "nodeType": "FunctionDefinition",
+            "src": "5451:139:46",
+            "documentation": {
+              "id": 41705,
+              "nodeType": "StructuredDocumentation",
+              "src": "4950:496:46",
+              "text": "@notice                 Exchange quote tokens for a bond in a specified market\n @notice                 Must be teller\n @param id_              ID of the Market the bond is being purchased from\n @param amount_          Amount to deposit in exchange for bond (after fee has been deducted)\n @param minAmountOut_    Minimum acceptable amount of bond to receive. Prevents frontrunning\n @return payout          Amount of payout token to be received from the bond"
+            },
+            "functionSelector": "e007fa97",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "purchaseBond",
+            "nameLocation": "5460:12:46",
+            "parameters": {
+              "id": 41712,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41707,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "5490:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41716,
+                  "src": "5482:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41706,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5482:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41709,
+                  "mutability": "mutable",
+                  "name": "amount_",
+                  "nameLocation": "5511:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41716,
+                  "src": "5503:15:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41708,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5503:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41711,
+                  "mutability": "mutable",
+                  "name": "minAmountOut_",
+                  "nameLocation": "5536:13:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41716,
+                  "src": "5528:21:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41710,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5528:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5472:83:46"
+            },
+            "returnParameters": {
+              "id": 41715,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41714,
+                  "mutability": "mutable",
+                  "name": "payout",
+                  "nameLocation": "5582:6:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41716,
+                  "src": "5574:14:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41713,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "5574:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "5573:16:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41726,
+            "nodeType": "FunctionDefinition",
+            "src": "6382:75:46",
+            "documentation": {
+              "id": 41717,
+              "nodeType": "StructuredDocumentation",
+              "src": "5596:781:46",
+              "text": "@notice                         Set market intervals to different values than the defaults\n @notice                         Must be market owner\n @dev                            Changing the intervals could cause markets to behave in unexpected way\n                                 tuneInterval should be greater than tuneAdjustmentDelay\n @param id_                      Market ID\n @param intervals_               Array of intervals (3)\n                                 1. Tune interval - Frequency of tuning\n                                 2. Tune adjustment delay - Time to implement downward tuning adjustments\n                                 3. Debt decay interval - Interval over which debt should decay completely"
+            },
+            "functionSelector": "699e17d9",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setIntervals",
+            "nameLocation": "6391:12:46",
+            "parameters": {
+              "id": 41724,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41719,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "6412:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41726,
+                  "src": "6404:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41718,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6404:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41723,
+                  "mutability": "mutable",
+                  "name": "intervals_",
+                  "nameLocation": "6436:10:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41726,
+                  "src": "6417:29:46",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$3_calldata_ptr",
+                    "typeString": "uint32[3]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 41720,
+                      "name": "uint32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "6417:6:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 41722,
+                    "length": {
+                      "hexValue": "33",
+                      "id": 41721,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "6424:1:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_3_by_1",
+                        "typeString": "int_const 3"
+                      },
+                      "value": "3"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "6417:9:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint32_$3_storage_ptr",
+                      "typeString": "uint32[3]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6403:44:46"
+            },
+            "returnParameters": {
+              "id": 41725,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6456:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41734,
+            "nodeType": "FunctionDefinition",
+            "src": "6808:64:46",
+            "documentation": {
+              "id": 41727,
+              "nodeType": "StructuredDocumentation",
+              "src": "6463:340:46",
+              "text": "@notice                      Designate a new owner of a market\n @notice                      Must be market owner\n @dev                         Doesn't change permissions until newOwner calls pullOwnership\n @param id_                   Market ID\n @param newOwner_             New address to give ownership to"
+            },
+            "functionSelector": "bcf6cde8",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pushOwnership",
+            "nameLocation": "6817:13:46",
+            "parameters": {
+              "id": 41732,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41729,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "6839:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41734,
+                  "src": "6831:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41728,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6831:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41731,
+                  "mutability": "mutable",
+                  "name": "newOwner_",
+                  "nameLocation": "6852:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41734,
+                  "src": "6844:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41730,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "6844:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "6830:32:46"
+            },
+            "returnParameters": {
+              "id": 41733,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "6871:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41740,
+            "nodeType": "FunctionDefinition",
+            "src": "7176:45:46",
+            "documentation": {
+              "id": 41735,
+              "nodeType": "StructuredDocumentation",
+              "src": "6878:293:46",
+              "text": "@notice                      Accept ownership of a market\n @notice                      Must be market newOwner\n @dev                         The existing owner must call pushOwnership prior to the newOwner calling this function\n @param id_                   Market ID"
+            },
+            "functionSelector": "10b05317",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "pullOwnership",
+            "nameLocation": "7185:13:46",
+            "parameters": {
+              "id": 41738,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41737,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "7207:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41740,
+                  "src": "7199:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41736,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "7199:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "7198:13:46"
+            },
+            "returnParameters": {
+              "id": 41739,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "7220:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41748,
+            "nodeType": "FunctionDefinition",
+            "src": "8273:58:46",
+            "documentation": {
+              "id": 41741,
+              "nodeType": "StructuredDocumentation",
+              "src": "7227:1041:46",
+              "text": "@notice             Set the auctioneer defaults\n @notice             Must be policy\n @param defaults_    Array of default values\n                     1. Tune interval - amount of time between tuning adjustments\n                     2. Tune adjustment delay - amount of time to apply downward tuning adjustments\n                     3. Minimum debt decay interval - minimum amount of time to let debt decay to zero\n                     4. Minimum deposit interval - minimum amount of time to wait between deposits\n                     5. Minimum market duration - minimum amount of time a market can be created for\n                     6. Minimum debt buffer - the minimum amount of debt over the initial debt to trigger a market shutdown\n @dev                The defaults set here are important to avoid edge cases in market behavior, e.g. a very short market reacts doesn't tune well\n @dev                Only applies to new markets that are created after the change"
+            },
+            "functionSelector": "bd1f3a5e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDefaults",
+            "nameLocation": "8282:11:46",
+            "parameters": {
+              "id": 41746,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41745,
+                  "mutability": "mutable",
+                  "name": "defaults_",
+                  "nameLocation": "8311:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41748,
+                  "src": "8294:26:46",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint32_$6_memory_ptr",
+                    "typeString": "uint32[6]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 41742,
+                      "name": "uint32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "8294:6:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint32",
+                        "typeString": "uint32"
+                      }
+                    },
+                    "id": 41744,
+                    "length": {
+                      "hexValue": "36",
+                      "id": 41743,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "8301:1:46",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_6_by_1",
+                        "typeString": "int_const 6"
+                      },
+                      "value": "6"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "8294:9:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint32_$6_storage_ptr",
+                      "typeString": "uint32[6]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8293:28:46"
+            },
+            "returnParameters": {
+              "id": 41747,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8330:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41754,
+            "nodeType": "FunctionDefinition",
+            "src": "8633:51:46",
+            "documentation": {
+              "id": 41749,
+              "nodeType": "StructuredDocumentation",
+              "src": "8337:291:46",
+              "text": "@notice             Change the status of the auctioneer to allow creation of new markets\n @dev                Setting to false and allowing active markets to end will sunset the auctioneer\n @param status_      Allow market creation (true) : Disallow market creation (false)"
+            },
+            "functionSelector": "5f77274e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setAllowNewMarkets",
+            "nameLocation": "8642:18:46",
+            "parameters": {
+              "id": 41752,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41751,
+                  "mutability": "mutable",
+                  "name": "status_",
+                  "nameLocation": "8666:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41754,
+                  "src": "8661:12:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 41750,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "8661:4:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "8660:14:46"
+            },
+            "returnParameters": {
+              "id": 41753,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "8683:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41762,
+            "nodeType": "FunctionDefinition",
+            "src": "9097:72:46",
+            "documentation": {
+              "id": 41755,
+              "nodeType": "StructuredDocumentation",
+              "src": "8690:402:46",
+              "text": "@notice             Change whether a market creator is allowed to use a callback address in their markets or not\n @notice             Must be guardian\n @dev                Callback is believed to be safe, but a whitelist is implemented to prevent abuse\n @param creator_     Address of market creator\n @param status_      Allow callback (true) : Disallow callback (false)"
+            },
+            "functionSelector": "bbbdd95a",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setCallbackAuthStatus",
+            "nameLocation": "9106:21:46",
+            "parameters": {
+              "id": 41760,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41757,
+                  "mutability": "mutable",
+                  "name": "creator_",
+                  "nameLocation": "9136:8:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41762,
+                  "src": "9128:16:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41756,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9128:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41759,
+                  "mutability": "mutable",
+                  "name": "status_",
+                  "nameLocation": "9151:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41762,
+                  "src": "9146:12:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 41758,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9146:4:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9127:32:46"
+            },
+            "returnParameters": {
+              "id": 41761,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "9168:0:46"
+            },
+            "scope": 41859,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41782,
+            "nodeType": "FunctionDefinition",
+            "src": "9916:285:46",
+            "documentation": {
+              "id": 41763,
+              "nodeType": "StructuredDocumentation",
+              "src": "9223:688:46",
+              "text": "@notice                 Provides information for the Teller to execute purchases on a Market\n @param id_              Market ID\n @return owner           Address of the market owner (tokens transferred from this address if no callback)\n @return callbackAddr    Address of the callback contract to get tokens for payouts\n @return payoutToken     Payout Token (token paid out) for the Market\n @return quoteToken      Quote Token (token received) for the Market\n @return vesting         Timestamp or duration for vesting, implementation-dependent\n @return maxPayout       Maximum amount of payout tokens you can purchase in one transaction"
+            },
+            "functionSelector": "acc5570c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getMarketInfoForPurchase",
+            "nameLocation": "9925:24:46",
+            "parameters": {
+              "id": 41766,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41765,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "9958:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "9950:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41764,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "9950:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "9949:13:46"
+            },
+            "returnParameters": {
+              "id": 41781,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41768,
+                  "mutability": "mutable",
+                  "name": "owner",
+                  "nameLocation": "10031:5:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10023:13:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41767,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10023:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41770,
+                  "mutability": "mutable",
+                  "name": "callbackAddr",
+                  "nameLocation": "10058:12:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10050:20:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41769,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10050:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41773,
+                  "mutability": "mutable",
+                  "name": "payoutToken",
+                  "nameLocation": "10090:11:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10084:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$22445",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "id": 41772,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 41771,
+                      "name": "ERC20",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22445,
+                      "src": "10084:5:46"
+                    },
+                    "referencedDeclaration": 22445,
+                    "src": "10084:5:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$22445",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41776,
+                  "mutability": "mutable",
+                  "name": "quoteToken",
+                  "nameLocation": "10121:10:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10115:16:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_ERC20_$22445",
+                    "typeString": "contract ERC20"
+                  },
+                  "typeName": {
+                    "id": 41775,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 41774,
+                      "name": "ERC20",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22445,
+                      "src": "10115:5:46"
+                    },
+                    "referencedDeclaration": 22445,
+                    "src": "10115:5:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_ERC20_$22445",
+                      "typeString": "contract ERC20"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41778,
+                  "mutability": "mutable",
+                  "name": "vesting",
+                  "nameLocation": "10152:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10145:14:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 41777,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10145:6:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41780,
+                  "mutability": "mutable",
+                  "name": "maxPayout",
+                  "nameLocation": "10181:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41782,
+                  "src": "10173:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41779,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10173:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10009:191:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41790,
+            "nodeType": "FunctionDefinition",
+            "src": "10558:66:46",
+            "documentation": {
+              "id": 41783,
+              "nodeType": "StructuredDocumentation",
+              "src": "10207:195:46",
+              "text": "@notice             Calculate current market price of payout token in quote tokens\n @param id_          ID of market\n @return             Price for market in configured decimals"
+            },
+            "functionSelector": "3adec5a7",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "marketPrice",
+            "nameLocation": "10567:11:46",
+            "parameters": {
+              "id": 41786,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41785,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "10587:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41790,
+                  "src": "10579:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41784,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10579:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10578:13:46"
+            },
+            "returnParameters": {
+              "id": 41789,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41788,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41790,
+                  "src": "10615:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41787,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "10615:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "10614:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41802,
+            "nodeType": "FunctionDefinition",
+            "src": "11157:130:46",
+            "documentation": {
+              "id": 41791,
+              "nodeType": "StructuredDocumentation",
+              "src": "10630:522:46",
+              "text": "@notice             Payout due for amount of quote tokens\n @dev                Accounts for debt and control variable decay so it is up to date\n @param amount_      Amount of quote tokens to spend\n @param id_          ID of market\n @param referrer_    Address of referrer, used to get fees to calculate accurate payout amount.\n                     Inputting the zero address will take into account just the protocol fee.\n @return             amount of payout tokens to be paid"
+            },
+            "functionSelector": "bf48582b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "payoutFor",
+            "nameLocation": "11166:9:46",
+            "parameters": {
+              "id": 41798,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41793,
+                  "mutability": "mutable",
+                  "name": "amount_",
+                  "nameLocation": "11193:7:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41802,
+                  "src": "11185:15:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41792,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11185:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41795,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "11218:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41802,
+                  "src": "11210:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41794,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11210:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41797,
+                  "mutability": "mutable",
+                  "name": "referrer_",
+                  "nameLocation": "11239:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41802,
+                  "src": "11231:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41796,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11231:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11175:79:46"
+            },
+            "returnParameters": {
+              "id": 41801,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41800,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41802,
+                  "src": "11278:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41799,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11278:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11277:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41812,
+            "nodeType": "FunctionDefinition",
+            "src": "11627:91:46",
+            "documentation": {
+              "id": 41803,
+              "nodeType": "StructuredDocumentation",
+              "src": "11293:329:46",
+              "text": "@notice             Returns maximum amount of quote token accepted by the market\n @param id_          ID of market\n @param referrer_    Address of referrer, used to get fees to calculate accurate payout amount.\n                     Inputting the zero address will take into account just the protocol fee."
+            },
+            "functionSelector": "c7bf8ca0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "maxAmountAccepted",
+            "nameLocation": "11636:17:46",
+            "parameters": {
+              "id": 41808,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41805,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "11662:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41812,
+                  "src": "11654:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41804,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11654:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 41807,
+                  "mutability": "mutable",
+                  "name": "referrer_",
+                  "nameLocation": "11675:9:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41812,
+                  "src": "11667:17:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41806,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11667:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11653:32:46"
+            },
+            "returnParameters": {
+              "id": 41811,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41810,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41812,
+                  "src": "11709:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41809,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11709:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11708:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41820,
+            "nodeType": "FunctionDefinition",
+            "src": "11840:65:46",
+            "documentation": {
+              "id": 41813,
+              "nodeType": "StructuredDocumentation",
+              "src": "11724:111:46",
+              "text": "@notice             Does market send payout immediately\n @param id_          Market ID to search for"
+            },
+            "functionSelector": "8b098db3",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isInstantSwap",
+            "nameLocation": "11849:13:46",
+            "parameters": {
+              "id": 41816,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41815,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "11871:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41820,
+                  "src": "11863:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41814,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11863:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11862:13:46"
+            },
+            "returnParameters": {
+              "id": 41819,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41818,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41820,
+                  "src": "11899:4:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 41817,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "11899:4:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "11898:6:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41828,
+            "nodeType": "FunctionDefinition",
+            "src": "12017:58:46",
+            "documentation": {
+              "id": 41821,
+              "nodeType": "StructuredDocumentation",
+              "src": "11911:101:46",
+              "text": "@notice             Is a given market accepting deposits\n @param id_          ID of market"
+            },
+            "functionSelector": "27507458",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "isLive",
+            "nameLocation": "12026:6:46",
+            "parameters": {
+              "id": 41824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41823,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "12041:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41828,
+                  "src": "12033:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41822,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12033:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12032:13:46"
+            },
+            "returnParameters": {
+              "id": 41827,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41826,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41828,
+                  "src": "12069:4:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 41825,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12069:4:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12068:6:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41836,
+            "nodeType": "FunctionDefinition",
+            "src": "12190:62:46",
+            "documentation": {
+              "id": 41829,
+              "nodeType": "StructuredDocumentation",
+              "src": "12081:104:46",
+              "text": "@notice             Returns the address of the market owner\n @param id_          ID of market"
+            },
+            "functionSelector": "6352211e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "ownerOf",
+            "nameLocation": "12199:7:46",
+            "parameters": {
+              "id": 41832,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41831,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "12215:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41836,
+                  "src": "12207:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41830,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12207:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12206:13:46"
+            },
+            "returnParameters": {
+              "id": 41835,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41834,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41836,
+                  "src": "12243:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 41833,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12243:7:46",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12242:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41843,
+            "nodeType": "FunctionDefinition",
+            "src": "12334:57:46",
+            "documentation": {
+              "id": 41837,
+              "nodeType": "StructuredDocumentation",
+              "src": "12258:71:46",
+              "text": "@notice             Returns the Teller that services the Auctioneer"
+            },
+            "functionSelector": "9787d107",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getTeller",
+            "nameLocation": "12343:9:46",
+            "parameters": {
+              "id": 41838,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "12352:2:46"
+            },
+            "returnParameters": {
+              "id": 41842,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41841,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41843,
+                  "src": "12378:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBondTeller_$42145",
+                    "typeString": "contract IBondTeller"
+                  },
+                  "typeName": {
+                    "id": 41840,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 41839,
+                      "name": "IBondTeller",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 42145,
+                      "src": "12378:11:46"
+                    },
+                    "referencedDeclaration": 42145,
+                    "src": "12378:11:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBondTeller_$42145",
+                      "typeString": "contract IBondTeller"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12377:13:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41850,
+            "nodeType": "FunctionDefinition",
+            "src": "12477:65:46",
+            "documentation": {
+              "id": 41844,
+              "nodeType": "StructuredDocumentation",
+              "src": "12397:75:46",
+              "text": "@notice             Returns the Aggregator that services the Auctioneer"
+            },
+            "functionSelector": "3ad59dbc",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAggregator",
+            "nameLocation": "12486:13:46",
+            "parameters": {
+              "id": 41845,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "12499:2:46"
+            },
+            "returnParameters": {
+              "id": 41849,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41848,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41850,
+                  "src": "12525:15:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_IBondAggregator_$41654",
+                    "typeString": "contract IBondAggregator"
+                  },
+                  "typeName": {
+                    "id": 41847,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 41846,
+                      "name": "IBondAggregator",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 41654,
+                      "src": "12525:15:46"
+                    },
+                    "referencedDeclaration": 41654,
+                    "src": "12525:15:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_IBondAggregator_$41654",
+                      "typeString": "contract IBondAggregator"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12524:17:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 41858,
+            "nodeType": "FunctionDefinition",
+            "src": "12613:70:46",
+            "documentation": {
+              "id": 41851,
+              "nodeType": "StructuredDocumentation",
+              "src": "12548:60:46",
+              "text": "@notice             Returns current capacity of a market"
+            },
+            "functionSelector": "1c063a6c",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "currentCapacity",
+            "nameLocation": "12622:15:46",
+            "parameters": {
+              "id": 41854,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41853,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "12646:3:46",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41858,
+                  "src": "12638:11:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41852,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12638:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12637:13:46"
+            },
+            "returnParameters": {
+              "id": 41857,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 41856,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 41858,
+                  "src": "12674:7:46",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 41855,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "12674:7:46",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "12673:9:46"
+            },
+            "scope": 41859,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBondAuctioneer",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          41859
+        ],
+        "name": "IBondAuctioneer",
+        "nameLocation": "224:15:46",
+        "scope": 41860,
+        "usedErrors": []
+      }
+    ],
+    "license": "AGPL-3.0"
+  },
+  "id": 46
+}

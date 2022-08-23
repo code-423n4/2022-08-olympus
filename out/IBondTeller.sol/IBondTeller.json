@@ -1,0 +1,745 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract ERC20[]",
+          "name": "tokens_",
+          "type": "address[]"
+        },
+        {
+          "internalType": "address",
+          "name": "to_",
+          "type": "address"
+        }
+      ],
+      "name": "claimFees",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "referrer_",
+          "type": "address"
+        }
+      ],
+      "name": "getFee",
+      "outputs": [
+        {
+          "internalType": "uint48",
+          "name": "",
+          "type": "uint48"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "recipient_",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "referrer_",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "id_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount_",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "minAmountOut_",
+          "type": "uint256"
+        }
+      ],
+      "name": "purchase",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint48",
+          "name": "",
+          "type": "uint48"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint48",
+          "name": "fee_",
+          "type": "uint48"
+        }
+      ],
+      "name": "setProtocolFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint48",
+          "name": "fee_",
+          "type": "uint48"
+        }
+      ],
+      "name": "setReferrerFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "claimFees(address[],address)": "2f6fa94e",
+    "getFee(address)": "b88c9148",
+    "purchase(address,address,uint256,uint256,uint256)": "6de5b4cd",
+    "setProtocolFee(uint48)": "b1e55529",
+    "setReferrerFee(uint48)": "0d4dfc21"
+  },
+  "ast": {
+    "absolutePath": "src/test/lib/bonds/interfaces/IBondTeller.sol",
+    "id": 42146,
+    "exportedSymbols": {
+      "ERC20": [
+        22445
+      ],
+      "IBondTeller": [
+        42145
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:2171:50",
+    "nodes": [
+      {
+        "id": 42094,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:50",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 42096,
+        "nodeType": "ImportDirective",
+        "src": "63:47:50",
+        "absolutePath": "lib/solmate/src/tokens/ERC20.sol",
+        "file": "solmate/tokens/ERC20.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 42146,
+        "sourceUnit": 22446,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 42095,
+              "name": "ERC20",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 22445,
+              "src": "71:5:50",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 42145,
+        "nodeType": "ContractDefinition",
+        "src": "112:2095:50",
+        "nodes": [
+          {
+            "id": 42114,
+            "nodeType": "FunctionDefinition",
+            "src": "966:191:50",
+            "documentation": {
+              "id": 42097,
+              "nodeType": "StructuredDocumentation",
+              "src": "140:821:50",
+              "text": "@notice                 Exchange quote tokens for a bond in a specified market\n @param recipient_       Address of recipient of bond. Allows deposits for other addresses\n @param referrer_        Address of referrer who will receive referral fee. For frontends to fill.\n                         Direct calls can use the zero address for no referrer fee.\n @param id_              ID of the Market the bond is being purchased from\n @param amount_          Amount to deposit in exchange for bond\n @param minAmountOut_    Minimum acceptable amount of bond to receive. Prevents frontrunning\n @return                 Amount of payout token to be received from the bond\n @return                 Timestamp at which the bond token can be redeemed for the underlying token"
+            },
+            "functionSelector": "6de5b4cd",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "purchase",
+            "nameLocation": "975:8:50",
+            "parameters": {
+              "id": 42108,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42099,
+                  "mutability": "mutable",
+                  "name": "recipient_",
+                  "nameLocation": "1001:10:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "993:18:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 42098,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "993:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42101,
+                  "mutability": "mutable",
+                  "name": "referrer_",
+                  "nameLocation": "1029:9:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1021:17:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 42100,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1021:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42103,
+                  "mutability": "mutable",
+                  "name": "id_",
+                  "nameLocation": "1056:3:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1048:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 42102,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1048:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42105,
+                  "mutability": "mutable",
+                  "name": "amount_",
+                  "nameLocation": "1077:7:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1069:15:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 42104,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1069:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42107,
+                  "mutability": "mutable",
+                  "name": "minAmountOut_",
+                  "nameLocation": "1102:13:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1094:21:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 42106,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1094:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "983:138:50"
+            },
+            "returnParameters": {
+              "id": 42113,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42110,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1140:7:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 42109,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1140:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42112,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42114,
+                  "src": "1149:6:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 42111,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1149:6:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1139:17:50"
+            },
+            "scope": 42145,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 42122,
+            "nodeType": "FunctionDefinition",
+            "src": "1387:66:50",
+            "documentation": {
+              "id": 42115,
+              "nodeType": "StructuredDocumentation",
+              "src": "1163:219:50",
+              "text": "@notice          Get current fee charged by the teller based on the combined protocol and referrer fee\n @param referrer_ Address of the referrer\n @return          Fee in basis points (3 decimal places)"
+            },
+            "functionSelector": "b88c9148",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getFee",
+            "nameLocation": "1396:6:50",
+            "parameters": {
+              "id": 42118,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42117,
+                  "mutability": "mutable",
+                  "name": "referrer_",
+                  "nameLocation": "1411:9:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42122,
+                  "src": "1403:17:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 42116,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1403:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1402:19:50"
+            },
+            "returnParameters": {
+              "id": 42121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42120,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42122,
+                  "src": "1445:6:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 42119,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1445:6:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1444:8:50"
+            },
+            "scope": 42145,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 42128,
+            "nodeType": "FunctionDefinition",
+            "src": "1613:46:50",
+            "documentation": {
+              "id": 42123,
+              "nodeType": "StructuredDocumentation",
+              "src": "1459:149:50",
+              "text": "@notice         Set protocol fee\n @notice         Must be guardian\n @param fee_     Protocol fee in basis points (3 decimal places)"
+            },
+            "functionSelector": "b1e55529",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setProtocolFee",
+            "nameLocation": "1622:14:50",
+            "parameters": {
+              "id": 42126,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42125,
+                  "mutability": "mutable",
+                  "name": "fee_",
+                  "nameLocation": "1644:4:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42128,
+                  "src": "1637:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 42124,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1637:6:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1636:13:50"
+            },
+            "returnParameters": {
+              "id": 42127,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1658:0:50"
+            },
+            "scope": 42145,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 42134,
+            "nodeType": "FunctionDefinition",
+            "src": "1859:46:50",
+            "documentation": {
+              "id": 42129,
+              "nodeType": "StructuredDocumentation",
+              "src": "1665:189:50",
+              "text": "@notice         Set your fee as a referrer to the protocol\n @notice         Fee is set for sending address\n @param fee_     Referrer fee in basis points (3 decimal places)"
+            },
+            "functionSelector": "0d4dfc21",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setReferrerFee",
+            "nameLocation": "1868:14:50",
+            "parameters": {
+              "id": 42132,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42131,
+                  "mutability": "mutable",
+                  "name": "fee_",
+                  "nameLocation": "1890:4:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42134,
+                  "src": "1883:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint48",
+                    "typeString": "uint48"
+                  },
+                  "typeName": {
+                    "id": 42130,
+                    "name": "uint48",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1883:6:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint48",
+                      "typeString": "uint48"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1882:13:50"
+            },
+            "returnParameters": {
+              "id": 42133,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1904:0:50"
+            },
+            "scope": 42145,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 42144,
+            "nodeType": "FunctionDefinition",
+            "src": "2140:65:50",
+            "documentation": {
+              "id": 42135,
+              "nodeType": "StructuredDocumentation",
+              "src": "1911:224:50",
+              "text": "@notice         Claim fees accrued for input tokens and sends to protocol\n @notice         Must be guardian\n @param tokens_  Array of tokens to claim fees for\n @param to_      Address to send fees to"
+            },
+            "functionSelector": "2f6fa94e",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "claimFees",
+            "nameLocation": "2149:9:50",
+            "parameters": {
+              "id": 42142,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 42139,
+                  "mutability": "mutable",
+                  "name": "tokens_",
+                  "nameLocation": "2174:7:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42144,
+                  "src": "2159:22:50",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_ERC20_$22445_$dyn_memory_ptr",
+                    "typeString": "contract ERC20[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 42137,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 42136,
+                        "name": "ERC20",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 22445,
+                        "src": "2159:5:50"
+                      },
+                      "referencedDeclaration": 22445,
+                      "src": "2159:5:50",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_ERC20_$22445",
+                        "typeString": "contract ERC20"
+                      }
+                    },
+                    "id": 42138,
+                    "nodeType": "ArrayTypeName",
+                    "src": "2159:7:50",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_ERC20_$22445_$dyn_storage_ptr",
+                      "typeString": "contract ERC20[]"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 42141,
+                  "mutability": "mutable",
+                  "name": "to_",
+                  "nameLocation": "2191:3:50",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 42144,
+                  "src": "2183:11:50",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 42140,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2183:7:50",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2158:37:50"
+            },
+            "returnParameters": {
+              "id": 42143,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "2204:0:50"
+            },
+            "scope": 42145,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IBondTeller",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          42145
+        ],
+        "name": "IBondTeller",
+        "nameLocation": "122:11:50",
+        "scope": 42146,
+        "usedErrors": []
+      }
+    ],
+    "license": "AGPL-3.0"
+  },
+  "id": 50
+}
