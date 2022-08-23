@@ -60,7 +60,82 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 # Contest Scope
 
-### 
+## Contract Details
+
+### Modules
+All modules have an assigned 5-byte keycode. Also have no dependencies other than the Kernel.
+#### OlympusTreasury
+- Keycode: `TRSRY`
+- Treasury for the protocol
+- Holds all assets for the treasury
+- Maintains debt balances for contracts that borrow funds
+- LOC: 153
+
+#### OlympusMinter
+- Keycode: `MINTR`
+- Wrapper for minting and burning capabilities of OHM token
+- LOC: 40
+
+#### OlympusPrice
+- Keycode: `PRICE`
+- Holds historical price oracle data for the Range-Bound Stability System
+- LOC: 293
+
+#### OlympusRange
+- Keycode: `PRICE`
+- Holds range data for the Range-Bound Stability System
+- LOC: 347
+
+#### OlympusInstructions
+- Keycode: `INSTR`
+- Used for storing batched Kernel instructions for convenient proposal execution in the Governance policy
+- LOC: 80
+
+#### OlympusVotes
+- Keycode: `VOTES`
+- Dummy votes token for phased governance rollout
+- LOC: 64
+
+### Policies
+All policies have their module dependencies defined inside the `configureDependencies` function. Policies may also have outside dependencies, which will be listed here.
+
+#### Operator
+- Main contract for the Range-Bound Stability system
+- Facilitates bond markets (cushions) and treasury swaps (walls) when appropriate.
+- Ext. Dependencies: BondAuctioneer (Bond Protocol)
+- LOC: 801
+
+#### BondCallback
+- Contract to be used by BondAuctioneer to allow minting/burning of OHM for bond payouts.
+- Ext. Dependencies: BondAggregator (Bond Protocol)
+- LOC: 194
+
+#### Heart
+- Policy for keepers to activate regularly scheduled RBS functions and be compensated.
+- LOC: 153
+
+#### PriceConfig
+- Used for a specified role to adjust parameters in the `PRICE` module
+- LOC: 75
+
+#### TreasuryCustodian
+- Policy to allow specified role to adjust treasury debt and approvals.
+- LOC: 88
+
+#### OlympusGovernance
+- Governor contract, has vote locking and net-votes vote counting built in
+- Intended to be used as the `executor` role in the Kernel
+- LOC: 314
+
+#### VoterRegistration
+- Policy for distributing `VOTES` tokens (for phased rollout of governance)
+- LOC: 57
+
+
+## Build and Deploy
+// TODO OIGHTY PLZ
+`forge build`
+
 # Documentation
 ## Overview
 
@@ -70,12 +145,14 @@ Olympus V3, aka Bophades, is the next iteration of the Olympus protocol. It is a
 ### Range-Bound Stability (RBS) system
 
 Range-Bound Stability is a system for algorithmically using treasury assets to support OHM exchange rates with its major liquidity pairs. More details can be found here:
-- Whitepaper https://ohm.fyi/gentle-pegging
-- Initial spec https://docs.google.com/document/d/1AdPex_lMpSC_3U8UEU4hiSZIT1O1FekoCujRtYEJ0ig
+- [Whitepaper](https://ohm.fyi/gentle-pegging)
+- [Initial spec](https://docs.google.com/document/d/1AdPex_lMpSC_3U8UEU4hiSZIT1O1FekoCujRtYEJ0ig)
+- [Video overview](https://www.loom.com/share/f3b053ad02674383908d53783eccb37e)
 
 ### Governance
 
-// TODO
+The Olympus governor is an adaptation of the Default governance contract, which uses token voting to interact with the kernel as its executor. This allows voters to add and remove contracts from the kernel. There are a few unique systems to this governor, like the net-votes vote counting system (vs the regular quorum voting as is common). More information can be found in the doc below.
+- [Documentation](https://hackmd.io/iWgqYLFwShGUDBF4zh397w)
 
 ## Default Framework: Kernel, Modules and Policies Summary
 Bophades uses the [Default Framework](https://github.com/fullyallocated/Default) to configure the protocol’s smart contracts and authorized addresses within the system. In this framework, all contract dependencies and authorizations are managed via “Actions” in the Kernel.sol contract. These actions are as follows:
