@@ -1,0 +1,184 @@
+{
+  "abi": [
+    {
+      "inputs": [],
+      "name": "deposit",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "deposit()": "d0e30db0",
+    "withdraw(uint256)": "2e1a7d4d"
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IWETH9.sol",
+    "id": 26125,
+    "exportedSymbols": {
+      "IWETH9": [
+        26124
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:264:18",
+    "nodes": [
+      {
+        "id": 26112,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:18",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 26124,
+        "nodeType": "ContractDefinition",
+        "src": "94:206:18",
+        "nodes": [
+          {
+            "id": 26117,
+            "nodeType": "FunctionDefinition",
+            "src": "168:36:18",
+            "documentation": {
+              "id": 26114,
+              "nodeType": "StructuredDocumentation",
+              "src": "117:46:18",
+              "text": "@notice Deposit ether to get wrapped ether"
+            },
+            "functionSelector": "d0e30db0",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "deposit",
+            "nameLocation": "177:7:18",
+            "parameters": {
+              "id": 26115,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "184:2:18"
+            },
+            "returnParameters": {
+              "id": 26116,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "203:0:18"
+            },
+            "scope": 26124,
+            "stateMutability": "payable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 26123,
+            "nodeType": "FunctionDefinition",
+            "src": "262:36:18",
+            "documentation": {
+              "id": 26118,
+              "nodeType": "StructuredDocumentation",
+              "src": "210:47:18",
+              "text": "@notice Withdraw wrapped ether to get ether"
+            },
+            "functionSelector": "2e1a7d4d",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "withdraw",
+            "nameLocation": "271:8:18",
+            "parameters": {
+              "id": 26121,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 26120,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 26123,
+                  "src": "280:7:18",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 26119,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "280:7:18",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "279:9:18"
+            },
+            "returnParameters": {
+              "id": 26122,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "297:0:18"
+            },
+            "scope": 26124,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IWETH9",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 26113,
+          "nodeType": "StructuredDocumentation",
+          "src": "63:31:18",
+          "text": "@title Interface for WETH9"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          26124
+        ],
+        "name": "IWETH9",
+        "nameLocation": "104:6:18",
+        "scope": 26125,
+        "usedErrors": []
+      }
+    ],
+    "license": "AGPL-3.0"
+  },
+  "id": 18
+}

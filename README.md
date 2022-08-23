@@ -62,6 +62,20 @@ Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 ## Contract Details
 
+### Kernel
+- Default kernel
+- Main registry for protocol
+- Controlled by the `executor` address
+- Has defined `Actions` for mutating state of the registry
+- Intended to be used with the `OlympusGovernance` policy
+- Includes all of the main dependencies used for Policies and Modules
+- Uses a `KernelUtils.sol` file to define common global functions
+- LOC: 459
+
+#### KernelUtils
+- Define common global utility functions to be used in any contract in the protocol
+- LOC: 67
+
 ### Modules
 All modules have an assigned 5-byte keycode. Also have no dependencies other than the Kernel.
 #### OlympusTreasury

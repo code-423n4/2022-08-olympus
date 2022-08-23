@@ -1,0 +1,3709 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract Kernel",
+          "name": "kernel_",
+          "type": "address"
+        },
+        {
+          "internalType": "contract Module",
+          "name": "module_",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "Keycode",
+              "name": "keycode",
+              "type": "bytes5"
+            },
+            {
+              "internalType": "bytes4",
+              "name": "funcSelector",
+              "type": "bytes4"
+            }
+          ],
+          "internalType": "struct Permissions[]",
+          "name": "requests_",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "caller_",
+          "type": "address"
+        }
+      ],
+      "name": "KernelAdapter_OnlyKernel",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract Kernel",
+          "name": "newKernel_",
+          "type": "address"
+        }
+      ],
+      "name": "changeKernel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "configureDependencies",
+      "outputs": [
+        {
+          "internalType": "Keycode[]",
+          "name": "dependencies",
+          "type": "bytes5[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "isActive",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "kernel",
+      "outputs": [
+        {
+          "internalType": "contract Kernel",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "requestPermissions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "Keycode",
+              "name": "keycode",
+              "type": "bytes5"
+            },
+            {
+              "internalType": "bytes4",
+              "name": "funcSelector",
+              "type": "bytes4"
+            }
+          ],
+          "internalType": "struct Permissions[]",
+          "name": "requests",
+          "type": "tuple[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "activate_",
+          "type": "bool"
+        }
+      ],
+      "name": "setActiveStatus",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x608060405234801561001057600080fd5b506040516107fe3803806107fe83398101604081905261002f9161016c565b600080546001600160a01b038086166001600160a01b031992831617835560018054918616919092161790558151905b818110156100dc57600283828151811061007b5761007b610290565b6020908102919091018101518254600181018455600093845292829020815193018054919092015160e01c65010000000000026001600160481b031990911660d89390931c92909217919091179055806100d4816102a6565b91505061005f565b50505050506102cd565b6001600160a01b03811681146100fb57600080fd5b50565b634e487b7160e01b600052604160045260246000fd5b604080519081016001600160401b0381118282101715610136576101366100fe565b60405290565b604051601f8201601f191681016001600160401b0381118282101715610164576101646100fe565b604052919050565b60008060006060848603121561018157600080fd5b835161018c816100e6565b8093505060208085015161019f816100e6565b604086810151919450906001600160401b03808211156101be57600080fd5b818801915088601f8301126101d257600080fd5b8151818111156101e4576101e46100fe565b6101f2858260051b0161013c565b818152858101925060069190911b83018501908a82111561021257600080fd5b928501925b818410156102805784848c03121561022f5760008081fd5b610237610114565b84516001600160d81b0319811681146102505760008081fd5b8152848701516001600160e01b03198116811461026d5760008081fd5b8188015283529284019291850191610217565b8096505050505050509250925092565b634e487b7160e01b600052603260045260246000fd5b6000600182016102c657634e487b7160e01b600052601160045260246000fd5b5060010190565b610522806102dc6000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c806322f3e2d4146100675780634657b36c146100905780635924be70146100a55780639459b875146100ba578063d4aae0c4146100cf578063ec7404b1146100fa575b600080fd5b60005461007b90600160a01b900460ff1681565b60405190151581526020015b60405180910390f35b6100a361009e36600461036c565b61010d565b005b6100ad610161565b604051610087919061039c565b6100c2610263565b60405161008791906103ff565b6000546100e2906001600160a01b031681565b6040516001600160a01b039091168152602001610087565b6100a361010836600461044d565b610321565b6000546001600160a01b0316331461013f5760405163053e900f60e21b81523360048201526024015b60405180910390fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6002546060908067ffffffffffffffff8111156101805761018061046f565b6040519080825280602002602001820160405280156101c557816020015b604080518082019091526000808252602082015281526020019060019003908161019e5790505b50915060005b8181101561025e57600281815481106101e6576101e6610485565b60009182526020918290206040805180820190915291015460d881901b6001600160d81b031916825265010000000000900460e01b6001600160e01b03191691810191909152835184908390811061024057610240610485565b602002602001018190525080806102569061049b565b9150506101cb565b505090565b60408051600180825281830190925260609160208083019080368337505060015460408051630d73f61760e11b815290519394506001600160a01b0390911692631ae7ec2e925060048083019260209291908290030181865afa1580156102ce573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102f291906104c2565b8160008151811061030557610305610485565b6001600160d81b03199092166020928302919091019091015290565b6000546001600160a01b0316331461034e5760405163053e900f60e21b8152336004820152602401610136565b60008054911515600160a01b0260ff60a01b19909216919091179055565b60006020828403121561037e57600080fd5b81356001600160a01b038116811461039557600080fd5b9392505050565b602080825282518282018190526000919060409081850190868401855b828110156103f257815180516001600160d81b03191685528601516001600160e01b0319168685015292840192908501906001016103b9565b5091979650505050505050565b6020808252825182820181905260009190848201906040850190845b818110156104415783516001600160d81b0319168352928401929184019160010161041b565b50909695505050505050565b60006020828403121561045f57600080fd5b8135801515811461039557600080fd5b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b6000600182016104bb57634e487b7160e01b600052601160045260246000fd5b5060010190565b6000602082840312156104d457600080fd5b81516001600160d81b03198116811461039557600080fdfea26469706673582212204846af1890b9491e1d13028db4282b13cb0cf0c613fb3f7bedf343b875ee993164736f6c634300080f0033",
+    "sourceMap": "194:967:38:-:0;;;305:288;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1944:6:11;:16;;-1:-1:-1;;;;;1944:16:11;;;-1:-1:-1;;;;;;1944:16:11;;;;;;;437:17:38;;;;::::1;::::0;;;::::1;;::::0;;478:16;;;504:83:::1;524:3;520:1;:7;504:83;;;548:9;563;573:1;563:12;;;;;;;;:::i;:::-;;::::0;;::::1;::::0;;;;;;;548:28;;::::1;::::0;::::1;::::0;;-1:-1:-1;548:28:38;;;;;;;;;;::::1;::::0;;;;;::::1;::::0;::::1;;::::0;::::1;-1:-1:-1::0;;;;;;548:28:38;;;::::1;::::0;;;::::1;::::0;;;;;;;::::1;::::0;;529:3;::::1;::::0;::::1;:::i;:::-;;;;504:83;;;;427:166;305:288:::0;;;194:967;;14:139:76;-1:-1:-1;;;;;97:31:76;;87:42;;77:70;;143:1;140;133:12;77:70;14:139;:::o;158:127::-;219:10;214:3;210:20;207:1;200:31;250:4;247:1;240:15;274:4;271:1;264:15;290:250;361:2;355:9;;;391:15;;-1:-1:-1;;;;;421:34:76;;457:22;;;418:62;415:88;;;483:18;;:::i;:::-;519:2;512:22;290:250;:::o;545:275::-;616:2;610:9;681:2;662:13;;-1:-1:-1;;658:27:76;646:40;;-1:-1:-1;;;;;701:34:76;;737:22;;;698:62;695:88;;;763:18;;:::i;:::-;799:2;792:22;545:275;;-1:-1:-1;545:275:76:o;825:1945::-;1000:6;1008;1016;1069:2;1057:9;1048:7;1044:23;1040:32;1037:52;;;1085:1;1082;1075:12;1037:52;1117:9;1111:16;1136:39;1169:5;1136:39;:::i;:::-;1194:5;1184:15;;;1218:2;1265;1254:9;1250:18;1244:25;1278:41;1311:7;1278:41;:::i;:::-;1364:2;1395:18;;;1389:25;1338:7;;-1:-1:-1;1364:2:76;-1:-1:-1;;;;;1463:14:76;;;1460:34;;;1490:1;1487;1480:12;1460:34;1528:6;1517:9;1513:22;1503:32;;1573:7;1566:4;1562:2;1558:13;1554:27;1544:55;;1595:1;1592;1585:12;1544:55;1624:2;1618:9;1646:2;1642;1639:10;1636:36;;;1652:18;;:::i;:::-;1692:36;1724:2;1719;1716:1;1712:10;1708:19;1692:36;:::i;:::-;1762:15;;;1793:12;;;;-1:-1:-1;1844:1:76;1840:10;;;;1832:19;;1828:28;;;1868:19;;;1865:39;;;1900:1;1897;1890:12;1865:39;1924:11;;;;1944:796;1960:6;1955:3;1952:15;1944:796;;;2040:2;2034:3;2025:7;2021:17;2017:26;2014:116;;;2084:1;2113:2;2109;2102:14;2014:116;2158:21;;:::i;:::-;2207:10;;-1:-1:-1;;;;;;2252:36:76;;2240:49;;2230:147;;2331:1;2360:2;2356;2349:14;2230:147;2390:24;;2448:12;;;2442:19;-1:-1:-1;;;;;;2496:34:76;;2484:47;;2474:145;;2573:1;2602:2;2598;2591:14;2474:145;2639:16;;;2632:33;2678:20;;1977:12;;;;2718;;;;1944:796;;;2759:5;2749:15;;;;;;;;825:1945;;;;;:::o;2775:127::-;2836:10;2831:3;2827:20;2824:1;2817:31;2867:4;2864:1;2857:15;2891:4;2888:1;2881:15;2907:232;2946:3;2967:17;;;2964:140;;3026:10;3021:3;3017:20;3014:1;3007:31;3061:4;3058:1;3051:15;3089:4;3086:1;3079:15;2964:140;-1:-1:-1;3131:1:76;3120:13;;2907:232::o;:::-;194:967:38;;;;;;",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c806322f3e2d4146100675780634657b36c146100905780635924be70146100a55780639459b875146100ba578063d4aae0c4146100cf578063ec7404b1146100fa575b600080fd5b60005461007b90600160a01b900460ff1681565b60405190151581526020015b60405180910390f35b6100a361009e36600461036c565b61010d565b005b6100ad610161565b604051610087919061039c565b6100c2610263565b60405161008791906103ff565b6000546100e2906001600160a01b031681565b6040516001600160a01b039091168152602001610087565b6100a361010836600461044d565b610321565b6000546001600160a01b0316331461013f5760405163053e900f60e21b81523360048201526024015b60405180910390fd5b600080546001600160a01b0319166001600160a01b0392909216919091179055565b6002546060908067ffffffffffffffff8111156101805761018061046f565b6040519080825280602002602001820160405280156101c557816020015b604080518082019091526000808252602082015281526020019060019003908161019e5790505b50915060005b8181101561025e57600281815481106101e6576101e6610485565b60009182526020918290206040805180820190915291015460d881901b6001600160d81b031916825265010000000000900460e01b6001600160e01b03191691810191909152835184908390811061024057610240610485565b602002602001018190525080806102569061049b565b9150506101cb565b505090565b60408051600180825281830190925260609160208083019080368337505060015460408051630d73f61760e11b815290519394506001600160a01b0390911692631ae7ec2e925060048083019260209291908290030181865afa1580156102ce573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102f291906104c2565b8160008151811061030557610305610485565b6001600160d81b03199092166020928302919091019091015290565b6000546001600160a01b0316331461034e5760405163053e900f60e21b8152336004820152602401610136565b60008054911515600160a01b0260ff60a01b19909216919091179055565b60006020828403121561037e57600080fd5b81356001600160a01b038116811461039557600080fd5b9392505050565b602080825282518282018190526000919060409081850190868401855b828110156103f257815180516001600160d81b03191685528601516001600160e01b0319168685015292840192908501906001016103b9565b5091979650505050505050565b6020808252825182820181905260009190848201906040850190845b818110156104415783516001600160d81b0319168352928401929184019160010161041b565b50909695505050505050565b60006020828403121561045f57600080fd5b8135801515811461039557600080fd5b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b6000600182016104bb57634e487b7160e01b600052601160045260246000fd5b5060010190565b6000602082840312156104d457600080fd5b81516001600160d81b03198116811461039557600080fdfea26469706673582212204846af1890b9491e1d13028db4282b13cb0cf0c613fb3f7bedf343b875ee993164736f6c634300080f0033",
+    "sourceMap": "194:967:38:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;4099:20:11;;;;;-1:-1:-1;;;4099:20:11;;;;;;;;;179:14:76;;172:22;154:41;;142:2;127:18;4099:20:11;;;;;;;;2255:97;;;;;;:::i;:::-;;:::i;:::-;;886:273:38;;;:::i;:::-;;;;;;;:::i;655:225::-;;;:::i;:::-;;;;;;;:::i;1879:20:11:-;;;;;-1:-1:-1;;;;;1879:20:11;;;;;;-1:-1:-1;;;;;2246:32:76;;;2228:51;;2216:2;2201:18;1879:20:11;2066:219:76;4595:98:11;;;;;;:::i;:::-;;:::i;2255:97::-;2107:6;;-1:-1:-1;;;;;2107:6:11;2085:10;:29;2081:78;;2123:36;;-1:-1:-1;;;2123:36:11;;2148:10;2123:36;;;2228:51:76;2201:18;;2123:36:11;;;;;;;;2081:78;2326:6:::1;:19:::0;;-1:-1:-1;;;;;;2326:19:11::1;-1:-1:-1::0;;;;;2326:19:11;;;::::1;::::0;;;::::1;::::0;;2255:97::o;886:273:38:-;1003:9;:16;948:29;;1003:16;1040:22;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;;;;;;;;;;;;;1040:22:38;;;;;;;;;;;;;;;;1029:33;;1077:9;1072:81;1092:3;1088:1;:7;1072:81;;;1130:9;1140:1;1130:12;;;;;;;;:::i;:::-;;;;;;;;;;1116:26;;;;;;;;;1130:12;;1116:26;;;;;-1:-1:-1;;;;;;1116:26:38;;;;;;;;-1:-1:-1;;;;;;1116:26:38;;;;;;;;:11;;;;1125:1;;1116:11;;;;;;:::i;:::-;;;;;;:26;;;;1097:3;;;;;:::i;:::-;;;;1072:81;;;;979:180;886:273;:::o;655:225::-;812:16;;;826:1;812:16;;;;;;;;;752:29;;812:16;;;;;;;;;-1:-1:-1;;856:7:38;;:17;;;-1:-1:-1;;;856:17:38;;;;797:31;;-1:-1:-1;;;;;;856:7:38;;;;:15;;-1:-1:-1;856:17:38;;;;;;;;;;;;;;:7;:17;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;838:12;851:1;838:15;;;;;;;;:::i;:::-;-1:-1:-1;;;;;;838:35:38;;;:15;;;;;;;;;;;:35;655:225;:::o;4595:98:11:-;2107:6;;-1:-1:-1;;;;;2107:6:11;2085:10;:29;2081:78;;2123:36;;-1:-1:-1;;;2123:36:11;;2148:10;2123:36;;;2228:51:76;2201:18;;2123:36:11;2066:219:76;2081:78:11;4666:8:::1;:20:::0;;;::::1;;-1:-1:-1::0;;;4666:20:11::1;-1:-1:-1::0;;;;4666:20:11;;::::1;::::0;;;::::1;::::0;;4595:98::o;206:302:76:-;281:6;334:2;322:9;313:7;309:23;305:32;302:52;;;350:1;347;340:12;302:52;376:23;;-1:-1:-1;;;;;428:31:76;;418:42;;408:70;;474:1;471;464:12;408:70;497:5;206:302;-1:-1:-1;;;206:302:76:o;513:854::-;744:2;796:21;;;866:13;;769:18;;;888:22;;;715:4;;744:2;929;;947:18;;;;988:15;;;715:4;1031:310;1045:6;1042:1;1039:13;1031:310;;;1104:13;;1146:9;;-1:-1:-1;;;;;;1142:38:76;1130:51;;1225:11;;1219:18;-1:-1:-1;;;;;;1215:45:76;1201:12;;;1194:67;1281:12;;;;1316:15;;;;1067:1;1060:9;1031:310;;;-1:-1:-1;1358:3:76;;513:854;-1:-1:-1;;;;;;;513:854:76:o;1372:689::-;1571:2;1623:21;;;1693:13;;1596:18;;;1715:22;;;1542:4;;1571:2;1794:15;;;;1768:2;1753:18;;;1542:4;1837:198;1851:6;1848:1;1845:13;1837:198;;;1916:13;;-1:-1:-1;;;;;;1912:42:76;1900:55;;2010:15;;;;1975:12;;;;1873:1;1866:9;1837:198;;;-1:-1:-1;2052:3:76;;1372:689;-1:-1:-1;;;;;;1372:689:76:o;2290:273::-;2346:6;2399:2;2387:9;2378:7;2374:23;2370:32;2367:52;;;2415:1;2412;2405:12;2367:52;2454:9;2441:23;2507:5;2500:13;2493:21;2486:5;2483:32;2473:60;;2529:1;2526;2519:12;2776:127;2837:10;2832:3;2828:20;2825:1;2818:31;2868:4;2865:1;2858:15;2892:4;2889:1;2882:15;2908:127;2969:10;2964:3;2960:20;2957:1;2950:31;3000:4;2997:1;2990:15;3024:4;3021:1;3014:15;3040:232;3079:3;3100:17;;;3097:140;;3159:10;3154:3;3150:20;3147:1;3140:31;3194:4;3191:1;3184:15;3222:4;3219:1;3212:15;3097:140;-1:-1:-1;3264:1:76;3253:13;;3040:232::o;3277:322::-;3376:6;3429:2;3417:9;3408:7;3404:23;3400:32;3397:52;;;3445:1;3442;3435:12;3397:52;3471:16;;-1:-1:-1;;;;;;3516:34:76;;3506:45;;3496:73;;3565:1;3562;3555:12",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "changeKernel(address)": "4657b36c",
+    "configureDependencies()": "9459b875",
+    "isActive()": "22f3e2d4",
+    "kernel()": "d4aae0c4",
+    "requestPermissions()": "5924be70",
+    "setActiveStatus(bool)": "ec7404b1"
+  },
+  "ast": {
+    "absolutePath": "src/test/lib/ModuleTestFixtureGenerator.sol",
+    "id": 36958,
+    "exportedSymbols": {
+      "Actions": [
+        22545
+      ],
+      "Instruction": [
+        22551
+      ],
+      "InvalidKeycode": [
+        65744
+      ],
+      "InvalidRole": [
+        65749
+      ],
+      "Kernel": [
+        23747
+      ],
+      "KernelAdapter": [
+        22609
+      ],
+      "KernelAdapter_OnlyKernel": [
+        22478
+      ],
+      "Kernel_AddressAlreadyHasRole": [
+        22525
+      ],
+      "Kernel_AddressDoesNotHaveRole": [
+        22532
+      ],
+      "Kernel_InvalidModuleUpgrade": [
+        22510
+      ],
+      "Kernel_ModuleAlreadyInstalled": [
+        22505
+      ],
+      "Kernel_OnlyAdmin": [
+        22500
+      ],
+      "Kernel_OnlyExecutor": [
+        22496
+      ],
+      "Kernel_PolicyAlreadyActivated": [
+        22514
+      ],
+      "Kernel_PolicyNotActivated": [
+        22518
+      ],
+      "Kernel_RoleDoesNotExist": [
+        22537
+      ],
+      "Keycode": [
+        22559
+      ],
+      "Module": [
+        22670
+      ],
+      "ModuleTestFixture": [
+        36792
+      ],
+      "ModuleTestFixtureGenerator": [
+        36957
+      ],
+      "Module_PolicyNotPermitted": [
+        22482
+      ],
+      "Permissions": [
+        22557
+      ],
+      "Policy": [
+        22777
+      ],
+      "Policy_ModuleDoesNotExist": [
+        22492
+      ],
+      "Policy_OnlyRole": [
+        22487
+      ],
+      "Quabi": [
+        44425
+      ],
+      "Role": [
+        22561
+      ],
+      "TargetNotAContract": [
+        65739
+      ],
+      "ensureContract": [
+        65823
+      ],
+      "ensureValidKeycode": [
+        65868
+      ],
+      "ensureValidRole": [
+        65923
+      ],
+      "fromKeycode": [
+        65777
+      ],
+      "fromRole": [
+        65805
+      ],
+      "toKeycode": [
+        65763
+      ],
+      "toRole": [
+        65791
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "37:2884:38",
+    "nodes": [
+      {
+        "id": 36665,
+        "nodeType": "PragmaDirective",
+        "src": "37:24:38",
+        "literals": [
+          "solidity",
+          ">=",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 36667,
+        "nodeType": "ImportDirective",
+        "src": "63:40:38",
+        "absolutePath": "src/test/lib/quabi/Quabi.sol",
+        "file": "./quabi/Quabi.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 36958,
+        "sourceUnit": 44426,
+        "symbolAliases": [
+          {
+            "foreign": {
+              "id": 36666,
+              "name": "Quabi",
+              "nodeType": "Identifier",
+              "overloadedDeclarations": [],
+              "referencedDeclaration": 44425,
+              "src": "71:5:38",
+              "typeDescriptions": {}
+            },
+            "nameLocation": "-1:-1:-1"
+          }
+        ],
+        "unitAlias": ""
+      },
+      {
+        "id": 36668,
+        "nodeType": "ImportDirective",
+        "src": "104:24:38",
+        "absolutePath": "src/Kernel.sol",
+        "file": "src/Kernel.sol",
+        "nameLocation": "-1:-1:-1",
+        "scope": 36958,
+        "sourceUnit": 23748,
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "id": 36792,
+        "nodeType": "ContractDefinition",
+        "src": "194:967:38",
+        "nodes": [
+          {
+            "id": 36674,
+            "nodeType": "VariableDeclaration",
+            "src": "237:23:38",
+            "constant": false,
+            "mutability": "mutable",
+            "name": "_module",
+            "nameLocation": "253:7:38",
+            "scope": 36792,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Module_$22670",
+              "typeString": "contract Module"
+            },
+            "typeName": {
+              "id": 36673,
+              "nodeType": "UserDefinedTypeName",
+              "pathNode": {
+                "id": 36672,
+                "name": "Module",
+                "nodeType": "IdentifierPath",
+                "referencedDeclaration": 22670,
+                "src": "237:6:38"
+              },
+              "referencedDeclaration": 22670,
+              "src": "237:6:38",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Module_$22670",
+                "typeString": "contract Module"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 36678,
+            "nodeType": "VariableDeclaration",
+            "src": "266:32:38",
+            "constant": false,
+            "mutability": "mutable",
+            "name": "_requests",
+            "nameLocation": "289:9:38",
+            "scope": 36792,
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage",
+              "typeString": "struct Permissions[]"
+            },
+            "typeName": {
+              "baseType": {
+                "id": 36676,
+                "nodeType": "UserDefinedTypeName",
+                "pathNode": {
+                  "id": 36675,
+                  "name": "Permissions",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 22557,
+                  "src": "266:11:38"
+                },
+                "referencedDeclaration": 22557,
+                "src": "266:11:38",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                  "typeString": "struct Permissions"
+                }
+              },
+              "id": 36677,
+              "nodeType": "ArrayTypeName",
+              "src": "266:13:38",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                "typeString": "struct Permissions[]"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "id": 36723,
+            "nodeType": "FunctionDefinition",
+            "src": "305:288:38",
+            "body": {
+              "id": 36722,
+              "nodeType": "Block",
+              "src": "427:166:38",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 36696,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 36694,
+                      "name": "_module",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36674,
+                      "src": "437:7:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Module_$22670",
+                        "typeString": "contract Module"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 36695,
+                      "name": "module_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36684,
+                      "src": "447:7:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Module_$22670",
+                        "typeString": "contract Module"
+                      }
+                    },
+                    "src": "437:17:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "id": 36697,
+                  "nodeType": "ExpressionStatement",
+                  "src": "437:17:38"
+                },
+                {
+                  "assignments": [
+                    36699
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36699,
+                      "mutability": "mutable",
+                      "name": "len",
+                      "nameLocation": "472:3:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36722,
+                      "src": "464:11:38",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 36698,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "464:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36702,
+                  "initialValue": {
+                    "expression": {
+                      "id": 36700,
+                      "name": "requests_",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36688,
+                      "src": "478:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions memory[] memory"
+                      }
+                    },
+                    "id": 36701,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "src": "478:16:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "464:30:38"
+                },
+                {
+                  "body": {
+                    "id": 36720,
+                    "nodeType": "Block",
+                    "src": "534:53:38",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "baseExpression": {
+                                "id": 36715,
+                                "name": "requests_",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 36688,
+                                "src": "563:9:38",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                                  "typeString": "struct Permissions memory[] memory"
+                                }
+                              },
+                              "id": 36717,
+                              "indexExpression": {
+                                "id": 36716,
+                                "name": "i",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 36704,
+                                "src": "573:1:38",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "nodeType": "IndexAccess",
+                              "src": "563:12:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                                "typeString": "struct Permissions memory"
+                              }
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                                "typeString": "struct Permissions memory"
+                              }
+                            ],
+                            "expression": {
+                              "id": 36712,
+                              "name": "_requests",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36678,
+                              "src": "548:9:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage",
+                                "typeString": "struct Permissions storage ref[] storage ref"
+                              }
+                            },
+                            "id": 36714,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "push",
+                            "nodeType": "MemberAccess",
+                            "src": "548:14:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr_$_t_struct$_Permissions_$22557_storage_$returns$__$bound_to$_t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr_$",
+                              "typeString": "function (struct Permissions storage ref[] storage pointer,struct Permissions storage ref)"
+                            }
+                          },
+                          "id": 36718,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "548:28:38",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 36719,
+                        "nodeType": "ExpressionStatement",
+                        "src": "548:28:38"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 36708,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 36706,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36704,
+                      "src": "520:1:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 36707,
+                      "name": "len",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36699,
+                      "src": "524:3:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "520:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 36721,
+                  "initializationExpression": {
+                    "assignments": [
+                      36704
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 36704,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "517:1:38",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 36721,
+                        "src": "509:9:38",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 36703,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "509:7:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 36705,
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "509:9:38"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 36710,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "529:3:38",
+                      "subExpression": {
+                        "id": 36709,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36704,
+                        "src": "529:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 36711,
+                    "nodeType": "ExpressionStatement",
+                    "src": "529:3:38"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "504:83:38"
+                }
+              ]
+            },
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 36691,
+                    "name": "kernel_",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 36681,
+                    "src": "418:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Kernel_$23747",
+                      "typeString": "contract Kernel"
+                    }
+                  }
+                ],
+                "id": 36692,
+                "kind": "baseConstructorSpecifier",
+                "modifierName": {
+                  "id": 36690,
+                  "name": "Policy",
+                  "nodeType": "IdentifierPath",
+                  "referencedDeclaration": 22777,
+                  "src": "411:6:38"
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "411:15:38"
+              }
+            ],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "parameters": {
+              "id": 36689,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36681,
+                  "mutability": "mutable",
+                  "name": "kernel_",
+                  "nameLocation": "333:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36723,
+                  "src": "326:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Kernel_$23747",
+                    "typeString": "contract Kernel"
+                  },
+                  "typeName": {
+                    "id": 36680,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36679,
+                      "name": "Kernel",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 23747,
+                      "src": "326:6:38"
+                    },
+                    "referencedDeclaration": 23747,
+                    "src": "326:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Kernel_$23747",
+                      "typeString": "contract Kernel"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 36684,
+                  "mutability": "mutable",
+                  "name": "module_",
+                  "nameLocation": "357:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36723,
+                  "src": "350:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Module_$22670",
+                    "typeString": "contract Module"
+                  },
+                  "typeName": {
+                    "id": 36683,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36682,
+                      "name": "Module",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22670,
+                      "src": "350:6:38"
+                    },
+                    "referencedDeclaration": 22670,
+                    "src": "350:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 36688,
+                  "mutability": "mutable",
+                  "name": "requests_",
+                  "nameLocation": "395:9:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36723,
+                  "src": "374:30:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct Permissions[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 36686,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 36685,
+                        "name": "Permissions",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 22557,
+                        "src": "374:11:38"
+                      },
+                      "referencedDeclaration": 22557,
+                      "src": "374:11:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                        "typeString": "struct Permissions"
+                      }
+                    },
+                    "id": 36687,
+                    "nodeType": "ArrayTypeName",
+                    "src": "374:13:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                      "typeString": "struct Permissions[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "316:94:38"
+            },
+            "returnParameters": {
+              "id": 36693,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "427:0:38"
+            },
+            "scope": 36792,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 36749,
+            "nodeType": "FunctionDefinition",
+            "src": "655:225:38",
+            "body": {
+              "id": 36748,
+              "nodeType": "Block",
+              "src": "787:93:38",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 36738,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 36731,
+                      "name": "dependencies",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36729,
+                      "src": "797:12:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr",
+                        "typeString": "Keycode[] memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "hexValue": "31",
+                          "id": 36736,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "kind": "number",
+                          "lValueRequested": false,
+                          "nodeType": "Literal",
+                          "src": "826:1:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          },
+                          "value": "1"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_rational_1_by_1",
+                            "typeString": "int_const 1"
+                          }
+                        ],
+                        "id": 36735,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "812:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr_$",
+                          "typeString": "function (uint256) pure returns (Keycode[] memory)"
+                        },
+                        "typeName": {
+                          "baseType": {
+                            "id": 36733,
+                            "nodeType": "UserDefinedTypeName",
+                            "pathNode": {
+                              "id": 36732,
+                              "name": "Keycode",
+                              "nodeType": "IdentifierPath",
+                              "referencedDeclaration": 22559,
+                              "src": "816:7:38"
+                            },
+                            "referencedDeclaration": 22559,
+                            "src": "816:7:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                              "typeString": "Keycode"
+                            }
+                          },
+                          "id": 36734,
+                          "nodeType": "ArrayTypeName",
+                          "src": "816:9:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_storage_ptr",
+                            "typeString": "Keycode[]"
+                          }
+                        }
+                      },
+                      "id": 36737,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "812:16:38",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr",
+                        "typeString": "Keycode[] memory"
+                      }
+                    },
+                    "src": "797:31:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr",
+                      "typeString": "Keycode[] memory"
+                    }
+                  },
+                  "id": 36739,
+                  "nodeType": "ExpressionStatement",
+                  "src": "797:31:38"
+                },
+                {
+                  "expression": {
+                    "id": 36746,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 36740,
+                        "name": "dependencies",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36729,
+                        "src": "838:12:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr",
+                          "typeString": "Keycode[] memory"
+                        }
+                      },
+                      "id": 36742,
+                      "indexExpression": {
+                        "hexValue": "30",
+                        "id": 36741,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "851:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "838:15:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                        "typeString": "Keycode"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [],
+                      "expression": {
+                        "argumentTypes": [],
+                        "expression": {
+                          "id": 36743,
+                          "name": "_module",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 36674,
+                          "src": "856:7:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_contract$_Module_$22670",
+                            "typeString": "contract Module"
+                          }
+                        },
+                        "id": 36744,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "KEYCODE",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": 22653,
+                        "src": "856:15:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_external_pure$__$returns$_t_userDefinedValueType$_Keycode_$22559_$",
+                          "typeString": "function () pure external returns (Keycode)"
+                        }
+                      },
+                      "id": 36745,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "856:17:38",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                        "typeString": "Keycode"
+                      }
+                    },
+                    "src": "838:35:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                      "typeString": "Keycode"
+                    }
+                  },
+                  "id": 36747,
+                  "nodeType": "ExpressionStatement",
+                  "src": "838:35:38"
+                }
+              ]
+            },
+            "baseFunctions": [
+              22767
+            ],
+            "functionSelector": "9459b875",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "configureDependencies",
+            "nameLocation": "664:21:38",
+            "overrides": {
+              "id": 36725,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "726:8:38"
+            },
+            "parameters": {
+              "id": 36724,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "685:2:38"
+            },
+            "returnParameters": {
+              "id": 36730,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36729,
+                  "mutability": "mutable",
+                  "name": "dependencies",
+                  "nameLocation": "769:12:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36749,
+                  "src": "752:29:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_memory_ptr",
+                    "typeString": "Keycode[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 36727,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 36726,
+                        "name": "Keycode",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 22559,
+                        "src": "752:7:38"
+                      },
+                      "referencedDeclaration": 22559,
+                      "src": "752:7:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                        "typeString": "Keycode"
+                      }
+                    },
+                    "id": 36728,
+                    "nodeType": "ArrayTypeName",
+                    "src": "752:9:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_userDefinedValueType$_Keycode_$22559_$dyn_storage_ptr",
+                      "typeString": "Keycode[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "751:31:38"
+            },
+            "scope": 36792,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 36791,
+            "nodeType": "FunctionDefinition",
+            "src": "886:273:38",
+            "body": {
+              "id": 36790,
+              "nodeType": "Block",
+              "src": "979:180:38",
+              "statements": [
+                {
+                  "assignments": [
+                    36758
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36758,
+                      "mutability": "mutable",
+                      "name": "len",
+                      "nameLocation": "997:3:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36790,
+                      "src": "989:11:38",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 36757,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "989:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36761,
+                  "initialValue": {
+                    "expression": {
+                      "id": 36759,
+                      "name": "_requests",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36678,
+                      "src": "1003:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage",
+                        "typeString": "struct Permissions storage ref[] storage ref"
+                      }
+                    },
+                    "id": 36760,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "src": "1003:16:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "989:30:38"
+                },
+                {
+                  "expression": {
+                    "id": 36769,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "id": 36762,
+                      "name": "requests",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36755,
+                      "src": "1029:8:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions memory[] memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 36767,
+                          "name": "len",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 36758,
+                          "src": "1058:3:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 36766,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "lValueRequested": false,
+                        "nodeType": "NewExpression",
+                        "src": "1040:17:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$",
+                          "typeString": "function (uint256) pure returns (struct Permissions memory[] memory)"
+                        },
+                        "typeName": {
+                          "baseType": {
+                            "id": 36764,
+                            "nodeType": "UserDefinedTypeName",
+                            "pathNode": {
+                              "id": 36763,
+                              "name": "Permissions",
+                              "nodeType": "IdentifierPath",
+                              "referencedDeclaration": 22557,
+                              "src": "1044:11:38"
+                            },
+                            "referencedDeclaration": 22557,
+                            "src": "1044:11:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                              "typeString": "struct Permissions"
+                            }
+                          },
+                          "id": 36765,
+                          "nodeType": "ArrayTypeName",
+                          "src": "1044:13:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                            "typeString": "struct Permissions[]"
+                          }
+                        }
+                      },
+                      "id": 36768,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "functionCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "1040:22:38",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions memory[] memory"
+                      }
+                    },
+                    "src": "1029:33:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct Permissions memory[] memory"
+                    }
+                  },
+                  "id": 36770,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1029:33:38"
+                },
+                {
+                  "body": {
+                    "id": 36788,
+                    "nodeType": "Block",
+                    "src": "1102:51:38",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 36786,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 36780,
+                              "name": "requests",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36755,
+                              "src": "1116:8:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                                "typeString": "struct Permissions memory[] memory"
+                              }
+                            },
+                            "id": 36782,
+                            "indexExpression": {
+                              "id": 36781,
+                              "name": "i",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36772,
+                              "src": "1125:1:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "1116:11:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                              "typeString": "struct Permissions memory"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "baseExpression": {
+                              "id": 36783,
+                              "name": "_requests",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36678,
+                              "src": "1130:9:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage",
+                                "typeString": "struct Permissions storage ref[] storage ref"
+                              }
+                            },
+                            "id": 36785,
+                            "indexExpression": {
+                              "id": 36784,
+                              "name": "i",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36772,
+                              "src": "1140:1:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "nodeType": "IndexAccess",
+                            "src": "1130:12:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Permissions_$22557_storage",
+                              "typeString": "struct Permissions storage ref"
+                            }
+                          },
+                          "src": "1116:26:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                            "typeString": "struct Permissions memory"
+                          }
+                        },
+                        "id": 36787,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1116:26:38"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 36776,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 36774,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36772,
+                      "src": "1088:1:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 36775,
+                      "name": "len",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36758,
+                      "src": "1092:3:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "1088:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 36789,
+                  "initializationExpression": {
+                    "assignments": [
+                      36772
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 36772,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "1085:1:38",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 36789,
+                        "src": "1077:9:38",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 36771,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1077:7:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 36773,
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "1077:9:38"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 36778,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": false,
+                      "src": "1097:3:38",
+                      "subExpression": {
+                        "id": 36777,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36772,
+                        "src": "1097:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 36779,
+                    "nodeType": "ExpressionStatement",
+                    "src": "1097:3:38"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "1072:81:38"
+                }
+              ]
+            },
+            "baseFunctions": [
+              22776
+            ],
+            "functionSelector": "5924be70",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "requestPermissions",
+            "nameLocation": "895:18:38",
+            "overrides": {
+              "id": 36751,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "930:8:38"
+            },
+            "parameters": {
+              "id": 36750,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "913:2:38"
+            },
+            "returnParameters": {
+              "id": 36756,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36755,
+                  "mutability": "mutable",
+                  "name": "requests",
+                  "nameLocation": "969:8:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36791,
+                  "src": "948:29:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct Permissions[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 36753,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 36752,
+                        "name": "Permissions",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 22557,
+                        "src": "948:11:38"
+                      },
+                      "referencedDeclaration": 22557,
+                      "src": "948:11:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                        "typeString": "struct Permissions"
+                      }
+                    },
+                    "id": 36754,
+                    "nodeType": "ArrayTypeName",
+                    "src": "948:13:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                      "typeString": "struct Permissions[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "947:31:38"
+            },
+            "scope": 36792,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 36670,
+              "name": "Policy",
+              "nodeType": "IdentifierPath",
+              "referencedDeclaration": 22777,
+              "src": "224:6:38"
+            },
+            "id": 36671,
+            "nodeType": "InheritanceSpecifier",
+            "src": "224:6:38"
+          }
+        ],
+        "canonicalName": "ModuleTestFixture",
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 36669,
+          "nodeType": "StructuredDocumentation",
+          "src": "130:64:38",
+          "text": "@notice Mock policy to allow testing gated module functions"
+        },
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          36792,
+          22777,
+          22609
+        ],
+        "name": "ModuleTestFixture",
+        "nameLocation": "203:17:38",
+        "scope": 36958,
+        "usedErrors": [
+          22478
+        ]
+      },
+      {
+        "id": 36957,
+        "nodeType": "ContractDefinition",
+        "src": "1254:1666:38",
+        "nodes": [
+          {
+            "id": 36818,
+            "nodeType": "FunctionDefinition",
+            "src": "1377:210:38",
+            "body": {
+              "id": 36817,
+              "nodeType": "Block",
+              "src": "1495:92:38",
+              "statements": [
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "arguments": [
+                          {
+                            "arguments": [],
+                            "expression": {
+                              "argumentTypes": [],
+                              "expression": {
+                                "id": 36809,
+                                "name": "module_",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 36795,
+                                "src": "1542:7:38",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_contract$_Module_$22670",
+                                  "typeString": "contract Module"
+                                }
+                              },
+                              "id": 36810,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "memberName": "kernel",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 22565,
+                              "src": "1542:14:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_function_external_view$__$returns$_t_contract$_Kernel_$23747_$",
+                                "typeString": "function () view external returns (contract Kernel)"
+                              }
+                            },
+                            "id": 36811,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "functionCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "1542:16:38",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Kernel_$23747",
+                              "typeString": "contract Kernel"
+                            }
+                          },
+                          {
+                            "id": 36812,
+                            "name": "module_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 36795,
+                            "src": "1560:7:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_Module_$22670",
+                              "typeString": "contract Module"
+                            }
+                          },
+                          {
+                            "id": 36813,
+                            "name": "requests_",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 36799,
+                            "src": "1569:9:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                              "typeString": "struct Permissions memory[] memory"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_contract$_Kernel_$23747",
+                              "typeString": "contract Kernel"
+                            },
+                            {
+                              "typeIdentifier": "t_contract$_Module_$22670",
+                              "typeString": "contract Module"
+                            },
+                            {
+                              "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                              "typeString": "struct Permissions memory[] memory"
+                            }
+                          ],
+                          "id": 36808,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "nodeType": "NewExpression",
+                          "src": "1520:21:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_creation_nonpayable$_t_contract$_Kernel_$23747_$_t_contract$_Module_$22670_$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$returns$_t_contract$_ModuleTestFixture_$36792_$",
+                            "typeString": "function (contract Kernel,contract Module,struct Permissions memory[] memory) returns (contract ModuleTestFixture)"
+                          },
+                          "typeName": {
+                            "id": 36807,
+                            "nodeType": "UserDefinedTypeName",
+                            "pathNode": {
+                              "id": 36806,
+                              "name": "ModuleTestFixture",
+                              "nodeType": "IdentifierPath",
+                              "referencedDeclaration": 36792,
+                              "src": "1524:17:38"
+                            },
+                            "referencedDeclaration": 36792,
+                            "src": "1524:17:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_contract$_ModuleTestFixture_$36792",
+                              "typeString": "contract ModuleTestFixture"
+                            }
+                          }
+                        },
+                        "id": 36814,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1520:59:38",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_ModuleTestFixture_$36792",
+                          "typeString": "contract ModuleTestFixture"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_ModuleTestFixture_$36792",
+                          "typeString": "contract ModuleTestFixture"
+                        }
+                      ],
+                      "id": 36805,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "ElementaryTypeNameExpression",
+                      "src": "1512:7:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_type$_t_address_$",
+                        "typeString": "type(address)"
+                      },
+                      "typeName": {
+                        "id": 36804,
+                        "name": "address",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "1512:7:38",
+                        "typeDescriptions": {}
+                      }
+                    },
+                    "id": 36815,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "typeConversion",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1512:68:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 36803,
+                  "id": 36816,
+                  "nodeType": "Return",
+                  "src": "1505:75:38"
+                }
+              ]
+            },
+            "functionSelector": "f51be968",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateFixture",
+            "nameLocation": "1386:15:38",
+            "parameters": {
+              "id": 36800,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36795,
+                  "mutability": "mutable",
+                  "name": "module_",
+                  "nameLocation": "1409:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36818,
+                  "src": "1402:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Module_$22670",
+                    "typeString": "contract Module"
+                  },
+                  "typeName": {
+                    "id": 36794,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36793,
+                      "name": "Module",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22670,
+                      "src": "1402:6:38"
+                    },
+                    "referencedDeclaration": 22670,
+                    "src": "1402:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 36799,
+                  "mutability": "mutable",
+                  "name": "requests_",
+                  "nameLocation": "1439:9:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36818,
+                  "src": "1418:30:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                    "typeString": "struct Permissions[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 36797,
+                      "nodeType": "UserDefinedTypeName",
+                      "pathNode": {
+                        "id": 36796,
+                        "name": "Permissions",
+                        "nodeType": "IdentifierPath",
+                        "referencedDeclaration": 22557,
+                        "src": "1418:11:38"
+                      },
+                      "referencedDeclaration": 22557,
+                      "src": "1418:11:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                        "typeString": "struct Permissions"
+                      }
+                    },
+                    "id": 36798,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1418:13:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                      "typeString": "struct Permissions[]"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1401:48:38"
+            },
+            "returnParameters": {
+              "id": 36803,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36802,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36818,
+                  "src": "1482:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36801,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1482:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1481:9:38"
+            },
+            "scope": 36957,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 36891,
+            "nodeType": "FunctionDefinition",
+            "src": "1673:601:38",
+            "body": {
+              "id": 36890,
+              "nodeType": "Block",
+              "src": "1795:479:38",
+              "statements": [
+                {
+                  "assignments": [
+                    36830
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36830,
+                      "mutability": "mutable",
+                      "name": "keycode",
+                      "nameLocation": "1871:7:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36890,
+                      "src": "1863:15:38",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                        "typeString": "Keycode"
+                      },
+                      "typeName": {
+                        "id": 36829,
+                        "nodeType": "UserDefinedTypeName",
+                        "pathNode": {
+                          "id": 36828,
+                          "name": "Keycode",
+                          "nodeType": "IdentifierPath",
+                          "referencedDeclaration": 22559,
+                          "src": "1863:7:38"
+                        },
+                        "referencedDeclaration": 22559,
+                        "src": "1863:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                          "typeString": "Keycode"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36834,
+                  "initialValue": {
+                    "arguments": [],
+                    "expression": {
+                      "argumentTypes": [],
+                      "expression": {
+                        "id": 36831,
+                        "name": "module_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36821,
+                        "src": "1881:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        }
+                      },
+                      "id": 36832,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "KEYCODE",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 22653,
+                      "src": "1881:15:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_external_pure$__$returns$_t_userDefinedValueType$_Keycode_$22559_$",
+                        "typeString": "function () pure external returns (Keycode)"
+                      }
+                    },
+                    "id": 36833,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1881:17:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                      "typeString": "Keycode"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1863:35:38"
+                },
+                {
+                  "assignments": [
+                    36839
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36839,
+                      "mutability": "mutable",
+                      "name": "selectors",
+                      "nameLocation": "1925:9:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36890,
+                      "src": "1909:25:38",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                        "typeString": "bytes4[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36837,
+                          "name": "bytes4",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "1909:6:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes4",
+                            "typeString": "bytes4"
+                          }
+                        },
+                        "id": 36838,
+                        "nodeType": "ArrayTypeName",
+                        "src": "1909:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_bytes4_$dyn_storage_ptr",
+                          "typeString": "bytes4[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36845,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 36842,
+                        "name": "contractName_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36823,
+                        "src": "1968:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "hexValue": "7065726d697373696f6e6564",
+                        "id": 36843,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1983:14:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_bc9cf9fbaa3800427f82db4fdc734ea76be5c099daf9da092acde2b68d045198",
+                          "typeString": "literal_string \"permissioned\""
+                        },
+                        "value": "permissioned"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_bc9cf9fbaa3800427f82db4fdc734ea76be5c099daf9da092acde2b68d045198",
+                          "typeString": "literal_string \"permissioned\""
+                        }
+                      ],
+                      "expression": {
+                        "id": 36840,
+                        "name": "Quabi",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 44425,
+                        "src": "1937:5:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_contract$_Quabi_$44425_$",
+                          "typeString": "type(library Quabi)"
+                        }
+                      },
+                      "id": 36841,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "getFunctionsWithModifier",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 44424,
+                      "src": "1937:30:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_delegatecall_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bytes4_$dyn_memory_ptr_$",
+                        "typeString": "function (string memory,string memory) returns (bytes4[] memory)"
+                      }
+                    },
+                    "id": 36844,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1937:61:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                      "typeString": "bytes4[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "1909:89:38"
+                },
+                {
+                  "assignments": [
+                    36847
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36847,
+                      "mutability": "mutable",
+                      "name": "num",
+                      "nameLocation": "2016:3:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36890,
+                      "src": "2008:11:38",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      },
+                      "typeName": {
+                        "id": 36846,
+                        "name": "uint256",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "2008:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36850,
+                  "initialValue": {
+                    "expression": {
+                      "id": 36848,
+                      "name": "selectors",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36839,
+                      "src": "2022:9:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                        "typeString": "bytes4[] memory"
+                      }
+                    },
+                    "id": 36849,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "length",
+                    "nodeType": "MemberAccess",
+                    "src": "2022:16:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2008:30:38"
+                },
+                {
+                  "assignments": [
+                    36855
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36855,
+                      "mutability": "mutable",
+                      "name": "requests",
+                      "nameLocation": "2070:8:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36890,
+                      "src": "2049:29:38",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36853,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36852,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2049:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2049:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36854,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2049:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36862,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "id": 36860,
+                        "name": "num",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36847,
+                        "src": "2099:3:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      ],
+                      "id": 36859,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "2081:17:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (struct Permissions memory[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36857,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36856,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2085:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2085:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36858,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2085:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      }
+                    },
+                    "id": 36861,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2081:22:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct Permissions memory[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2049:54:38"
+                },
+                {
+                  "body": {
+                    "id": 36883,
+                    "nodeType": "Block",
+                    "src": "2143:73:38",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 36881,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "baseExpression": {
+                              "id": 36872,
+                              "name": "requests",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36855,
+                              "src": "2157:8:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                                "typeString": "struct Permissions memory[] memory"
+                              }
+                            },
+                            "id": 36874,
+                            "indexExpression": {
+                              "id": 36873,
+                              "name": "i",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36864,
+                              "src": "2166:1:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "2157:11:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                              "typeString": "struct Permissions memory"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "arguments": [
+                              {
+                                "id": 36876,
+                                "name": "keycode",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 36830,
+                                "src": "2183:7:38",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                                  "typeString": "Keycode"
+                                }
+                              },
+                              {
+                                "baseExpression": {
+                                  "id": 36877,
+                                  "name": "selectors",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 36839,
+                                  "src": "2192:9:38",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_array$_t_bytes4_$dyn_memory_ptr",
+                                    "typeString": "bytes4[] memory"
+                                  }
+                                },
+                                "id": 36879,
+                                "indexExpression": {
+                                  "id": 36878,
+                                  "name": "i",
+                                  "nodeType": "Identifier",
+                                  "overloadedDeclarations": [],
+                                  "referencedDeclaration": 36864,
+                                  "src": "2202:1:38",
+                                  "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  }
+                                },
+                                "isConstant": false,
+                                "isLValue": true,
+                                "isPure": false,
+                                "lValueRequested": false,
+                                "nodeType": "IndexAccess",
+                                "src": "2192:12:38",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_bytes4",
+                                  "typeString": "bytes4"
+                                }
+                              }
+                            ],
+                            "expression": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                                  "typeString": "Keycode"
+                                },
+                                {
+                                  "typeIdentifier": "t_bytes4",
+                                  "typeString": "bytes4"
+                                }
+                              ],
+                              "id": 36875,
+                              "name": "Permissions",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 22557,
+                              "src": "2171:11:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_type$_t_struct$_Permissions_$22557_storage_ptr_$",
+                                "typeString": "type(struct Permissions storage pointer)"
+                              }
+                            },
+                            "id": 36880,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "kind": "structConstructorCall",
+                            "lValueRequested": false,
+                            "names": [],
+                            "nodeType": "FunctionCall",
+                            "src": "2171:34:38",
+                            "tryCall": false,
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                              "typeString": "struct Permissions memory"
+                            }
+                          },
+                          "src": "2157:48:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                            "typeString": "struct Permissions memory"
+                          }
+                        },
+                        "id": 36882,
+                        "nodeType": "ExpressionStatement",
+                        "src": "2157:48:38"
+                      }
+                    ]
+                  },
+                  "condition": {
+                    "commonType": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    },
+                    "id": 36868,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "id": 36866,
+                      "name": "i",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36864,
+                      "src": "2129:1:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "<",
+                    "rightExpression": {
+                      "id": 36867,
+                      "name": "num",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36847,
+                      "src": "2133:3:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "2129:7:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "id": 36884,
+                  "initializationExpression": {
+                    "assignments": [
+                      36864
+                    ],
+                    "declarations": [
+                      {
+                        "constant": false,
+                        "id": 36864,
+                        "mutability": "mutable",
+                        "name": "i",
+                        "nameLocation": "2126:1:38",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 36884,
+                        "src": "2118:9:38",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 36863,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "2118:7:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "id": 36865,
+                    "nodeType": "VariableDeclarationStatement",
+                    "src": "2118:9:38"
+                  },
+                  "loopExpression": {
+                    "expression": {
+                      "id": 36870,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "UnaryOperation",
+                      "operator": "++",
+                      "prefix": true,
+                      "src": "2138:3:38",
+                      "subExpression": {
+                        "id": 36869,
+                        "name": "i",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36864,
+                        "src": "2140:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 36871,
+                    "nodeType": "ExpressionStatement",
+                    "src": "2138:3:38"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "2113:103:38"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 36886,
+                        "name": "module_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36821,
+                        "src": "2249:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        }
+                      },
+                      {
+                        "id": 36887,
+                        "name": "requests",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36855,
+                        "src": "2258:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      ],
+                      "id": 36885,
+                      "name": "generateFixture",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36818,
+                      "src": "2233:15:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_Module_$22670_$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$returns$_t_address_$",
+                        "typeString": "function (contract Module,struct Permissions memory[] memory) returns (address)"
+                      }
+                    },
+                    "id": 36888,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2233:34:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 36827,
+                  "id": 36889,
+                  "nodeType": "Return",
+                  "src": "2226:41:38"
+                }
+              ]
+            },
+            "functionSelector": "90499579",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateGodmodeFixture",
+            "nameLocation": "1682:22:38",
+            "parameters": {
+              "id": 36824,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36821,
+                  "mutability": "mutable",
+                  "name": "module_",
+                  "nameLocation": "1712:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36891,
+                  "src": "1705:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Module_$22670",
+                    "typeString": "contract Module"
+                  },
+                  "typeName": {
+                    "id": 36820,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36819,
+                      "name": "Module",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22670,
+                      "src": "1705:6:38"
+                    },
+                    "referencedDeclaration": 22670,
+                    "src": "1705:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 36823,
+                  "mutability": "mutable",
+                  "name": "contractName_",
+                  "nameLocation": "1735:13:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36891,
+                  "src": "1721:27:38",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 36822,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1721:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1704:45:38"
+            },
+            "returnParameters": {
+              "id": 36827,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36826,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36891,
+                  "src": "1782:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36825,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1782:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1781:9:38"
+            },
+            "scope": 36957,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 36930,
+            "nodeType": "FunctionDefinition",
+            "src": "2358:305:38",
+            "body": {
+              "id": 36929,
+              "nodeType": "Block",
+              "src": "2474:189:38",
+              "statements": [
+                {
+                  "assignments": [
+                    36905
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36905,
+                      "mutability": "mutable",
+                      "name": "requests",
+                      "nameLocation": "2505:8:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36929,
+                      "src": "2484:29:38",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36903,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36902,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2484:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2484:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36904,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2484:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36912,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "hexValue": "31",
+                        "id": 36910,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2534:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        },
+                        "value": "1"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_1_by_1",
+                          "typeString": "int_const 1"
+                        }
+                      ],
+                      "id": 36909,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "2516:17:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (struct Permissions memory[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36907,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36906,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2520:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2520:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36908,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2520:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      }
+                    },
+                    "id": 36911,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2516:20:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct Permissions memory[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2484:52:38"
+                },
+                {
+                  "expression": {
+                    "id": 36922,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 36913,
+                        "name": "requests",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36905,
+                        "src": "2546:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      },
+                      "id": 36915,
+                      "indexExpression": {
+                        "hexValue": "30",
+                        "id": 36914,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2555:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "2546:11:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                        "typeString": "struct Permissions memory"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "arguments": [],
+                          "expression": {
+                            "argumentTypes": [],
+                            "expression": {
+                              "id": 36917,
+                              "name": "module_",
+                              "nodeType": "Identifier",
+                              "overloadedDeclarations": [],
+                              "referencedDeclaration": 36894,
+                              "src": "2572:7:38",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_contract$_Module_$22670",
+                                "typeString": "contract Module"
+                              }
+                            },
+                            "id": 36918,
+                            "isConstant": false,
+                            "isLValue": false,
+                            "isPure": false,
+                            "lValueRequested": false,
+                            "memberName": "KEYCODE",
+                            "nodeType": "MemberAccess",
+                            "referencedDeclaration": 22653,
+                            "src": "2572:15:38",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_external_pure$__$returns$_t_userDefinedValueType$_Keycode_$22559_$",
+                              "typeString": "function () pure external returns (Keycode)"
+                            }
+                          },
+                          "id": 36919,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "2572:17:38",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                            "typeString": "Keycode"
+                          }
+                        },
+                        {
+                          "id": 36920,
+                          "name": "funcSelector_",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 36896,
+                          "src": "2591:13:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_bytes4",
+                            "typeString": "bytes4"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_userDefinedValueType$_Keycode_$22559",
+                            "typeString": "Keycode"
+                          },
+                          {
+                            "typeIdentifier": "t_bytes4",
+                            "typeString": "bytes4"
+                          }
+                        ],
+                        "id": 36916,
+                        "name": "Permissions",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 22557,
+                        "src": "2560:11:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Permissions_$22557_storage_ptr_$",
+                          "typeString": "type(struct Permissions storage pointer)"
+                        }
+                      },
+                      "id": 36921,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [],
+                      "nodeType": "FunctionCall",
+                      "src": "2560:45:38",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                        "typeString": "struct Permissions memory"
+                      }
+                    },
+                    "src": "2546:59:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Permissions_$22557_memory_ptr",
+                      "typeString": "struct Permissions memory"
+                    }
+                  },
+                  "id": 36923,
+                  "nodeType": "ExpressionStatement",
+                  "src": "2546:59:38"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 36925,
+                        "name": "module_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36894,
+                        "src": "2638:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        }
+                      },
+                      {
+                        "id": 36926,
+                        "name": "requests",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36905,
+                        "src": "2647:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      ],
+                      "id": 36924,
+                      "name": "generateFixture",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36818,
+                      "src": "2622:15:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_Module_$22670_$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$returns$_t_address_$",
+                        "typeString": "function (contract Module,struct Permissions memory[] memory) returns (address)"
+                      }
+                    },
+                    "id": 36927,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2622:34:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 36900,
+                  "id": 36928,
+                  "nodeType": "Return",
+                  "src": "2615:41:38"
+                }
+              ]
+            },
+            "functionSelector": "9c2ed15e",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateFunctionFixture",
+            "nameLocation": "2367:23:38",
+            "parameters": {
+              "id": 36897,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36894,
+                  "mutability": "mutable",
+                  "name": "module_",
+                  "nameLocation": "2398:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36930,
+                  "src": "2391:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Module_$22670",
+                    "typeString": "contract Module"
+                  },
+                  "typeName": {
+                    "id": 36893,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36892,
+                      "name": "Module",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22670,
+                      "src": "2391:6:38"
+                    },
+                    "referencedDeclaration": 22670,
+                    "src": "2391:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 36896,
+                  "mutability": "mutable",
+                  "name": "funcSelector_",
+                  "nameLocation": "2414:13:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36930,
+                  "src": "2407:20:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 36895,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2407:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2390:38:38"
+            },
+            "returnParameters": {
+              "id": 36900,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36899,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36930,
+                  "src": "2461:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36898,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2461:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2460:9:38"
+            },
+            "scope": 36957,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "id": 36956,
+            "nodeType": "FunctionDefinition",
+            "src": "2727:191:38",
+            "body": {
+              "id": 36955,
+              "nodeType": "Block",
+              "src": "2798:120:38",
+              "statements": [
+                {
+                  "assignments": [
+                    36942
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 36942,
+                      "mutability": "mutable",
+                      "name": "requests",
+                      "nameLocation": "2829:8:38",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 36955,
+                      "src": "2808:29:38",
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                        "typeString": "struct Permissions[]"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36940,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36939,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2808:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2808:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36941,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2808:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      },
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 36949,
+                  "initialValue": {
+                    "arguments": [
+                      {
+                        "hexValue": "30",
+                        "id": 36947,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "number",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "2858:1:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        },
+                        "value": "0"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_rational_0_by_1",
+                          "typeString": "int_const 0"
+                        }
+                      ],
+                      "id": 36946,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "2840:17:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$",
+                        "typeString": "function (uint256) pure returns (struct Permissions memory[] memory)"
+                      },
+                      "typeName": {
+                        "baseType": {
+                          "id": 36944,
+                          "nodeType": "UserDefinedTypeName",
+                          "pathNode": {
+                            "id": 36943,
+                            "name": "Permissions",
+                            "nodeType": "IdentifierPath",
+                            "referencedDeclaration": 22557,
+                            "src": "2844:11:38"
+                          },
+                          "referencedDeclaration": 22557,
+                          "src": "2844:11:38",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_struct$_Permissions_$22557_storage_ptr",
+                            "typeString": "struct Permissions"
+                          }
+                        },
+                        "id": 36945,
+                        "nodeType": "ArrayTypeName",
+                        "src": "2844:13:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_storage_$dyn_storage_ptr",
+                          "typeString": "struct Permissions[]"
+                        }
+                      }
+                    },
+                    "id": 36948,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": true,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2840:20:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                      "typeString": "struct Permissions memory[] memory"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "2808:52:38"
+                },
+                {
+                  "expression": {
+                    "arguments": [
+                      {
+                        "id": 36951,
+                        "name": "module_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36933,
+                        "src": "2893:7:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        }
+                      },
+                      {
+                        "id": 36952,
+                        "name": "requests",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 36942,
+                        "src": "2902:8:38",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Module_$22670",
+                          "typeString": "contract Module"
+                        },
+                        {
+                          "typeIdentifier": "t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr",
+                          "typeString": "struct Permissions memory[] memory"
+                        }
+                      ],
+                      "id": 36950,
+                      "name": "generateFixture",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 36818,
+                      "src": "2877:15:38",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_Module_$22670_$_t_array$_t_struct$_Permissions_$22557_memory_ptr_$dyn_memory_ptr_$returns$_t_address_$",
+                        "typeString": "function (contract Module,struct Permissions memory[] memory) returns (address)"
+                      }
+                    },
+                    "id": 36953,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "2877:34:38",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 36937,
+                  "id": 36954,
+                  "nodeType": "Return",
+                  "src": "2870:41:38"
+                }
+              ]
+            },
+            "functionSelector": "0b5089b5",
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "generateDummyFixture",
+            "nameLocation": "2736:20:38",
+            "parameters": {
+              "id": 36934,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36933,
+                  "mutability": "mutable",
+                  "name": "module_",
+                  "nameLocation": "2764:7:38",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36956,
+                  "src": "2757:14:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Module_$22670",
+                    "typeString": "contract Module"
+                  },
+                  "typeName": {
+                    "id": 36932,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 36931,
+                      "name": "Module",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 22670,
+                      "src": "2757:6:38"
+                    },
+                    "referencedDeclaration": 22670,
+                    "src": "2757:6:38",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Module_$22670",
+                      "typeString": "contract Module"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2756:16:38"
+            },
+            "returnParameters": {
+              "id": 36937,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 36936,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 36956,
+                  "src": "2789:7:38",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 36935,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "2789:7:38",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "2788:9:38"
+            },
+            "scope": 36957,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ModuleTestFixtureGenerator",
+        "contractDependencies": [
+          36792
+        ],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "linearizedBaseContracts": [
+          36957
+        ],
+        "name": "ModuleTestFixtureGenerator",
+        "nameLocation": "1262:26:38",
+        "scope": 36958,
+        "usedErrors": []
+      }
+    ],
+    "license": "AGPL-3.0"
+  },
+  "id": 38
+}
