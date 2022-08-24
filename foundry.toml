@@ -1,6 +1,5 @@
 [profile.default]
 remappings = [
-    'ds-test/=lib/ds-test/src/',
     'solmate/=lib/solmate/src/',
     'forge-std/=lib/forge-std/src/',
 
@@ -8,5 +7,6 @@ remappings = [
     'modules/=src/modules',
     'policies/=src/policies',
     'libraries/=src/libraries',
+    'test/=src/test/'
 ]
 ffi = true
