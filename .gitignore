@@ -1,3 +1,7 @@
+# Foundry
+/out
+/cache
+
 # Logs
 logs
 *.log
