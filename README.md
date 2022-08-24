@@ -12,8 +12,8 @@
 ## TLDR
 
 - Do you have a link to the repo that the contest will cover?   https://github.com/OlympusDAO/bophades2 (private repo)
-- How many (non-library) contracts are in the scope?   13
-- Total sLoC in these contracts?   2859
+- How many (non-library) contracts are in the scope?   18
+- Total sLoC in these contracts?   1944
 - How many library dependencies?   0
 - How many separate interfaces and struct definitions are there for the contracts within scope?   5
 - Does most of your code generally use composition or inheritance?   Inheritance
