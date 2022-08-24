@@ -9,8 +9,77 @@
 
 # Contest Scope
 
-## Contract Details
+## TLDR
 
+- Do you have a link to the repo that the contest will cover?   https://github.com/OlympusDAO/bophades2 (private repo)
+- How many (non-library) contracts are in the scope?   13
+- Total sLoC in these contracts?   2859
+- How many library dependencies?   0
+- How many separate interfaces and struct definitions are there for the contracts within scope?   5
+- Does most of your code generally use composition or inheritance?   Inheritance
+- How many external calls?   2
+- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?   yes
+- Please describe required context:   Bond protocol for launching bonds. Will provide docs.
+- Does it use an oracle?   yes
+- If yes, please describe what kind? e.g. chainlink or ..?   Chainlink
+- Does the token conform to the ERC20 standard?   Yes
+- Are there any novel or unique curve logic or mathematical models?   No
+- Does it use a timelock function?   no
+- Is it an NFT?   no
+- Does it have an AMM?   no
+- Is it a fork of a popular project?   no
+- Does it use rollups?   no
+- Is it multi-chain?   no
+- Does it use a side-chain?   no
+- Do you have a preferred timezone for communication?  CST/EST
+
+### Files in scope
+|Files|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|[Coverage](#nowhere "(Lines hit / Total)")|
+|:-|:-:|:-:|
+|_Kernel Contracts (2)_|
+|[src/Kernel.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/Kernel.sol) [Σ](#nowhere "Unchecked Blocks")|[262](#nowhere "(nSLOC:258, SLOC:262, Lines:459)")|[100.00%](#nowhere "(Hit:110 / Total:110)")|
+|[src/utils/KernelUtils.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/utils/KernelUtils.sol) [🖥](#nowhere "Uses Assembly") [Σ](#nowhere "Unchecked Blocks")|[46](#nowhere "(nSLOC:46, SLOC:46, Lines:67)")|-|
+|_Module Contracts (6)_|
+|[src/modules/TRSRY.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/TRSRY.sol) [Σ](#nowhere "Unchecked Blocks")|[90](#nowhere "(nSLOC:74, SLOC:90, Lines:153)")|[100.00%](#nowhere "(Hit:29 / Total:29)")|
+|[src/modules/MINTR.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/MINTR.sol)|[21](#nowhere "(nSLOC:21, SLOC:21, Lines:40)")|[100.00%](#nowhere "(Hit:4 / Total:4)")|
+|[src/modules/RANGE.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/RANGE.sol)|[224](#nowhere "(nSLOC:220, SLOC:224, Lines:347)")|[100.00%](#nowhere "(Hit:63 / Total:63)")|
+|[src/modules/PRICE.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/PRICE.sol) [Σ](#nowhere "Unchecked Blocks")|[145](#nowhere "(nSLOC:142, SLOC:145, Lines:293)")|[100.00%](#nowhere "(Hit:67 / Total:67)")|
+|[src/modules/VOTES.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/VOTES.sol) [Σ](#nowhere "Unchecked Blocks")|[38](#nowhere "(nSLOC:34, SLOC:38, Lines:64)")|[100.00%](#nowhere "(Hit:10 / Total:10)")|
+|[src/modules/INSTR.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/modules/INSTR.sol) [Σ](#nowhere "Unchecked Blocks")|[44](#nowhere "(nSLOC:44, SLOC:44, Lines:80)")|[100.00%](#nowhere "(Hit:19 / Total:19)")|
+|_Policy Contracts (7)_|
+|[src/policies/TreasuryCustodian.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/TreasuryCustodian.sol) [Σ](#nowhere "Unchecked Blocks")|[56](#nowhere "(nSLOC:44, SLOC:56, Lines:88)")|[100.00%](#nowhere "(Hit:18 / Total:18)")|
+|[src/policies/Operator.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/Operator.sol)|[487](#nowhere "(nSLOC:465, SLOC:487, Lines:801)")|[100.00%](#nowhere "(Hit:215 / Total:215)")|
+|[src/policies/BondCallback.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/BondCallback.sol) [Σ](#nowhere "Unchecked Blocks")|[122](#nowhere "(nSLOC:103, SLOC:122, Lines:194)")|[100.00%](#nowhere "(Hit:49 / Total:49)")|
+|[src/policies/Heart.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/Heart.sol)|[82](#nowhere "(nSLOC:74, SLOC:82, Lines:153)")|[100.00%](#nowhere "(Hit:21 / Total:21)")|
+|[src/policies/PriceConfig.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/PriceConfig.sol)|[41](#nowhere "(nSLOC:27, SLOC:41, Lines:75)")|[100.00%](#nowhere "(Hit:10 / Total:10)")|
+|[src/policies/Governance.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/Governance.sol) [Σ](#nowhere "Unchecked Blocks")|[183](#nowhere "(nSLOC:173, SLOC:183, Lines:314)")|[100.00%](#nowhere "(Hit:71 / Total:71)")|
+|[src/policies/VoterRegistration.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/VoterRegistration.sol)|[28](#nowhere "(nSLOC:23, SLOC:28, Lines:57)")|[100.00%](#nowhere "(Hit:8 / Total:8)")|
+|_Interfaces (3)_|
+|[src/interfaces/IBondCallback.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/IBondCallback.sol)|[11](#nowhere "(nSLOC:7, SLOC:11, Lines:31)")|-|
+|[src/policies/interfaces/IHeart.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/interfaces/IHeart.sol)|[10](#nowhere "(nSLOC:10, SLOC:10, Lines:39)")|-|
+|[src/policies/interfaces/IOperator.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/interfaces/IOperator.sol)|[54](#nowhere "(nSLOC:42, SLOC:54, Lines:150)")|-|
+|Total (18 files):| [1944](#nowhere "(nSLOC:1807, SLOC:1944, Lines:3405)")| [100.00%](#nowhere "Hit:694 / Total:694")|
+
+
+### All other contracts (not in scope)
+
+|File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|[Coverage](#nowhere "(Lines hit / Total)")|
+|:-|:-:|:-:|
+|_Contracts (2)_|
+|[src/scripts/Deploy.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/scripts/Deploy.sol) [🌀](#nowhere "create/create2")|[170](#nowhere "(nSLOC:170, SLOC:170, Lines:279)")|[0.00%](#nowhere "(Hit:0 / Total:75)")|
+|[src/external/OlympusERC20.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/external/OlympusERC20.sol) [🖥](#nowhere "Uses Assembly") [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover")|[492](#nowhere "(nSLOC:408, SLOC:492, Lines:931)")|[0.00%](#nowhere "(Hit:0 / Total:142)")|
+|_Libraries (2)_|
+|[src/libraries/TransferHelper.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/libraries/TransferHelper.sol)|[35](#nowhere "(nSLOC:22, SLOC:35, Lines:46)")|[0.00%](#nowhere "(Hit:0 / Total:6)")|
+|[src/libraries/FullMath.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/libraries/FullMath.sol) [🖥](#nowhere "Uses Assembly") [Σ](#nowhere "Unchecked Blocks")|[67](#nowhere "(nSLOC:59, SLOC:67, Lines:128)")|[0.00%](#nowhere "(Hit:0 / Total:31)")|
+|_Interfaces (5)_|
+|[src/interfaces/IWETH9.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/IWETH9.sol) [💰](#nowhere "Payable Functions")|[5](#nowhere "(nSLOC:5, SLOC:5, Lines:11)")|-|
+|[src/interfaces/IBondTeller.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/IBondTeller.sol)|[15](#nowhere "(nSLOC:9, SLOC:15, Lines:44)")|-|
+|[src/interfaces/AggregatorV2V3Interface.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/AggregatorV2V3Interface.sol)|[36](#nowhere "(nSLOC:18, SLOC:36, Lines:53)")|-|
+|[src/interfaces/IBondAggregator.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/IBondAggregator.sol)|[38](#nowhere "(nSLOC:20, SLOC:38, Lines:104)")|-|
+|[src/interfaces/IBondAuctioneer.sol](https://github.com/code-423n4/2022-08-olympus/blob/main/src/interfaces/IBondAuctioneer.sol)|[57](#nowhere "(nSLOC:39, SLOC:57, Lines:199)")|-|
+|Total (over 9 files):| [915](#nowhere "(nSLOC:750, SLOC:915, Lines:1795)")| [0.00%](#nowhere "Hit:0 / Total:254")|
+
+## Contract Descriptions TLDR
 ### Kernel
 - Default kernel
 - Main registry for protocol
@@ -19,11 +88,9 @@
 - Intended to be used with the `OlympusGovernance` policy
 - Includes all of the main dependencies used for Policies and Modules
 - Uses a `KernelUtils.sol` file to define common global functions
-- LOC: 459
 
 #### KernelUtils
 - Define common global utility functions to be used in any contract in the protocol
-- LOC: 67
 
 ### Modules
 All modules have an assigned 5-byte keycode. Also have no dependencies other than the Kernel.
@@ -32,32 +99,26 @@ All modules have an assigned 5-byte keycode. Also have no dependencies other tha
 - Treasury for the protocol
 - Holds all assets for the treasury
 - Maintains debt balances for contracts that borrow funds
-- LOC: 153
 
 #### OlympusMinter
 - Keycode: `MINTR`
 - Wrapper for minting and burning capabilities of OHM token
-- LOC: 40
 
 #### OlympusPrice
 - Keycode: `PRICE`
 - Holds historical price oracle data for the Range-Bound Stability System
-- LOC: 293
 
 #### OlympusRange
 - Keycode: `PRICE`
 - Holds range data for the Range-Bound Stability System
-- LOC: 347
 
 #### OlympusInstructions
 - Keycode: `INSTR`
 - Used for storing batched Kernel instructions for convenient proposal execution in the Governance policy
-- LOC: 80
 
 #### OlympusVotes
 - Keycode: `VOTES`
 - Dummy votes token for phased governance rollout
-- LOC: 64
 
 ### Policies
 All policies have their module dependencies defined inside the `configureDependencies` function. Policies may also have outside dependencies, which will be listed here.
@@ -66,36 +127,34 @@ All policies have their module dependencies defined inside the `configureDepende
 - Main contract for the Range-Bound Stability system
 - Facilitates bond markets (cushions) and treasury swaps (walls) when appropriate.
 - Ext. Dependencies: BondAuctioneer (Bond Protocol)
-- LOC: 801
 
 #### BondCallback
 - Contract to be used by BondAuctioneer to allow minting/burning of OHM for bond payouts.
 - Ext. Dependencies: BondAggregator (Bond Protocol)
-- LOC: 194
 
 #### Heart
 - Policy for keepers to activate regularly scheduled RBS functions and be compensated.
-- LOC: 153
-
-#### PriceConfig
-- Used for a specified role to adjust parameters in the `PRICE` module
-- LOC: 75
 
 #### TreasuryCustodian
 - Policy to allow specified role to adjust treasury debt and approvals.
-- LOC: 88
 
 #### OlympusGovernance
 - Governor contract, has vote locking and net-votes vote counting built in
 - Intended to be used as the `executor` role in the Kernel
-- LOC: 314
 
 #### VoterRegistration
 - Policy for distributing `VOTES` tokens (for phased rollout of governance)
-- LOC: 57
+
+### Areas of concern for Wardens
+- Kernel and the Default architecture
+- Treasury hardening and making sure no potential accounting issues or unintended side effects
+- Verification of the Range-Bound Stability contracts (Operator, BondCallback, Heart and associated modules) and any kind of accounting errors
+- Verification of Governance policy and its custom vote counting and potential issues that might arise
+
+In general, would like eyes on core functionality of the contracts. Gas optimizations are not prioritized but are welcome. 
 
 
-## Build and Deploy
+## Build, Test and Deploy
 The Bophades project uses the Foundry framework to build, test, and deploy the system. It's expected that you're using a *nix-based development environment. All commands assume you are using a shell terminal and your current working directory is the project root.
 
 If you don't already have Foundry, follow this [short guide](https://book.getfoundry.sh/getting-started/installation) to install.
@@ -109,7 +168,7 @@ External dependencies are stored in the /lib folder.
 
 Foundry uses git submodules to manage dependencies from remote repositories. To install the Bophades dependencies, run:
 ```shell
-$ git submodules update --init --recursive
+$ git submodule update --init --recursive
 ```
 
 ### Building the System
@@ -120,10 +179,16 @@ $ forge build
 
 The generated bytecode, ABI, and AST node structure is output to the /out folder.
 
-### Running the Test Suite
+### Running the test suite and generating gas report
 The Bophades test suite is written in Solidity and uses the `forge-std` library and `forge` test framework. To run the full test suite, run:
 ```shell
 $ forge test
+```
+
+To also generate a gas report, run:
+
+```shell
+$ FORGE_GAS_REPORT=true forge test
 ```
 
 Note: the Bophades test suite uses a Solidity library that employs the `--ffi` cheatcode, which allows the test to execute the shell commands defined in the library. These commands simply read data from the /out folder to collect lists of functions which have access control modifiers for automatically generating permissioned accounts. `--ffi` is enabled by default in the `foundry.toml` config file for this project.

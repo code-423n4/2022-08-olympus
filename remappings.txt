@@ -1,0 +1,9 @@
+bonds/=lib/bonds/src/
+ds-test/=lib/ds-test/src/
+forge-std/=lib/forge-std/src/
+interfaces/=src/interfaces/
+libraries/=src/libraries/
+modules/=src/modules/
+policies/=src/policies/
+solmate/=lib/solmate/src/
+test/=src/test/
