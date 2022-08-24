@@ -159,6 +159,8 @@ The Bophades project uses the Foundry framework to build, test, and deploy the s
 
 If you don't already have Foundry, follow this [short guide](https://book.getfoundry.sh/getting-started/installation) to install.
 
+NOTE: Slither does not work in the repo (yet). If you find a way to do so, please share in the discord :)
+
 ### Installing Dependencies
 Bophades relies on two (2) external project repositories as dependencies:
 - forge-std
