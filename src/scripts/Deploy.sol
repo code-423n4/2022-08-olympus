@@ -225,7 +225,7 @@ contract OlympusDeploy is Script {
     /// @dev should be called by address with the guardian role
     function initialize() external {
         // Set addresses from deployment
-        // priceConfig = OlympusPriceConfig();
+        priceConfig = OlympusPriceConfig(0x76FBaD8323f47e87c1646B70f2F53857aAF11D24);
         operator = Operator(0x532AC8804b233846645C1Cd53D3005604F5eC1c3);
         callback = BondCallback(0xdff3e45D4BE6B354384D770Fd63DDF90eA788d13);
 
@@ -233,8 +233,14 @@ contract OlympusDeploy is Script {
         vm.startBroadcast();
 
         /// Initialize the Price oracle
-        // DONE MANUALLY VIA ETHERSCAN DUE TO DATA INPUT LIMITATIONS
-        // priceConfig.initialize(priceObservations, lastObservationTime);
+
+        /// These are placeholder values. Actual market data will be used to initialize in production.
+        uint256[] memory prices = new uint256[](90);
+        for (uint i = 0; i < 90; i++) {
+            prices[i] = 15 * 1e18;
+        }
+
+        priceConfig.initialize(prices, uint48(block.timestamp));
 
         /// Set the operator address on the BondCallback contract
         callback.setOperator(operator);
