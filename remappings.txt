@@ -1,5 +1,3 @@
-bonds/=lib/bonds/src/
-ds-test/=lib/ds-test/src/
 forge-std/=lib/forge-std/src/
 interfaces/=src/interfaces/
 libraries/=src/libraries/
