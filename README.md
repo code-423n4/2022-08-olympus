@@ -193,7 +193,13 @@ To also generate a gas report, run:
 $ FORGE_GAS_REPORT=true forge test
 ```
 
-Note: the Bophades test suite uses a Solidity library that employs the `--ffi` cheatcode, which allows the test to execute the shell commands defined in the library. These commands simply read data from the /out folder to collect lists of functions which have access control modifiers for automatically generating permissioned accounts. `--ffi` is enabled by default in the `foundry.toml` config file for this project.
+NOTE 1: the Bophades test suite uses a Solidity library that employs the `--ffi` cheatcode, which allows the test to execute the shell commands defined in the library. These commands simply read data from the /out folder to collect lists of functions which have access control modifiers for automatically generating permissioned accounts. `--ffi` is enabled by default in the `foundry.toml` config file for this project.
+
+NOTE 2: There may be an error when testing with ffi: 
+
+```ERROR foundry_evm::executor::inspector::cheatcodes::ext: stderr err="tr: warning: an unescaped backslash at end of string is not portable\n"```
+
+This is caused by an unknown issue, likely with ffi, but is inconsequential - all of the tests should still pass as expected. If you do find out why this issue is present, please let us know!
 
 ### Deploying the System
 The project uses a `forge` script to deploy the system to a blockchain network, `src/scripts/Deploy.sol`. There are certain dependencies for the project which are assumed to exist prior to the deployment including the OHM token and a reserve token, which are not covered in the scope of the deployment script. However, some test files, such as `Operator.t.sol` show examples of providing mocks for these dependencies.
