@@ -1,9 +1,0 @@
-{
-  "contest": 156,
-  "handle": "newfork01",
-  "address": "0x3e1dac5da6ddb140b3bb472c0a2ef11b9576e617",
-  "risk": "G",
-  "title": "Gas Optimizations",
-  "issueId": 9,
-  "issueUrl": "https://github.com/code-423n4/2022-08-olympus/issues/9"
-}
