@@ -173,6 +173,9 @@ Foundry uses git submodules to manage dependencies from remote repositories. To 
 $ git submodule update --init --recursive
 ```
 
+Bophades also requires the use of jq for running some tests. jq is a program for manipulating JSON files from the command line, available on most OS's.
+jq installation instructions can be found here: https://stedolan.github.io/jq/download/
+
 ### Building the System
 Once dependencies are installed, you can build the project by running:
 ```shell
