@@ -1,0 +1,66 @@
+[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xe595db000000000000000000000000000000000000000000000000000000000000000000, args=[0]] testCorrectness_updateMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131051] PriceTest::testCorrectness_updateMovingAverage(0)
+    ├─ [22336] MockPriceFeed::setLatestAnswer(500000000000000)
+    │   └─ ← ()
+    ├─ [371] MockPriceFeed::latestAnswer() [staticcall]
+    │   └─ ← 500000000000000
+    ├─ [2364] MockPriceFeed::decimals() [staticcall]
+    │   └─ ← 18
+    ├─ [2364] MockPriceFeed::decimals() [staticcall]
+    │   └─ ← 18
+    ├─ [316] OlympusPrice::decimals() [staticcall]
+    │   └─ ← 18
+    ├─ [2397] OlympusPrice::observationFrequency() [staticcall]
+    │   └─ ← 28800
+    ├─ [397] OlympusPrice::movingAverageDuration() [staticcall]
+    │   └─ ← 604800
+    ├─ [22336] MockPriceFeed::setLatestAnswer(9011000000000000)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8261284800000000)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8586779421120000)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8462271119513760)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7907992361185608)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8424384262371028)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8441233030895770)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8433635921167963)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8190747206638325)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8035123009712196)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7900132943149031)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7744500324168995)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8090679488659349)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7475787847521238)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7694828431453610)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7290849938802295)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(6665295014053058)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7033219298828786)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(7587436979576494)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8239956559820072)
+    │   └─ ← ()
+    ├─ [336] MockPriceFeed::setLatestAnswer(8359435929937463)
+    │   └─ ← ()
+    ├─ [0] VM::prank(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0])
+    │   └─ ← ()
+    ├─ [10446] OlympusPrice::initialize([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000)
+    │   ├─ [2917] Kernel::modulePermissions(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [staticcall]
+    │   │   └─ ← false
+    │   └─ ← "Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ ← "Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
