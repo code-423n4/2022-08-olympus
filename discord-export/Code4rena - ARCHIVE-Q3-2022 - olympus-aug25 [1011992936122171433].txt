@@ -1,0 +1,1349 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q3-2022 / olympus-aug25
+==============================================================
+
+[08/24/2022 1:43 PM] kartoonjoy (pinned)
+👋 Hello and welcome to the contest channel for the $75K USDC **Olympus DAO** contest!
+
+📆 Contest opens 08/25/2022 8:00 PM (20:00 UTC) and runs through 09/01/2022 8:00 PM (20:00 UTC) (7 days).
+
+Please give a warm welcome to the Olympus DAO team, particularly @indigo //🙂,🙃//, @Oighty, @fullyallocated, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-08-olympus-dao-contest
+
+{Embed}
+https://code4rena.com/contests/2022-08-olympus-dao-contest
+Code4rena Olympus DAO contest
+$75,000 USDC
+25 August 2022—1 September 2022
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/C4-banner-7C19B.png
+
+{Reactions}
+takingcareofbusiness (7) chefskiss (5) 
+
+[08/24/2022 1:46 PM] ind.igo
+Gm
+
+
+[08/24/2022 1:46 PM] ind.igo
+:bidness:
+
+{Reactions}
+hi5 (7) 
+
+[08/24/2022 2:12 PM] codingnamekiki
+https://tenor.com/view/raccoon-yes-gif-11132867
+
+{Embed}
+https://tenor.com/view/raccoon-yes-gif-11132867
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/raccoon-yes-88934.png
+
+
+[08/24/2022 2:20 PM] kartoonjoy
+Pinned a message.
+
+
+[08/24/2022 2:44 PM] ch_301
+:hi5:
+
+
+[08/24/2022 4:11 PM] fullyallocated
+Gm
+
+{Reactions}
+hearteyesshark (3) 
+
+[08/24/2022 4:49 PM] oighty
+gm! Looking forward to seeing what you find!
+
+{Reactions}
+🔥 (5) 
+
+[08/24/2022 6:39 PM] ind.igo
+I wrote a tweet thread on the architecture recently https://twitter.com/_ndigo/status/1561397936466149376
+
+{Embed}
+indigo (🙂,🙃) (@_ndigo)
+https://twitter.com/_ndigo/status/1561397936466149376
+Olympus V3, aka codename Bophades, is finally going into Code Arena audit this week. The framework we are building is meant to make a very strong foundation for Olympus moving forward.
+
+Here's a brief overview of the contracts 👇
+Likes
+473
+Twitter
+
+{Reactions}
+👍 (12) 🚀 (8) 
+
+[08/24/2022 6:39 PM] ind.igo
+all of this is also in the repo when it becomes available, but here's a sneak peek
+
+
+[08/24/2022 6:39 PM] ind.igo
+gives some context, etc
+
+
+[08/25/2022 2:44 PM] haruxe
+:widePeepoHappy1: :widePeepoHappy2: :widePeepoHappy3: :widePeepoHappy4: gm Olympus team
+
+
+[08/25/2022 4:11 PM] fullyallocated
+Gm 😊
+
+
+[08/25/2022 4:33 PM] codingnamekiki
+https://tenor.com/view/little-white-cat-cat-white-cat-kitten-kitty-gif-16717139
+
+{Embed}
+https://tenor.com/view/little-white-cat-cat-white-cat-kitten-kitty-gif-16717139
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/little-white-cat-cat-1F680.png
+
+
+[08/25/2022 8:03 PM] haruxe
+:PagChomp:
+
+
+[08/25/2022 8:03 PM] haruxe
+live
+
+
+[08/25/2022 8:08 PM] ind.igo
+Gm
+
+
+[08/25/2022 8:08 PM] ind.igo
+Let's get it
+
+
+[08/25/2022 9:09 PM] tofunmi
+First foundry scripting codebase 
+No ts or js whoa
+
+
+[08/25/2022 9:10 PM] tofunmi
+Gas golfed though 🥲
+
+{Reactions}
+🥲 takingcareofbusiness (3) booty (2) 
+
+[08/26/2022 1:38 AM] haruxe
+Good timing on this, I was just getting comfortable with Olympus after hunting on Immunefi
+
+
+[08/26/2022 11:07 AM] elku.cryptos
+so i ran the following commands in WSL ubuntu,
+```
+git submodule update --init --recursive
+forge build
+FORGE_GAS_REPORT=true forge test
+```
+and most of the tests passed except few errors. any idea?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-CE5EC.png
+
+
+[08/26/2022 11:08 AM] illilli000
+foundryup?
+
+
+[08/26/2022 11:11 AM] elku.cryptos
+does it work for you? its always a full reinstall for me. as it will say to remove forge, cast and anvil first. 
+not sure if its because i am using windows.
+
+
+[08/26/2022 11:13 AM] ind.igo
+Ah try forge test --ffi
+
+
+[08/26/2022 11:14 AM] ind.igo
+Could be an issue in the config, the ffi flag should not be necessary
+
+
+[08/26/2022 11:16 AM] illilli000
+the following works for me, but I'm not on windows:
+> rm -Rf 2022-08-olympus || true && git clone https://github.com/code-423n4/2022-08-olympus.git && cd 2022-08-olympus && git submodule update --init --recursive && foundryup && forge build && FORGE_GAS_REPORT=true forge test
+
+
+[08/26/2022 11:20 AM] elku.cryptos
+allright. since foundryup is  not working. i will just reinstall everything. thx.
+
+{Reactions}
+👍 (2) 
+
+[08/26/2022 11:20 AM] elku.cryptos
+same error. let me reinstall foundry.
+
+
+[08/26/2022 2:34 PM] zachobront
+A repo with a Forge deploy script. My heart is warm and fuzzy.
+
+{Reactions}
+bidness (2) 
+
+[08/26/2022 3:55 PM] ladboy233
+What's ya approach? I think this is one of the complicated system because it is new protocol version.
+
+
+[08/26/2022 3:56 PM] ladboy233
+Do we jump into the code or look into the documentation.
+
+
+[08/26/2022 3:56 PM] ladboy233
+After reading some documentation my brain is already exploded.
+
+
+[08/26/2022 3:59 PM] codingnamekiki
+My approach is to find i++ :chefskiss:
+
+{Reactions}
+hi5 (7) 
+
+[08/26/2022 4:00 PM] ladboy233
+lmao
+
+
+[08/26/2022 4:00 PM] ladboy233
+I am hunting for high and critical vulnerability.
+
+
+[08/26/2022 4:01 PM] ladboy233
+🔥
+
+
+[08/26/2022 4:01 PM] ladboy233
+:C4Keycap:
+
+
+[08/26/2022 4:01 PM] ladboy233
+🎷
+
+
+[08/26/2022 4:02 PM] codingnamekiki
+same l am hunting critical gas optimizations : p
+
+
+[08/26/2022 4:03 PM] pfapostol
+but can't read the documentation? no offense
+
+{Reactions}
+👍 😂 
+
+[08/26/2022 4:05 PM] ladboy233
+I am trying haha
+
+
+[08/26/2022 4:05 PM] ladboy233
+hahha
+
+
+[08/26/2022 4:09 PM] pfapostol
+The documentation is really great and it is one of the most pleasant codes I’ve seen here. That will probably make it difficult to find vulnerabilities.
+
+{Reactions}
+🙏 (3) 
+
+[08/26/2022 4:38 PM] ind.igo
+thank you! the intention of the architecture is to be extendible by governance. meaning anyone can add new modules to the system in the future. so it should be extremely easy to audit.
+
+
+[08/26/2022 4:41 PM] oighty
+Are you still having this issue? It may be a shell permission issue with some of the .sh scripts we use for a test fixture.
+
+
+[08/26/2022 5:41 PM] .anth3m
+Is beat meant to be called by any random user or is there some specified bot/function that would call it?
+
+
+[08/26/2022 7:08 PM] devtooligan
+1.  search for i++
+2. replace w ++i
+3. profit
+
+Pro-tip: can also optimize other variables like x++ or y++, even index++
+
+
+[08/26/2022 7:12 PM] devtooligan
+i++ leaderboard:
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/IMG_0172-67026.png
+
+{Reactions}
+nice (8) 
+
+[08/26/2022 7:37 PM] codingnamekiki
+hey l can buy a piece of gum 😄
+
+{Reactions}
+🤣 
+
+[08/26/2022 7:38 PM] dravee
+No ser, ++i pays a lot more due to an asymptote issue in the curve reward system.
+
+0.10 USDC are Medium risk issues 😂
+
+{Reactions}
+🤣 (17) 
+
+[08/26/2022 9:17 PM] ind.igo
+anybody
+
+
+[08/26/2022 9:24 PM] kaden3328
+anybody else get this error? foundryup doesn't help
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-72A62.png
+
+
+[08/26/2022 9:40 PM] Dionysus#2947
+Chuggin along
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-82858.png
+
+
+[08/26/2022 9:42 PM] Dionysus#2947
+```C44 - Use unchecked blocks where overflow/underflow is impossible, or where an overflow/underflow is unrealistic on human timescales (counters, etc). Comment explanations wherever unchecked is used, along with an estimate of how much gas it saves (if relevant).```
+
+
+[08/26/2022 9:45 PM] Dionysus#2947
+I'm having some strange versioning issues as well, the only workaround i've found is temporarily changing 0.8.15 -> >=0.8.0 in between commits
+
+
+[08/26/2022 9:45 PM] Dionysus#2947
+never seen this before 😛
+
+
+[08/26/2022 11:55 PM] ladboy233
+Looks like anyone can call it if the price data is old (the last update time exceeds the frequency)
+
+
+[08/26/2022 11:56 PM] ladboy233
+Scaned the code without fully understand the documentation. Will revisit documentation.
+
+
+[08/26/2022 11:56 PM] ladboy233
+Well I cannot my finding is valid until it appears in the report.
+
+
+[08/26/2022 11:56 PM] ladboy233
+good learning experience.
+
+
+[08/27/2022 8:59 AM] minh___
+i have tested it on WSL too and have quite different results:
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-B22D7.png
+
+
+[08/27/2022 8:59 AM] minh___
+havent done the gas report command tho
+
+
+[08/27/2022 1:57 PM] ind.igo
+hmm
+
+
+[08/27/2022 1:57 PM] ind.igo
+if you test with `forge test --ffi`, do you have same results?
+
+
+[08/27/2022 2:04 PM] minh___
+yes, same results
+
+
+[08/27/2022 2:35 PM] ind.igo
+@Oighty may be able to assist. it may be some permissioning issues with Quabi, a library he made. refer to this message
+
+{Reactions}
+👍 
+
+[08/27/2022 2:48 PM] jimmyx0x
+Getting the same issue here
+
+
+[08/27/2022 3:48 PM] oighty
+We haven’t tested it on Windows. Trying providing execute permissions to src/test/lib/quabi/*.sh
+
+
+[08/27/2022 4:22 PM] minh___
+that didnt do the trick either sadly
+
+
+[08/27/2022 4:23 PM] minh___
+did `chmod +x src/test/lib/quabi/*.sh` for the record
+
+
+[08/27/2022 6:18 PM] ind.igo
+@minhtrng @jimmyx0x im ~95% sure this has to do with the ffi and possibly the Quabi lib. can you guys give me a a stack trace using `forge test -vvv`
+
+
+[08/27/2022 6:19 PM] ind.igo
+give me a stack trace of any of the failing functions which fail with `Module_PolicyNotPermitted`
+
+
+[08/27/2022 7:13 PM] minh___
+here you go
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/message-D2CF2.txt
+
+
+[08/27/2022 10:14 PM] czar102
+Can I do the same with `c++;`?
+
+
+[08/27/2022 10:16 PM] czar102
+Also, if I try to compile files with extension .ppc instead of .cpp they should be faster, right?
+
+
+[08/27/2022 10:43 PM] 100proof
+@Czar102 That is very oblique humour but I appreciate it 🙂
+
+{Reactions}
+same 
+
+[08/28/2022 12:28 AM] jimmyx0x
+getting something similar as minhtrng
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/out-201F1.txt
+
+
+[08/28/2022 6:21 AM] shr1ftyy
+I've gotten the exact same error as these guys
+
+
+[08/28/2022 6:22 AM] shr1ftyy
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/log-F4A66.txt
+
+
+[08/28/2022 6:22 AM] shr1ftyy
+37 tests failing
+
+
+[08/28/2022 6:22 AM] shr1ftyy
+also tried the `--ffi` flag
+
+
+[08/28/2022 6:37 AM] shr1ftyy
+Bruh Bophades more like Bophades nuts
+
+
+[08/28/2022 6:37 AM] shr1ftyy
+naw im jk
+
+
+[08/28/2022 6:37 AM] shr1ftyy
+: )
+
+
+[08/28/2022 7:27 AM] minh___
+thats actually where the name comes from: https://www.urbandictionary.com/define.php?term=Bophades
+
+{Embed}
+https://www.urbandictionary.com/define.php?term=Bophades
+Urban Dictionary: Bophades
+He was a lot like Achilles- he had just one weakness. Except instead of his heel it was his groin. You may have heard of "Achilles' heel", but have you heard of "Bophades' nuts"? Bophades -> bo-pha-des -> (Both-of-these) nuts
+
+{Reactions}
+KEK (3) 
+
+[08/28/2022 7:28 AM] minh___
+bophades is not an actual figure of greek mythology afaik, just a meme
+
+
+[08/28/2022 8:13 AM] shr1ftyy
+Ik the meme
+
+
+[08/28/2022 9:16 AM] LéoS#9942
+I have exactly the same error, if one of you can correct the problem, please let us know 👍
+
+
+[08/28/2022 9:21 AM] minh___
+@indigo //🙂,🙃// @Oighty  fyi, the [Range System Specification](https://docs.google.com/document/d/1AdPex_lMpSC_3U8UEU4hiSZIT1O1FekoCujRtYEJ0ig/edit) seems to be publicly editable
+
+{Embed}
+https://docs.google.com/document/d/1AdPex_lMpSC_3U8UEU4hiSZIT1O1FekoCujRtYEJ0ig/edit
+Olympus Range System Specification
+Olympus System for Range-Bound Stability Specification    This document codifies the requirements for a system to implement the Range-Bound Stability model defined in the recent paper by Zeus et al.  Initial spec by Zeus (has changed some since) ---  System is comprised of three components:  1. ...
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/q4OTBo4jQDtR3xlc5Uk4onLMfvdeQH-S4eTbYDbGLK-A06DD
+
+{Reactions}
+😂 
+
+[08/28/2022 1:36 PM] trust90
+The more I look at the code the more I get the feeling it is a very permissioned protocol with anything of meaning given to "admin" / "custodian" roles. I don't think it's what the Greek gods wanted for us...
+
+{Reactions}
+👍 (2) 
+
+[08/28/2022 1:48 PM] aviggiano
+idk why the repo says it doesn't work with slither, for me it works fine
+
+
+[08/28/2022 1:48 PM] aviggiano
+Slither how to
+
+
+[08/28/2022 1:56 PM] trust90
+Olympus folks, are you interested in centralization risks in your reports? Do you have a guideline as to what constitutes such a risk compared to "intended behavior"? @indigo //🙂,🙃//  @Oighty
+
+
+[08/28/2022 2:28 PM] elku.cryptos
+Where can I see how many runs is it the optimizer set to? 200? or 10000?
+
+
+[08/28/2022 3:07 PM] ind.igo
+haha you can suggest to it but cant edit. that would be bad!
+
+
+[08/28/2022 3:08 PM] ind.igo
+this is only necessary as a transition since a lot of the dao multisigs still control a few params. the goal with this new code is to transition over to more automated systems. the intention of the governor is to install policy contracts which do some actions, rather than how compound-like governors do arbitrary actions
+
+
+[08/28/2022 3:09 PM] ind.igo
+the policies that have been created so far are still controlled by multisigs, as the current systems are. we intend to install a new governor policy that will be able to do the multisig's job. but that will be a later iteration
+
+
+[08/28/2022 3:21 PM] ind.igo
+do you guys all have jq installed?
+
+{Reactions}
+👍 
+
+[08/28/2022 3:21 PM] ind.igo
+i just realized, thats a dependency for quabi
+
+
+[08/28/2022 3:22 PM] ind.igo
+@minhtrng @shr1ftyy
+
+
+[08/28/2022 3:23 PM] ind.igo
+`brew install jq` or whatever
+
+{Reactions}
+👏 (2) 
+
+[08/28/2022 3:39 PM] LéoS#9942
+thank you very much, it was exactly that. Problem solved
+
+{Reactions}
+takingcareofbusiness 
+
+[08/28/2022 3:57 PM] ind.igo
+ok will update the README with this
+
+
+[08/28/2022 4:29 PM] fullyallocated
+Yes, the Admin roles are for multisig/gated policy functions for special access
+
+
+[08/28/2022 4:29 PM] fullyallocated
+I personally am not a fan of this design but I think some practical constraints forced us to include this design pattern
+
+{Reactions}
+this (2) 🧠 (2) 
+
+[08/28/2022 4:29 PM] fullyallocated
+please note the special roles assigned by the Admin can only call POLICY onlyRole() functions, nothing directly in the modules
+
+{Reactions}
+this 
+
+[08/28/2022 8:24 PM] ind.igo
+@ all wardens, the readme has been updated with a section on installing `jq` as a dependency. if you're having issues running the tests, please ensure `jq` is installed on your machine
+
+
+[08/28/2022 8:24 PM] ind.igo
+https://github.com/code-423n4/2022-08-olympus/blob/main/README.md#installing-dependencies
+
+{Embed}
+https://github.com/code-423n4/2022-08-olympus/blob/main/README.md
+2022-08-olympus/README.md at main · code-423n4/2022-08-olympus
+Contribute to code-423n4/2022-08-olympus development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/41f2c41c-905f-4a3c-bb51-a55bf1ccc7b5-747DA
+
+
+[08/28/2022 8:29 PM] carlitox477
+@indigo //🙂,🙃// may I ask you sth by DM? (I've just sent you a friend request)
+
+
+[08/29/2022 2:22 AM] p12473
+@fullyallocated sent friend request!
+
+
+[08/29/2022 2:55 AM] ind.igo
+guys you can dm us without sending friend requests 🙂
+
+
+[08/29/2022 3:17 AM] p12473
+I tried for @fullyallocated but his privacy settings is preventing me from doing so haha
+
+
+[08/29/2022 3:17 AM] p12473
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-C90DC.png
+
+
+[08/29/2022 3:37 AM] devtooligan
+what if we just wanna be friends? 👉🏽👈🏽
+
+{Reactions}
+❤️ (6) 
+
+[08/29/2022 3:45 AM] dannygfromnyc
+How/when will the voter_admin be issuing or revoking votes? Is it treated as a callback, ad hoc, etc.?
+
+
+[08/29/2022 3:55 AM] fullyallocated
+Sorry
+
+
+[08/29/2022 3:56 AM] fullyallocated
+I just accepted @P12473
+
+{Reactions}
+🤝 
+
+[08/29/2022 4:00 AM] ak19966
+We are not allowed .. can you pls check DM settings
+
+
+[08/29/2022 6:19 AM] zhuxket
+What does Sigma mean in the scope list?
+
+
+[08/29/2022 8:24 AM] saneryee
+It may be a reminder that there are `unchecked blocks` in this code.
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/Screen_Shot_2022-08-29_at_16.22.25-BBD28.png
+
+{Reactions}
+👍 
+
+[08/29/2022 9:12 AM] fullyallocated
+Right now it’s arbitrary determined while we experiment with different distributions in internal testing
+
+
+[08/29/2022 9:12 AM] fullyallocated
+In live, the voter admin is expected to be replaced with voting vaults using OHM/GOHM
+
+
+[08/29/2022 9:14 AM] fullyallocated
+Also—just opened dms. Sorry guys
+
+
+[08/29/2022 1:17 PM] ind.igo
+ill be your fren, fren
+
+{Reactions}
+❤️ (4) 
+
+[08/29/2022 2:06 PM] ak19966
+@indigo //🙂,🙃//  did you get my DM ?
+
+{Reactions}
+👍 
+
+[08/29/2022 7:45 PM] jimmyx0x
+@indigo //🙂,🙃// tests all now work! thanks ser
+
+{Reactions}
+takingcareofbusiness 
+
+[08/29/2022 7:53 PM] ind.igo
+awesome!
+
+
+[08/29/2022 7:58 PM] acegawd
+DM @indigo //🙂,🙃//
+
+
+[08/29/2022 9:56 PM] Dionysus#2947
+Hey guys is there a preferred template for submitting findings
+
+
+[08/29/2022 10:11 PM] devtooligan
+https://code4rena.com/submission-template/
+
+and here are some guidelines in case you havent seen them https://docs.code4rena.com/roles/wardens/submission-policy#submitting-a-report
+
+{Reactions}
+❤️ 
+
+[08/29/2022 10:17 PM] Dionysus#2947
+what a legend ❤️ @++devtooligan
+
+
+[08/29/2022 10:18 PM] Dionysus#2947
+been working off a template spearbit has
+
+{Reactions}
+spearbit (6) 
+
+[08/29/2022 11:38 PM] Dionysus#2947
+just submitted my first report! lfggggg
+
+{Reactions}
+takingcareofbusiness (14) 🙏 (6) 
+
+[08/30/2022 4:12 PM] devtooligan
+next time someone tries to trick me w "Bophades" imma be like "Oh you mean the new Olympus codebase?"
+
+{Reactions}
+😁 (3) this (3) 
+
+[08/30/2022 4:47 PM] peachtea#3471
+hi guys im peach tea
+
+
+[08/30/2022 4:47 PM] peachtea#3471
+i like iced peach tea
+
+
+[08/30/2022 4:47 PM] peachtea#3471
+here to report ++i
+
+
+[08/30/2022 4:52 PM] slightscan
+How do you navigate the code? I have `juanblanco.solidity` and `tintinweb.solidity-visual-auditor`, but vscode still doesnt find many contracts and functions. For instance here https://github.com/code-423n4/2022-08-olympus/blob/main/src/policies/Heart.sol/#L21, I cannot cmd+click on the Policy. I have to manually search the project for this contract.
+
+
+[08/30/2022 5:00 PM] illilli000
+if you or anyone else figures it out, please let me know, so it can be flagged for future contests
+
+
+[08/30/2022 5:14 PM] ak19966
+did you build the contract ?
+
+
+[08/30/2022 5:14 PM] ak19966
+if the contract built successfully.. it can be navigated
+
+
+[08/30/2022 5:15 PM] minh___
+I am using pycharm with the corresponding solidity plugin, so not sure if its the same cause, but the problem I had are the comment blocks that mark certain regions, like "MODULE INTERFACE" in the pic above. If you comment out **all** the "region titles" in a file, navigating works just fine
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-3FAA2.png
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/unknown-69431.png
+
+
+[08/30/2022 5:27 PM] devtooligan
+that is a v interesting find.  but i think its a PyCharm thing because for me at least, it doesnt seem to fix the problem in vscode
+
+
+[08/30/2022 5:28 PM] devtooligan
+But I do hate those Solmate style section headers.  They also break w code folding
+
+
+[08/30/2022 5:37 PM] slightscan
+Yeah I built the project in shell with `forge build`. It builds successfully. However code navigation doesn't work for all items. For example if I cmd+click on Policy. I think that might be related to the import `import "src/Kernel.sol";` and maybe that there are many contracts in `Kernel.sol` that are not named Kernel.
+
+
+[08/30/2022 5:38 PM] slightscan
+Also clicking on ` OlympusRange internal range;` doesn't work. I thought maybe it's because the file name is different from the contract name.
+
+
+[08/30/2022 5:38 PM] devtooligan
+changing imports to relative imports adds some functionality but doesnt fix the problem completely
+
+
+[08/30/2022 5:39 PM] slightscan
+But if I click `RANGE.price(true, false)`, (on price) then that works 🤔
+
+
+[08/30/2022 5:39 PM] ak19966
+Wat about change into relative paths and the clean and build
+
+
+[08/30/2022 5:45 PM] slightscan
+changing `import "src/Kernel.sol";` to `import "../Kernel.sol";` in `Operator.sol`and clean building didnt seem to help
+
+
+[08/30/2022 7:17 PM] fullyallocated
+this is good to note, ty
+
+{Reactions}
+👍 
+
+[08/30/2022 7:32 PM] Dionysus#2947
+😄
+
+
+[08/30/2022 7:34 PM] Dionysus#2947
+bro same, these are my personal favorite:
+
+
+[08/30/2022 7:35 PM] Dionysus#2947
+```js
+//----------------------------------------------------------
+// Mutables
+//----------------------------------------------------------
+```
+
+
+[08/30/2022 8:12 PM] ind.igo
+oh really
+
+{Reactions}
+takingcareofbusiness (2) 
+
+[08/30/2022 8:25 PM] acegawd
+Who's available in DMs? @indigo //🙂,🙃// @Oighty or @fullyallocated ?
+
+
+[08/30/2022 8:25 PM] oighty
+All of us
+
+
+[08/30/2022 8:25 PM] acegawd
+I @indigo //🙂,🙃// from yesterday and no response.
+
+
+[08/30/2022 8:31 PM] fullyallocated
+whats the question regarding?
+
+
+[08/30/2022 8:32 PM] fullyallocated
+RBS, Governance, Kernel, or some other piece?
+
+
+[08/30/2022 8:50 PM] ind.igo
+does this work with code folding
+
+
+[08/30/2022 8:50 PM] ind.igo
+maybe should change these headers out
+
+
+[08/30/2022 8:50 PM] ind.igo
+only reason i added those was bc the little generator program was really easy
+
+
+[08/30/2022 8:54 PM] ind.igo
+hey sorry. ive gotten a lot of dms. that question is suited for oighty tho
+
+{Reactions}
+👍 
+
+[08/30/2022 9:01 PM] devtooligan
+lol. that generator is cool no doubt
+
+
+[08/30/2022 9:21 PM] Dionysus#2947
+Just checked, it does not, I actually don't use code folding tbh
+
+
+[08/30/2022 9:21 PM] Dionysus#2947
+@indigo //🙂,🙃//
+
+
+[08/30/2022 9:28 PM] ind.igo
+:REEEloud:
+
+
+[08/30/2022 9:28 PM] ind.igo
+ok will see what i can do
+
+
+[08/30/2022 9:38 PM] devtooligan
+When this style of section headers is used with code folding, the text of the header (the most important part) disappears.   So you lose your anchors / contextual guides when navigating around a large contract.  This style breaks code folding, and I've seen other types of section headers that can break doc generators.
+
+I'm all for people being creative and I do believe aestethics of a contract are important - especially when we're out here building hyperstructures to last for eternity.
+
+But I don't think it's worth breaking any kind of functionality for aestethics when there are literally limitless alternative styles to choose from.
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/Screen_Shot_2022-08-30_at_2.28.43_PM-A3342.png
+
+
+[08/30/2022 9:39 PM] Dionysus#2947
+Very fair point ser!
+
+
+[08/30/2022 9:39 PM] Dionysus#2947
+I shall continue looking for the perfect comment header haha
+
+{Reactions}
+😆 (3) 
+
+[08/31/2022 3:41 AM] ind.igo
+https://tenor.com/view/my-man-my-man-denzel-my-man-hd-my-man4k-gif-23532550
+
+{Embed}
+https://tenor.com/view/my-man-my-man-denzel-my-man-hd-my-man4k-gif-23532550
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/my-man-my-man-denzel-EBD09.png
+
+
+[08/31/2022 3:57 AM] devtooligan
+can you share a little about the reserves.  there is only one operator deployed for the protocol right?  it's not like there's an operator for DAI and an operator for WBTC, etc... from what i saw in the deploy script its DAI?  so does that mean that Olympus keeps most (all) of their reserves in DAI? i'm guessing it would not be common to switch reserve to a different token, right?
+
+
+[08/31/2022 2:44 PM] oighty
+The intent is to initially just run RBS for one reserve against OHM. It will likely be DAI to start with
+
+{Reactions}
+👍 
+
+[08/31/2022 2:58 PM] 0xsorrynotsorry
+So will the pools be decided for deployment by the governance?
+
+
+[08/31/2022 3:17 PM] ind.igo
+yes sir
+
+{Reactions}
+thankyou 
+
+[08/31/2022 11:24 PM] acegawd
+@Oighty  or @indigo //🙂,🙃//
+
+{Reactions}
+PU_pepeGoner 
+
+[09/01/2022 3:21 AM] devtooligan
+fren requests sent frenz @indigo //🙂,🙃//  @Oighty @fullyallocated
+
+
+[09/01/2022 7:58 AM] Bahurum#2516
+@fullyallocated just DMd. Can you please take a look ?
+
+
+[09/01/2022 8:02 AM] fullyallocated
+yess ir
+
+{Reactions}
+🙏 
+
+[09/01/2022 1:28 PM] m9800
+@indigo //🙂,🙃//  just Dmd
+
+
+[09/01/2022 3:21 PM] fullyallocated
+Someone messaged me about a function on governance.sol, i accidentally rejected the message request
+
+
+[09/01/2022 3:21 PM] fullyallocated
+Please send me again I’m sorry
+
+
+[09/01/2022 3:57 PM] pedroais
+Hi where can I find some documentation on the bondCallback policy?
+
+
+[09/01/2022 3:57 PM] pedroais
+Or anything that can help me understand how the function should behave
+
+
+[09/01/2022 4:05 PM] pedroais
+Got this from one of the devs posting it here so everyone can have it :
+
+https://docs.google.com/document/d/1Q5IZV25D3Nrlu2D6IvLYqd5-ojL8vsATuzhseKJ0Vm0/edit
+
+{Embed}
+https://docs.google.com/document/d/1Q5IZV25D3Nrlu2D6IvLYqd5-ojL8vsATuzhseKJ0Vm0/edit
+Bond Protocol Smart Contracts Summary
+Bond Protocol Smart Contracts  Overview	2 Improvements over previous Olympus and Olympus Pro bonds	2 Contracts	3 Auctioneer	4 Auctioneer Interface	4 Continuous Dutch Auctioneer (CDA) Interface	5 Base CDA Abstract Contract	5 Fixed-Expiration CDA Contract	5 Fixed-Term CDA Contract	5 Callback	5 Cal...
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/JpGbQ25dncQHIWYOGwpWGuFBhbour3zUCnNqySlKRA-CBFE2
+
+{Reactions}
+thankyou (6) 
+
+[09/01/2022 8:02 PM] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens The **Olympus DAO** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: the **Olympus DAO** team will review the findings over the next couple of days, and then we'll pass them off to the judge. Keep an eye on #📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+🔥 (22) 
+
+[09/01/2022 8:44 PM] H4t4way#3792
+Thanks guys, was a very good contest
+
+{Reactions}
+takingcareofbusiness (5) 🙏 (5) 
+
+[09/01/2022 8:47 PM] ind.igo
+Thank you all! Appreciate all the submissions 😉
+
+{Reactions}
+C4Keycap (15) 🔥 (4) 😉 (2) 
+
+[10/01/2022 10:02 AM] natzuu33
+Any update?
+
+{Reactions}
+👆 (4) 
+
+[10/03/2022 6:11 PM] natzuu33
+https://tenor.com/view/waiting-gif-23395435
+
+{Embed}
+https://tenor.com/view/waiting-gif-23395435
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/waiting-97BDA.png
+
+
+[10/03/2022 9:58 PM] ladboy233
+https://github.com/code-423n4/code423n4.com/pull/4209/files
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/4209/files
+Add Olympus to Leaderboard by liveactionllama · Pull Request #4209 ...
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/98446738-1A1F9
+
+{Reactions}
+👍 (10) 4739_Skeletor (2) 
+
+[10/03/2022 9:58 PM] ladboy233
+reward result.
+
+
+[10/04/2022 7:35 PM] dannygfromnyc
+Is there a way to view the findings before the report comes out?
+
+
+[10/04/2022 8:09 PM] ladboy233
+you need to become backstage
+
+
+[10/04/2022 8:19 PM] itsmetechjay
+🤑 🎉 Awards for **Olympus Bophades**:
+
+6773.28 DAI » @zzzitron 
+3865.14 DAI » @0x52 
+3500.39 DAI » @Trust 
+3056.06 DAI » @rbserver 
+3033.34 DAI » @Roman 
+2817.16 DAI » @enckrish 
+2600.94 DAI » @0x1f8b 
+2358.53 DAI » @IllIllI 
+2324.37 DAI » @lucyoa 
+2283.65 DAI » @cryptphi 
+2234.65 DAI » @datapunk 
+2107.82 DAI » @rvierdiiev 
+2048.36 DAI » @Bahurum 
+1905.41 DAI » @minhtrng 
+1905.41 DAI » @immeas 
+1905.41 DAI » @Czar102 
+1769.18 DAI » @bin2chen 
+1513.78 DAI » @csanuragjain 
+1415.91 DAI » @cccz 
+1193.85 DAI » @hansfriese 
+1111.24 DAI » @Jeiwan 
+1107.27 DAI » @Bernd 
+1040.99 DAI » @P12473 
+955.75 DAI » @brgltd 
+948.62 DAI » @d3e4 
+944.33 DAI » @djxploit 
+875.10 DAI » V_B (@Barichek, @Vlad B | zkSync)
+872.66 DAI » @Alex The Entreprenerd 
+716.21 DAI » @m9800 
+629.13 DAI » @code-cipher 
+607.78 DAI » @hyh 
+601.72 DAI » @ladboy233小伙子 
+601.40 DAI » @carlitox477 
+584.04 DAI » @0xNazgul 
+569.13 DAI » @Ruhum 
+536.51 DAI » @sorryNotsorry 
+514.46 DAI » @Pedroais 
+493.23 DAI » @pashov 
+441.48 DAI » @__141345__ 
+434.16 DAI » CertoraInc (@egjlmn1, @Ori Dabush, @ItayG, @shakedwinder, @RoiEvenHaim)
+401.63 DAI » @slightscan 
+401.59 DAI » @zhuXKET 
+401.57 DAI » PwnPatrol (@obront, @Throttle)
+401.57 DAI » @okkothejawa 
+373.26 DAI » @pfapostol 
+356.40 DAI » @c3phas 
+304.34 DAI » @yixxas 
+248.18 DAI » @0xSmartContract 
+189.06 DAI » Guardian (@0xOwen-GuardianAudits, Green)
+168.24 DAI » @++devtooligan 
+160.91 DAI » @0xNineDec
+
+
+[10/04/2022 8:19 PM] itsmetechjay
+151.13 DAI » LeoS
+131.95 DAI » @Tomo | NinjAudit 
+127.02 DAI » @Deivitto 
+101.20 DAI » @ReyAdmirado 
+99.82 DAI » @TomJ 
+99.68 DAI » @Sm4rty 
+97.62 DAI » @gogo 
+95.73 DAI » @Rolezn 
+93.42 DAI » @Ignacio 
+93.07 DAI » @ret2basic.eth 
+91.18 DAI » @thinklab 
+90.31 DAI » @ajtra 
+90.05 DAI » @Django | Saloon Finance 
+87.86 DAI » @Bnke 
+87.85 DAI » @grGred 
+87.56 DAI » @robee 
+87.50 DAI » @0xkatana 
+87.23 DAI » @fatherOfBlocks 
+87.17 DAI » @EricTee 
+87.09 DAI » @0X040 
+87.07 DAI » @ElKu 
+87.03 DAI » @cRat1st0s 
+87.02 DAI » @durianSausage 
+86.97 DAI » @lukris02 
+86.95 DAI » @martin11 
+86.94 DAI » @Rohan 
+86.92 DAI » @sikorico 
+86.91 DAI » @tnevler 
+86.90 DAI » @StevenL 
+86.90 DAI » @RaymondFam 
+86.90 DAI » @Waze 
+86.90 DAI » @delfin454000 
+86.90 DAI » @medikko 
+86.90 DAI » @bobirichman7542 
+86.90 DAI » @CodingNameKiki 
+86.90 DAI » @chandr 
+86.90 DAI » @rokinot 
+86.90 DAI » @0x85102 
+86.90 DAI » @aviggiano
+86.90 DAI » @apostle0x01 
+86.90 DAI » @Funen 
+86.90 DAI » @Natzuu 
+86.90 DAI » The_GUILD (@David_, @Ephraim, @LeoGold, greatsamist)
+86.90 DAI » @Jancem 
+86.90 DAI » @Diraco 
+86.90 DAI » @ne0n 
+67.50 DAI » mics
+65.34 DAI » @ak1 
+56.31 DAI » @shenwilly 
+55.94 DAI » @m_Rassska 
+54.34 DAI » @dipp 
+54.32 DAI » @DimSon 
+54.32 DAI » @bvttplvg 
+54.31 DAI » @Deleted User 
+54.31 DAI » @Ch_301 
+54.31 DAI » @Prasant Gupta 
+54.31 DAI » @w0Lfrum 
+54.31 DAI » @rajatbeladiya 
+54.31 DAI » @ch13fd357r0y3r 
+54.31 DAI » @PPrieditis 
+54.31 DAI » @Chom 
+54.31 DAI » @eierina 
+54.31 DAI » @PaludoX0 
+54.31 DAI » @Picodes | Angle 
+54.31 DAI » @p_crypt0 
+54.31 DAI » @Margaret 
+54.31 DAI » @8olidity 
+54.31 DAI » @TuckSparrow 
+54.31 DAI » @indijanc 
+54.31 DAI » @CRYP70 
+54.31 DAI » @cloudjunky 
+54.31 DAI » @MasterCookie 
+35.99 DAI » @JC
+32.71 DAI » @exolorkistis 
+32.61 DAI » @zishansami 
+32.60 DAI » @Dionysus 
+32.59 DAI » @ch0bu 
+32.59 DAI » @jag 
+32.58 DAI » @Noah3o6 
+32.58 DAI » @Saintcode_ 
+32.58 DAI » @chrisdior4 
+32.58 DAI » @Amithuddar 
+32.58 DAI » @Shishigami 
+32.58 DAI » @Metatron
+32.58 DAI » @RoiEvenHaim 
+32.58 DAI » @peiw 
+32.58 DAI » @karanctf 
+32.58 DAI » @kris 
+32.58 DAI » @simon135 
+32.58 DAI » @Tagir2003 
+32.58 DAI » @SooYa 
+32.58 DAI » @newfork01 
+32.58 DAI » @Fitraldys 
+11.03 DAI » @Dravee 
+11.03 DAI » @++Jujic#5558 
+11.03 DAI » @peachtea 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 16 total, 3 unique
+Med risk findings: 100 total, 32 unique
+Gas optimization reports: 91
+QA reports: 114
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations! 💸 💸
+
+*Note: If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 (19) 🔥 (8) 💸 (6) 🤑 (6) chefskiss (7) C4Keycap (5) thankyou (5) ❤️ (2) 
+
+[10/05/2022 12:10 AM] ladboy233
+we have 100 medium finding for this one？
+
+
+[10/05/2022 3:07 AM] ind.igo
+Congrats everyone. Thank you all so much for participating. I encourage you all to follow along with us, we'll be launching soon 🔜
+
+{Reactions}
+👍 (7) 🚀 (3) 
+
+[10/05/2022 4:06 AM] .satyam_
+When we can see reports of it?
+
+
+[10/05/2022 4:07 AM] .satyam_
+How to become backstage?
+
+
+[10/05/2022 4:20 AM] devtooligan
+https://docs.code4rena.com/roles/certified-contributors/backstage-wardens
+
+{Embed}
+https://docs.code4rena.com/roles/certified-contributors/backstage-wardens
++Backstage wardens
+
+
+[10/05/2022 4:38 AM] .satyam_
+Ok thanx
+
+
+[10/09/2022 12:25 PM] enckrish
+When do reports usually come out, after the awards have been announced?
+
+
+[10/09/2022 12:26 PM] enckrish
+This was my first audit contest and bounty, so a little excited 🥳😅
+
+
+[10/09/2022 1:31 PM] rohan16
+First payment would come :C4Keycap:
+
+{Reactions}
+😂 
+
+[10/09/2022 1:31 PM] rohan16
+Lol😁
+
+
+[10/09/2022 2:00 PM] enckrish
+Waiting for that too 💰💸😁
+
+
+[10/14/2022 3:44 PM] haruxe
+@fullyallocated could I ask you something rq? Sent you a friend request :PagChomp:
+
+
+[10/26/2022 6:55 PM] .chandr
+Hello! Are payments being delayed or am I just not receiving?
+
+
+[10/26/2022 8:47 PM] itsmetechjay
+Please open a help desk request (https://code4rena.com/help/) and we can look into it for you.
+
+{Embed}
+https://code4rena.com/help/
+Help | Code 423n4
+Need help with something? Contact us here.
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/C4-banner-7C19B.png
+
+
+[10/27/2022 1:03 AM] __141345__
+yesterday I just found it was in polygon DAI, seems silently sent many days ago
+
+
+[10/27/2022 8:37 AM] .chandr
+Thank you! Also available on DAI. For some reason, I was sure that the payment would be in USDC, apparently I missed some kind of announcement
+
+
+[10/27/2022 8:38 AM] .chandr
+Already found it, thanks
+
+{Reactions}
+👍 
+
+[11/05/2022 4:03 AM] raymondfam
+Can someone please shed lights how transaction queue rules work on blockchain? Does the EVM only run and complete one atomic transaction at a time or does it run multiple function calls concurrently? M-23 says the contract token balance could get a second increment in between previous and current balances. If this is the case, can the same increment be done by having someone sending tokens to the contract in between the two balance updates? Thanks.
+
+
+[11/05/2022 4:38 AM] neko_nyaa
+One atomic tx at a time. 
+
+Are you sure you're looking at the correct issue? M-23 has no mentions about balances
+
+
+[11/05/2022 3:33 PM] raymondfam
+It says/indicates the protocol revenue claimed could happen between balance measurements, incorrectly crediting the attacker's loan repayment. Did I misunderstand it?
+
+{Attachments}
+Code4rena - ARCHIVE-Q3-2022 - olympus-aug25 [1011992936122171433].txt_Files/Screenshot_20221105-102617_Samsung_Interne-9AE79.jpg
+
+
+[11/05/2022 3:59 PM] neko_nyaa
+Oh looks like I hit nouns builder by mistake, it was right next to olympus
+
+
+[11/05/2022 4:30 PM] raymondfam
+So if it's one atomic tx at a time, how could this even happen?
+
+
+[11/05/2022 5:05 PM] neko_nyaa
+External call happens during safeTransferFrom. The assumption is probably a weird ERC20 with a hook.
+
+
+[11/05/2022 5:07 PM] neko_nyaa
+If that hook can make the treasury claims its revenue or claiming anything that rightfully belongs to the treasury but doesn't belong to msg.sender (e.g. by calling some functions in another non-treasury contract), then both the revenue and _amount are counted towards debt repayment
+
+
+[11/05/2022 5:07 PM] neko_nyaa
+Would love more of @Czar102 's explanation though
+
+
+[11/05/2022 5:28 PM] czar102
+Hey, that is a very accurate description. I am sorry my submission is difficult to interpret 😅 
+I have no idea how to explain reentrancy issues better, feedback really appreciated
+
+
+[11/05/2022 5:31 PM] czar102
+Note that protocol revenue can only be counted once as a repayment since if one would try to do that twice, that would need to be in between two measurements, which is not possible because of the `ReentrancyGuard`
+
+
+[11/05/2022 7:11 PM] raymondfam
+Wow, thanks much for the clarification. The affected link is also related to M-02 where the safeTransferFrom failed to check token code existence. Other than a self-destructed or an undeployed contract, what else could render a token without a contract in it? And being devoid of code existence, (received == amount_) is still going to return true?
+
+
+[11/06/2022 12:41 AM] neko_nyaa
+> Other than a self-destructed or an undeployed contract, what else could render a token without a contract in it?
+
+Technically there is `delegatecall` pointing to an empty address. Though the contest note did say the token must be ERC20, so you can't really argue using this.
+
+> And being devoid of code existence, (received == amount_) is still going to return true?
+
+It won't, but that's the problem. You can do `getLoan()` that accrues debt but you never receive any tokens, and you suddenly have an unrepayable debt.
+
+
+[11/06/2022 1:12 AM] raymondfam
+Thanks for all the detailed replies. I truly learn a lot from this community.
+
+
+[06/25/2023 4:22 PM] shax2nk.in
+I'm recruiting moderators for a high salary (need to be very active) : https://discord.gg/H6r8hC9tq
+
+
+==============================================================
+Exported 230 message(s)
+==============================================================

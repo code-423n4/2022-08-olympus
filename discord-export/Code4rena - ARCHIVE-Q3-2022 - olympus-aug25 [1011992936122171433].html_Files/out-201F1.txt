@@ -1,0 +1,1236 @@
+No files changed, compilation skipped
+
+Running 2 tests for src/test/policies/VoterRegistration.t.sol:VoterRegistrationTest
+[32m[PASS][0m testCorrectness_WhenCalledByProperAuthority() (gas: 69153)
+[32m[PASS][0m testRevert_WhenCalledByRandomWallet() (gas: 19433)
+Test result: [32mok[0m. 2 passed; 0 failed; finished in 7.53ms
+
+Running 7 tests for src/test/policies/BondCallback.t.sol:BondCallbackTest
+[32m[PASS][0m testCorrectness_OnlyWhitelistedMarketsCanCallback() (gas: 252275)
+[32m[PASS][0m testCorrectness_amountsForMarket() (gas: 238359)
+[32m[PASS][0m testCorrectness_batchToTreasury() (gas: 966671)
+[32m[PASS][0m testCorrectness_callback() (gas: 539802)
+[32m[PASS][0m testCorrectness_callbackMustReceiveTokens() (gas: 367260)
+[32m[PASS][0m testCorrectness_setOperator() (gas: 36625)
+[32m[PASS][0m testCorrectness_whitelist() (gas: 1030468)
+Test result: [32mok[0m. 7 passed; 0 failed; finished in 16.30ms
+[2m2022-08-28T00:28:04.288355Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[2m2022-08-28T00:28:04.290185Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+
+Running 4 tests for src/test/modules/VOTES.t.sol:VotesTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_TransferFrom() (gas: 18734)
+Traces:
+  [18734] [31mVotesTest[0m::[31mtestCorrectness_TransferFrom[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8582] [31mOlympusVotes[0m::[31mmintTo[0m(0x0000000000000000000000000000000000000001, 10) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x564f544553, ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 0x449a52f8) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_burnFrom() (gas: 18733)
+Traces:
+  [18733] [31mVotesTest[0m::[31mtestCorrectness_burnFrom[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mstartPrank[0m(ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8582] [31mOlympusVotes[0m::[31mmintTo[0m(0x0000000000000000000000000000000000000001, 10) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x564f544553, ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 0x449a52f8) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_mintTo() (gas: 18689)
+Traces:
+  [18689] [31mVotesTest[0m::[31mtestCorrectness_mintTo[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8582] [31mOlympusVotes[0m::[31mmintTo[0m(0x0000000000000000000000000000000000000001, 10) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x564f544553, ModuleTestFixture: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 0x449a52f8) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)"
+
+[32m[PASS][0m testRevert_TransfersDisabled() (gas: 10981)
+[2m2022-08-28T00:28:04.304790Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[2m2022-08-28T00:28:04.304966Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[2m2022-08-28T00:28:04.305389Z[0m [31mERROR[0m [2mforge::runner[0m[2m:[0m setUp failed [3mreason[0m[2m=[0m"Revert" [3mcontract[0m[2m=[0m0xee35211c4d9126d520bbfeaf3cfee5fe7b86f221
+Test result: [31mFAILED[0m. 1 passed; 3 failed; finished in 254.79ms
+
+Running 1 test for src/test/policies/Governance.t.sol:GovernanceTest
+[31m[FAIL. Reason: Setup failed: Revert][0m setUp() (gas: 0)
+Test result: [31mFAILED[0m. 0 passed; 1 failed; finished in 270.44ms
+
+Running 11 tests for src/test/policies/Heart.t.sol:HeartTest
+[32m[PASS][0m testCorrectness_beat() (gas: 87179)
+[2m2022-08-28T00:28:04.310449Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[2m2022-08-28T00:28:04.311143Z[0m [31mERROR[0m [2mforge::runner[0m[2m:[0m setUp failed [3mreason[0m[2m=[0m"Revert" [3mcontract[0m[2m=[0m0xee35211c4d9126d520bbfeaf3cfee5fe7b86f221
+[32m[PASS][0m testCorrectness_cannotBeatIfInactive() (gas: 25114)
+[32m[PASS][0m testCorrectness_cannotBeatIfTooEarly() (gas: 25596)
+[2m2022-08-28T00:28:04.319530Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[32m[PASS][0m testCorrectness_cannotCallAdminFunctionsWithoutPermissions() (gas: 47017)
+[32m[PASS][0m testCorrectness_resetBeat() (gas: 110376)
+[32m[PASS][0m testCorrectness_setRewardTokenAndAmount() (gas: 828061)
+[32m[PASS][0m testCorrectness_toggleBeat() (gas: 25888)
+[2m2022-08-28T00:28:04.337036Z[0m [31mERROR[0m [2mfoundry_evm::executor::inspector::cheatcodes::ext[0m[2m:[0m stderr [3merr[0m[2m=[0m"./src/test/lib/quabi/jq.sh: line 7: jq: command not found\n"
+[32m[PASS][0m testCorrectness_viewFrequency() (gas: 12938)
+[32m[PASS][0m testCorrectness_withdrawUnspentRewards() (gas: 54527)
+[32m[PASS][0m testFail_beatFailsIfOperateReverts() (gas: 46706)
+[32m[PASS][0m testFail_beatFailsIfPriceReverts() (gas: 33608)
+Test result: [32mok[0m. 11 passed; 0 failed; finished in 2.60ms
+
+Running 1 test for src/test/modules/RANGE.t.sol:RangeTest
+[31m[FAIL. Reason: Setup failed: Revert][0m setUp() (gas: 0)
+Test result: [31mFAILED[0m. 0 passed; 1 failed; finished in 268.10ms
+
+Running 9 tests for src/test/modules/INSTR.t.sol:InstructionsTest
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_ActivatePolicy() (gas: 624396)
+Traces:
+  [624396] [31mInstructionsTest[0m::[31mtestCorrectness_ActivatePolicy[0m() [33m[0m
+    ├─ [180351] [33m→ [0m[33mnew[0m MockValidModule@"0x0020…3001"
+    │   └─ [32m← [0m789 bytes of code
+    ├─ [293162] [33m→ [0m[33mnew[0m MockModuleWriter@"0x45e8…25a0"
+    │   └─ [32m← [0m1239 bytes of code
+    ├─ [62237] [32mKernel[0m::[32mexecuteAction[0m(0, MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001]) [33m[0m
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [328] [32mMockValidModule[0m::[32mINIT[0m() [33m[0m
+    │   │   └─ [32m← [0m()
+    │   ├─ emit [36mActionExecuted[0m(action_: 0, target_: MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001])
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectEmit[0m(true, true, true, true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ emit [36mInstructionsStored[0m(instructionsId: 1)
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [6006] [31mOlympusInstructions[0m::[31mstore[0m([(2, 0x45e8debaf4b2f9a836d9e829284b04844e8925a0)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_ChangeExecutor() (gas: 23351)
+Traces:
+  [23351] [31mInstructionsTest[0m::[31mtestCorrectness_ChangeExecutor[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mexpectEmit[0m(true, true, true, true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ emit [36mInstructionsStored[0m(instructionsId: 1)
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([(2, 0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96), (4, 0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_DeactivatePolicy() (gas: 683481)
+Traces:
+  [683481] [31mInstructionsTest[0m::[31mtestCorrectness_DeactivatePolicy[0m() [33m[0m
+    ├─ [180351] [33m→ [0m[33mnew[0m MockValidModule@"0x0020…3001"
+    │   └─ [32m← [0m789 bytes of code
+    ├─ [293162] [33m→ [0m[33mnew[0m MockModuleWriter@"0x45e8…25a0"
+    │   └─ [32m← [0m1239 bytes of code
+    ├─ [62237] [32mKernel[0m::[32mexecuteAction[0m(0, MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001]) [33m[0m
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [328] [32mMockValidModule[0m::[32mINIT[0m() [33m[0m
+    │   │   └─ [32m← [0m()
+    │   ├─ emit [36mActionExecuted[0m(action_: 0, target_: MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001])
+    │   └─ [32m← [0m()
+    ├─ [58473] [32mKernel[0m::[32mexecuteAction[0m(2, MockModuleWriter: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   ├─ [294] [32mMockModuleWriter[0m::[32misActive[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   ├─ [352] [32mMockModuleWriter[0m::[32mconfigureDependencies[0m() [33m[0m
+    │   │   └─ [32m← [0m[]
+    │   ├─ [2608] [32mMockModuleWriter[0m::[32mrequestPermissions[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m[]
+    │   ├─ [748] [32mMockModuleWriter[0m::[32msetActiveStatus[0m(true) [33m[0m
+    │   │   └─ [32m← [0m()
+    │   ├─ emit [36mActionExecuted[0m(action_: 2, target_: MockModuleWriter: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0])
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectEmit[0m(true, true, true, true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ emit [36mInstructionsStored[0m(instructionsId: 1)
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [6006] [31mOlympusInstructions[0m::[31mstore[0m([(3, 0x45e8debaf4b2f9a836d9e829284b04844e8925a0)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_InstallModule() (gas: 235503)
+Traces:
+  [235503] [31mInstructionsTest[0m::[31mtestCorrectness_InstallModule[0m() [33m[0m
+    ├─ [180351] [33m→ [0m[33mnew[0m MockValidModule@"0x0020…3001"
+    │   └─ [32m← [0m789 bytes of code
+    ├─ [0] [34mVM[0m::[34mexpectEmit[0m(true, true, true, true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ emit [36mInstructionsStored[0m(instructionsId: 1)
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([(0, 0x0020536d969c76defdc59593df1b5f6f918c3001)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_UpgradeModule() (gas: 896005)
+Traces:
+  [896005] [31mInstructionsTest[0m::[31mtestCorrectness_UpgradeModule[0m() [33m[0m
+    ├─ [180351] [33m→ [0m[33mnew[0m MockValidModule@"0x0020…3001"
+    │   └─ [32m← [0m789 bytes of code
+    ├─ [293162] [33m→ [0m[33mnew[0m MockModuleWriter@"0x45e8…25a0"
+    │   └─ [32m← [0m1239 bytes of code
+    ├─ [180151] [33m→ [0m[33mnew[0m MockValidUpgradedModule@"0xe74e…bed0"
+    │   └─ [32m← [0m788 bytes of code
+    ├─ [62237] [32mKernel[0m::[32mexecuteAction[0m(0, MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001]) [33m[0m
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [173] [32mMockValidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m0x4d4f434b59
+    │   ├─ [328] [32mMockValidModule[0m::[32mINIT[0m() [33m[0m
+    │   │   └─ [32m← [0m()
+    │   ├─ emit [36mActionExecuted[0m(action_: 0, target_: MockValidModule: [0x0020536d969c76defdc59593df1b5f6f918c3001])
+    │   └─ [32m← [0m()
+    ├─ [58473] [32mKernel[0m::[32mexecuteAction[0m(2, MockModuleWriter: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   ├─ [294] [32mMockModuleWriter[0m::[32misActive[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   ├─ [352] [32mMockModuleWriter[0m::[32mconfigureDependencies[0m() [33m[0m
+    │   │   └─ [32m← [0m[]
+    │   ├─ [2608] [32mMockModuleWriter[0m::[32mrequestPermissions[0m() [33m[staticcall][0m
+    │   │   └─ [32m← [0m[]
+    │   ├─ [748] [32mMockModuleWriter[0m::[32msetActiveStatus[0m(true) [33m[0m
+    │   │   └─ [32m← [0m()
+    │   ├─ emit [36mActionExecuted[0m(action_: 2, target_: MockModuleWriter: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0])
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectEmit[0m(true, true, true, true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ emit [36mInstructionsStored[0m(instructionsId: 1)
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [6006] [31mOlympusInstructions[0m::[31mstore[0m([(1, 0xe74e1399d04e88dbed97760ce2d9dd767142bed0)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3f6c6e99][0m testRevert_InstructionsCannotBeEmpty() (gas: 19249)
+Traces:
+  [19249] [31mInstructionsTest[0m::[31mtestRevert_InstructionsCannotBeEmpty[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(INSTR_InstructionsCannotBeEmpty()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3f6c6e99"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0xdcaa8ba7][0m testRevert_InvalidChangeExecutorAction() (gas: 22197)
+Traces:
+  [22197] [31mInstructionsTest[0m::[31mtestRevert_InvalidChangeExecutorAction[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(INSTR_InvalidChangeExecutorAction()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([(4, 0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96), (2, 0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0xdcaa8ba7"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3afbb828696e76616c000000000000000000000000000000000000000000000000000000][0m testRevert_InvalidModuleKeycode() (gas: 25454)
+Traces:
+  [25454] [31mInstructionsTest[0m::[31mtestRevert_InvalidModuleKeycode[0m() [33m[0m
+    ├─ [150] [32mMockInvalidModule[0m::[32mKEYCODE[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m0x696e76616c
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(InvalidKeycode(0x696e76616c)) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([(0, 0x49413c9a31e0422686d5b949b02939d2f8c838fe)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3afbb828696e76616c000000000000000000000000000000000000000000000000000000"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x6f46ea740000000000000000000000000000000000000000000000000000000000000000][0m testRevert_InvalidTargetNotAContract() (gas: 20158)
+Traces:
+  [20158] [31mInstructionsTest[0m::[31mtestRevert_InvalidTargetNotAContract[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(TargetNotAContract(0x0000000000000000000000000000000000000000)) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8506] [31mOlympusInstructions[0m::[31mstore[0m([(0, 0x0000000000000000000000000000000000000000)]) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x494e535452, ModuleTestFixture: [0xbe44d12ca70bad2a72eec0d6660086cf341c3947], 0xb1d85eec) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0xbe44d12ca70bad2a72eec0d6660086cf341c3947)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x6f46ea740000000000000000000000000000000000000000000000000000000000000000"
+
+Test result: [31mFAILED[0m. 0 passed; 9 failed; finished in 305.87ms
+
+Running 17 tests for src/test/Kernel.t.sol:KernelTest
+[32m[PASS][0m testCorrectness_ActivatePolicy() (gas: 414531)
+[32m[PASS][0m testCorrectness_CallPermissionedPolicyFunction() (gas: 404430)
+[32m[PASS][0m testCorrectness_CallPublicPolicyFunction() (gas: 299316)
+[32m[PASS][0m testCorrectness_ChangeAdmin() (gas: 420581)
+[32m[PASS][0m testCorrectness_ChangeExecutor() (gas: 97552)
+[32m[PASS][0m testCorrectness_DeactivatePolicy() (gas: 343036)
+[32m[PASS][0m testCorrectness_EnsureContract() (gas: 80681)
+[32m[PASS][0m testCorrectness_EnsureValidKeycode() (gas: 52485)
+[32m[PASS][0m testCorrectness_EnsureValidRole() (gas: 59992)
+[32m[PASS][0m testCorrectness_GrantRole() (gas: 144818)
+[32m[PASS][0m testCorrectness_InitializeKernel() (gas: 106532)
+[32m[PASS][0m testCorrectness_InitializeModule() (gas: 11194)
+[32m[PASS][0m testCorrectness_InstallModule() (gas: 401677)
+[32m[PASS][0m testCorrectness_MigrateKernel() (gas: 2026615)
+[32m[PASS][0m testCorrectness_PolicyPermissions() (gas: 277440)
+[32m[PASS][0m testCorrectness_RevokeRole() (gas: 134291)
+[32m[PASS][0m testCorrectness_UpgradeModule() (gas: 744106)
+Test result: [32mok[0m. 17 passed; 0 failed; finished in 4.03ms
+
+Running 18 tests for src/test/modules/PRICE.t.sol:PriceTest
+[32m[PASS][0m testCorrectness_KEYCODE() (gas: 5546)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotChangeMovingAverageDurationWithInvalidParams() (gas: 19528)
+Traces:
+  [19528] [31mPriceTest[0m::[31mtestCorrectness_cannotChangeMovingAverageDurationWithInvalidParams[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mstartPrank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(Price_InvalidParams()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8489] [31mOlympusPrice[0m::[31mchangeMovingAverageDuration[0m(0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x8a157337) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotChangeObservationFrequencyWithInvalidParams() (gas: 19660)
+Traces:
+  [19660] [31mPriceTest[0m::[31mtestCorrectness_cannotChangeObservationFrequencyWithInvalidParams[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mstartPrank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(Price_InvalidParams()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8555] [31mOlympusPrice[0m::[31mchangeObservationFrequency[0m(0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x7d4dce76) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotInitializeWithInvalidParams() (gas: 24597)
+Traces:
+  [24597] [31mPriceTest[0m::[31mtestCorrectness_cannotInitializeWithInvalidParams[0m() [33m[0m
+    ├─ [2340] [32mOlympusPrice[0m::[32minitialized[0m() [33m[staticcall][0m
+    │   └─ [32m← [0mfalse
+    ├─ [0] [34mVM[0m::[34mstartPrank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(Price_InvalidParams()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [9609] [31mOlympusPrice[0m::[31minitialize[0m([0, 0, 0, 0, 0, 0, 0, 0, 0, 0], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f"
+
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xa985d3f5][0m testCorrectness_cannotUpdateMovingAverageBeforeInitialization() (gas: 19477)
+Traces:
+  [19477] [31mPriceTest[0m::[31mtestCorrectness_cannotUpdateMovingAverageBeforeInitialization[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mexpectRevert[0m(Price_NotInitialized()) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8431] [31mOlympusPrice[0m::[31mupdateMovingAverage[0m() [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x86db7df0) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xa985d3f5"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xea23ac6f0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_changeMovingAverageDuration(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131073] [31mPriceTest[0m::[31mtestCorrectness_changeMovingAverageDuration[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xd7ad66ae0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_changeObservationFrequency(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131140] [31mPriceTest[0m::[31mtestCorrectness_changeObservationFrequency[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xfa23fa7c0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getCurrentPrice(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131139] [31mPriceTest[0m::[31mtestCorrectness_getCurrentPrice[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xdf9b433f0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getLastPrice(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131162] [31mPriceTest[0m::[31mtestCorrectness_getLastPrice[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x34625fe20000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131075] [31mPriceTest[0m::[31mtestCorrectness_getMovingAverage[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xf4b58e610000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_initialize(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131989] [31mPriceTest[0m::[31mtestCorrectness_initialize[0m(0) [33m[0m
+    ├─ [2340] [32mOlympusPrice[0m::[32minitialized[0m() [33m[staticcall][0m
+    │   └─ [32m← [0mfalse
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[32m[PASS][0m testCorrectness_noObservationsBeforeInitialized() (gas: 78384)
+[32m[PASS][0m testCorrectness_onlyPermittedPoliciesCanCallAdminFunctions() (gas: 40790)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x4c8db7230000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_onlyPermittedPoliciesCanCallUpdateMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131262] [31mPriceTest[0m::[31mtestCorrectness_onlyPermittedPoliciesCanCallUpdateMovingAverage[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xe595db000000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_updateMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131051] [31mPriceTest[0m::[31mtestCorrectness_updateMovingAverage[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x987c1cd70000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_updateMovingAverageMultipleTimes(uint8) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [131052] [31mPriceTest[0m::[31mtestCorrectness_updateMovingAverageMultipleTimes[0m(0) [33m[0m
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(500000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [371] [32mMockPriceFeed[0m::[32mlatestAnswer[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m500000000000000
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2364] [32mMockPriceFeed[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [316] [32mOlympusPrice[0m::[32mdecimals[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m18
+    ├─ [2397] [32mOlympusPrice[0m::[32mobservationFrequency[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m28800
+    ├─ [397] [32mOlympusPrice[0m::[32mmovingAverageDuration[0m() [33m[staticcall][0m
+    │   └─ [32m← [0m604800
+    ├─ [22336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(9011000000000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8261284800000000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8586779421120000) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8462271119513760) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7907992361185608) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8424384262371028) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8441233030895770) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8433635921167963) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8190747206638325) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8035123009712196) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7900132943149031) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7744500324168995) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8090679488659349) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7475787847521238) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7694828431453610) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7290849938802295) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(6665295014053058) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7033219298828786) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(7587436979576494) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8239956559820072) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [336] [32mMockPriceFeed[0m::[32msetLatestAnswer[0m(8359435929937463) [33m[0m
+    │   └─ [32m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [10446] [31mOlympusPrice[0m::[31minitialize[0m([18022000000000000000, 16522569600000000000, 17173558842240000000, 16924542239027520000, 15815984722371216000, 16848768524742056000, 16882466061791540000, 16867271842335926000, 16381494413276650000, 16070246019424392000, 15800265886298062000, 15489000648337990000, 16181358977318698000, 14951575695042476000, 15389656862907220000, 14581699877604590000, 13330590028106116000, 14066438597657572000, 15174873959152988000, 16479913119640144000, 16718871859874926000], 1608336000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5052494345, ModuleTestFixture: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], 0x902a35b9) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0)"
+
+[32m[PASS][0m testCorrectness_viewsRevertBeforeInitialization() (gas: 18207)
+[32m[PASS][0m testFail_cannotReinitialize(uint8) (runs: 256, μ: 132012, ~: 132012)
+Test result: [31mFAILED[0m. 5 passed; 13 failed; finished in 338.35ms
+
+Running 4 tests for src/test/policies/TreasuryCustodian.t.sol:TreasuryCustodianTest
+[32m[PASS][0m test_ChangeDebt(uint256) (runs: 256, μ: 69879, ~: 70529)
+[32m[PASS][0m test_GrantApproval(uint256) (runs: 256, μ: 55642, ~: 56498)
+[32m[PASS][0m test_RevokeOldPolicyApproval() (gas: 903436)
+[32m[PASS][0m test_UnauthorizedChangeDebt(uint256) (runs: 256, μ: 32072, ~: 32072)
+Test result: [32mok[0m. 4 passed; 0 failed; finished in 71.60ms
+
+Running 12 tests for src/test/modules/TRSRY.t.sol:TRSRYTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x0fa89a3b0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_ApprovedCanWithdrawToken(uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [23622] [31mTRSRYTest[0m::[31mtestCorrectness_ApprovedCanWithdrawToken[0m(0) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(0xfad8712de4330b640064cfa05d0a29978dea11c6, MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testCorrectness_ClearDebt() (gas: 23186)
+Traces:
+  [23186] [31mTRSRYTest[0m::[31mtestCorrectness_ClearDebt[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 100000000000000000000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x412896ec0000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testCorrectness_GetLoan(uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [23958] [31mTRSRYTest[0m::[31mtestCorrectness_GetLoan[0m(1) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 1) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[32m[PASS][0m testCorrectness_GetReserveBalance() (gas: 15418)
+[32m[PASS][0m testCorrectness_KEYCODE() (gas: 5624)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x07a2e0270000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testCorrectness_RepayLoan(uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [23937] [31mTRSRYTest[0m::[31mtestCorrectness_RepayLoan[0m(1) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 1) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testCorrectness_SetDebt() (gas: 23119)
+Traces:
+  [23119] [31mTRSRYTest[0m::[31mtestCorrectness_SetDebt[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 100000000000000000000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0xabfdb28d0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_WithdrawApproval(uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [23262] [31mTRSRYTest[0m::[31mtestCorrectness_WithdrawApproval[0m(0) [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(0xfad8712de4330b640064cfa05d0a29978dea11c6, MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0xad13d92a0000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testRevert_UnauthorizedCannotGetLoan(uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [464266] [31mTRSRYTest[0m::[31mtestRevert_UnauthorizedCannotGetLoan[0m(1) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [407773] [33m→ [0m[33mnew[0m MockPolicy@"0x45e8…25a0"
+    │   └─ [32m← [0m1925 bytes of code
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(MockPolicy: [0x45e8debaf4b2f9a836d9e829284b04844e8925a0], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 1) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[32m[PASS][0m testRevert_UnauthorizedCannotWithdrawToken(uint256) (runs: 256, μ: 16492, ~: 16492)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testRevert_UnauthorizedPolicyCannotSetDebt() (gas: 23141)
+Traces:
+  [23141] [31mTRSRYTest[0m::[31mtestRevert_UnauthorizedPolicyCannotSetDebt[0m() [33m[0m
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8614] [31mOlympusTreasury[0m::[31msetApprovalFor[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], MockOhm: [0x49413c9a31e0422686d5b949b02939d2f8c838fe], 100000000000000000000) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x5452535259, ModuleTestFixture: [0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96], 0xd1b5b475) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)"
+
+[32m[PASS][0m testUser():(address) (gas: 2392)
+Test result: [31mFAILED[0m. 4 passed; 8 failed; finished in 345.01ms
+
+Running 7 tests for src/test/modules/MINTR.t.sol:MINTRTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001) Counterexample: calldata=0x49ae7bb900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000, args=[0x0000000000000000000000000000000000000001, 0]][0m testCorrectness_ApprovedAddressBurnsOhm(address,uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [19325] [31mMINTRTest[0m::[31mtestCorrectness_ApprovedAddressBurnsOhm[0m(0x0000000000000000000000000000000000000001, 0) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8527] [31mOlympusMinter[0m::[31mmintOhm[0m(0x0000000000000000000000000000000000000001, 0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x4d494e5452, ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], 0x3a56e307) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001)"
+
+[32m[PASS][0m testFail_ApprovedAddressCannotBurnFromZeroAddress(uint256) (runs: 256, μ: 18862, ~: 18862)
+[32m[PASS][0m testFail_ApprovedAddressCannotMintToZeroAddress(uint256) (runs: 256, μ: 18851, ~: 18851)
+[32m[PASS][0m testFail_UnapprovedAddressBurnsOhm(uint256) (runs: 256, μ: 18210, ~: 18210)
+[32m[PASS][0m testRevert_UnapprovedAddressCannotMintOhm(address,uint256) (runs: 256, μ: 22390, ~: 22390)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001) Counterexample: calldata=0xd3e4e4a100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000, args=[0x0000000000000000000000000000000000000001, 0]][0m test_ApprovedAddressMintsOhm(address,uint256) (runs: 0, μ: 0, ~: 0)
+Traces:
+  [19391] [31mMINTRTest[0m::[31mtest_ApprovedAddressMintsOhm[0m(0x0000000000000000000000000000000000000001, 0) [33m[0m
+    ├─ [0] [34mVM[0m::[34massume[0m(true) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [0] [34mVM[0m::[34mprank[0m(ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001]) [33m[0m
+    │   └─ [34m← [0m()
+    ├─ [8527] [31mOlympusMinter[0m::[31mmintOhm[0m(0x0000000000000000000000000000000000000001, 0) [33m[0m
+    │   ├─ [2917] [32mKernel[0m::[32mmodulePermissions[0m(0x4d494e5452, ModuleTestFixture: [0x0020536d969c76defdc59593df1b5f6f918c3001], 0x3a56e307) [33m[staticcall][0m
+    │   │   └─ [32m← [0mfalse
+    │   └─ [31m← [0m"Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001)"
+    └─ [31m← [0m"Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001)"
+
+[32m[PASS][0m test_KEYCODE() (gas: 5538)
+Test result: [31mFAILED[0m. 5 passed; 2 failed; finished in 337.04ms
+
+Running 56 tests for src/test/policies/Operator.t.sol:OperatorTest
+[32m[PASS][0m testCorrectness_cannotInitializeTwice() (gas: 359937)
+[32m[PASS][0m testCorrectness_cannotOperatorIfNotInitialized() (gas: 30994)
+[32m[PASS][0m testCorrectness_cannotPerformMarketOpsWhileInactive() (gas: 376412)
+[32m[PASS][0m testCorrectness_cannotSetCushionFactorWithInvalidParams() (gas: 369309)
+[32m[PASS][0m testCorrectness_cannotSetCushionParamsWithInvalidParams() (gas: 381596)
+[32m[PASS][0m testCorrectness_cannotSetReserveFactorWithInvalidParams() (gas: 369312)
+[32m[PASS][0m testCorrectness_cannotSetSpreadWithInvalidParams() (gas: 427440)
+[32m[PASS][0m testCorrectness_cannotSwapHighWallWhenDown() (gas: 446333)
+[32m[PASS][0m testCorrectness_cannotSwapLowWallWhenDown() (gas: 455618)
+[32m[PASS][0m testCorrectness_highCushionClosedAboveSpread() (gas: 1024854)
+[32m[PASS][0m testCorrectness_highCushionClosedBelowSpread() (gas: 1024794)
+[32m[PASS][0m testCorrectness_highCushionClosedOnRegen() (gas: 1002235)
+[32m[PASS][0m testCorrectness_highCushionClosedWhenWallDown() (gas: 1048321)
+[32m[PASS][0m testCorrectness_highCushionDeployedInSpread() (gas: 1007083)
+[32m[PASS][0m testCorrectness_highCushionNotDeployedWhenWallDown() (gas: 516499)
+[32m[PASS][0m testCorrectness_highCushionPurchasesReduceCapacity() (gas: 1263578)
+[32m[PASS][0m testCorrectness_highWallBreaksAtThreshold() (gas: 448133)
+[32m[PASS][0m testCorrectness_highWallRegenA() (gas: 691718)
+[32m[PASS][0m testCorrectness_highWallRegenB() (gas: 1043858)
+[32m[PASS][0m testCorrectness_highWallRegenC() (gas: 641150)
+[32m[PASS][0m testCorrectness_highWallRegenD() (gas: 815424)
+[32m[PASS][0m testCorrectness_highWallRegenTime() (gas: 677698)
+[32m[PASS][0m testCorrectness_initialize() (gas: 387637)
+[32m[PASS][0m testCorrectness_lowCushionClosedAboveSpread() (gas: 1055918)
+[32m[PASS][0m testCorrectness_lowCushionClosedBelowSpread() (gas: 1055983)
+[32m[PASS][0m testCorrectness_lowCushionClosedOnRegen() (gas: 1028554)
+[32m[PASS][0m testCorrectness_lowCushionClosedWhenWallDown() (gas: 1088858)
+[32m[PASS][0m testCorrectness_lowCushionDeployedInSpread() (gas: 1038575)
+[32m[PASS][0m testCorrectness_lowCushionNotDeployedWhenWallDown() (gas: 525852)
+[32m[PASS][0m testCorrectness_lowCushionPurchasesReduceCapacity() (gas: 1266140)
+[32m[PASS][0m testCorrectness_lowWallBreaksAtThreshold() (gas: 457438)
+[32m[PASS][0m testCorrectness_lowWallRegenA() (gas: 691082)
+[32m[PASS][0m testCorrectness_lowWallRegenB() (gas: 1048268)
+[32m[PASS][0m testCorrectness_lowWallRegenC() (gas: 645560)
+[32m[PASS][0m testCorrectness_lowWallRegenD() (gas: 819747)
+[32m[PASS][0m testCorrectness_lowWallRegenTime() (gas: 682128)
+[32m[PASS][0m testCorrectness_nonGuardianCannotCall() (gas: 369824)
+[32m[PASS][0m testCorrectness_nonPolicyCannotSetConfig() (gas: 386330)
+[32m[PASS][0m testCorrectness_onlyHeartOrGovernanceCanOperate() (gas: 499733)
+[32m[PASS][0m testCorrectness_regenerate() (gas: 723375)
+[32m[PASS][0m testCorrectness_setBondContracts() (gas: 4594494)
+[32m[PASS][0m testCorrectness_setCushionFactor() (gas: 372494)
+[32m[PASS][0m testCorrectness_setCushionParams() (gas: 373834)
+[32m[PASS][0m testCorrectness_setRegenParams() (gas: 449822)
+[32m[PASS][0m testCorrectness_setReserveFactor() (gas: 372502)
+[32m[PASS][0m testCorrectness_setSpreads() (gas: 416704)
+[32m[PASS][0m testCorrectness_setThresholdFactor() (gas: 375337)
+[32m[PASS][0m testCorrectness_swapHighWall() (gas: 438481)
+[32m[PASS][0m testCorrectness_swapLowWall() (gas: 447835)
+[32m[PASS][0m testCorrectness_swapRevertsOnSlippage() (gas: 397580)
+[32m[PASS][0m testCorrectness_swapRevertsWithInvalidToken() (gas: 372481)
+[32m[PASS][0m testCorrectness_updateRange() (gas: 510555)
+[32m[PASS][0m testCorrectness_viewFullCapacity() (gas: 385068)
+[32m[PASS][0m testCorrectness_viewGetAmountOut() (gas: 399634)
+[32m[PASS][0m test_marketClosesAsExpected1() (gas: 1202373)
+[32m[PASS][0m test_marketClosesAsExpected2() (gas: 1047411)
+Test result: [32mok[0m. 56 passed; 0 failed; finished in 43.86ms
+
+Running 5 tests for src/test/policies/PriceConfig.t.sol:PriceConfigTest
+[32m[PASS][0m testCorrectness_changeMovingAverageDuration(uint8) (runs: 256, μ: 1122305, ~: 1122304)
+[32m[PASS][0m testCorrectness_changeObservationFrequency(uint8) (runs: 256, μ: 1658797, ~: 1658796)
+[32m[PASS][0m testCorrectness_initialize(uint8) (runs: 256, μ: 662491, ~: 662491)
+[32m[PASS][0m testCorrectness_noObservationsBeforeInitialized() (gas: 78317)
+[32m[PASS][0m testCorrectness_onlyAuthorizedCanCallAdminFunctions() (gas: 39649)
+Test result: [32mok[0m. 5 passed; 0 failed; finished in 561.69ms
+
+Failing tests:
+Encountered 9 failing tests in src/test/modules/INSTR.t.sol:InstructionsTest
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_ActivatePolicy() (gas: 624396)
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_ChangeExecutor() (gas: 23351)
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_DeactivatePolicy() (gas: 683481)
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_InstallModule() (gas: 235503)
+[31m[FAIL. Reason: Log != expected log][0m testCorrectness_UpgradeModule() (gas: 896005)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3f6c6e99][0m testRevert_InstructionsCannotBeEmpty() (gas: 19249)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0xdcaa8ba7][0m testRevert_InvalidChangeExecutorAction() (gas: 22197)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x3afbb828696e76616c000000000000000000000000000000000000000000000000000000][0m testRevert_InvalidModuleKeycode() (gas: 25454)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c9000000000000000000000000be44d12ca70bad2a72eec0d6660086cf341c3947 != 0x6f46ea740000000000000000000000000000000000000000000000000000000000000000][0m testRevert_InvalidTargetNotAContract() (gas: 20158)
+
+Encountered 2 failing tests in src/test/modules/MINTR.t.sol:MINTRTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001) Counterexample: calldata=0x49ae7bb900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000, args=[0x0000000000000000000000000000000000000001, 0]][0m testCorrectness_ApprovedAddressBurnsOhm(address,uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x0020536d969c76defdc59593df1b5f6f918c3001) Counterexample: calldata=0xd3e4e4a100000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000000, args=[0x0000000000000000000000000000000000000001, 0]][0m test_ApprovedAddressMintsOhm(address,uint256) (runs: 0, μ: 0, ~: 0)
+
+Encountered 13 failing tests in src/test/modules/PRICE.t.sol:PriceTest
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotChangeMovingAverageDurationWithInvalidParams() (gas: 19528)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotChangeObservationFrequencyWithInvalidParams() (gas: 19660)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xbd19ab3f][0m testCorrectness_cannotInitializeWithInvalidParams() (gas: 24597)
+[31m[FAIL. Reason: Error != expected error: 0x11bf00c900000000000000000000000045e8debaf4b2f9a836d9e829284b04844e8925a0 != 0xa985d3f5][0m testCorrectness_cannotUpdateMovingAverageBeforeInitialization() (gas: 19477)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xea23ac6f0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_changeMovingAverageDuration(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xd7ad66ae0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_changeObservationFrequency(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xfa23fa7c0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getCurrentPrice(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xdf9b433f0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getLastPrice(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x34625fe20000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_getMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xf4b58e610000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_initialize(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x4c8db7230000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_onlyPermittedPoliciesCanCallUpdateMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0xe595db000000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_updateMovingAverage(uint8) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x45e8debaf4b2f9a836d9e829284b04844e8925a0) Counterexample: calldata=0x987c1cd70000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_updateMovingAverageMultipleTimes(uint8) (runs: 0, μ: 0, ~: 0)
+
+Encountered 1 failing test in src/test/modules/RANGE.t.sol:RangeTest
+[31m[FAIL. Reason: Setup failed: Revert][0m setUp() (gas: 0)
+
+Encountered 8 failing tests in src/test/modules/TRSRY.t.sol:TRSRYTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x0fa89a3b0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_ApprovedCanWithdrawToken(uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testCorrectness_ClearDebt() (gas: 23186)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x412896ec0000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testCorrectness_GetLoan(uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0x07a2e0270000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testCorrectness_RepayLoan(uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testCorrectness_SetDebt() (gas: 23119)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0xabfdb28d0000000000000000000000000000000000000000000000000000000000000000, args=[0]][0m testCorrectness_WithdrawApproval(uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96) Counterexample: calldata=0xad13d92a0000000000000000000000000000000000000000000000000000000000000001, args=[1]][0m testRevert_UnauthorizedCannotGetLoan(uint256) (runs: 0, μ: 0, ~: 0)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x8d27ebcee158fc8d8e35c3efa78840422b6c1b96)][0m testRevert_UnauthorizedPolicyCannotSetDebt() (gas: 23141)
+
+Encountered 3 failing tests in src/test/modules/VOTES.t.sol:VotesTest
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_TransferFrom() (gas: 18734)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_burnFrom() (gas: 18733)
+[31m[FAIL. Reason: Module_PolicyNotPermitted(0x49413c9a31e0422686d5b949b02939d2f8c838fe)][0m testCorrectness_mintTo() (gas: 18689)
+
+Encountered 1 failing test in src/test/policies/Governance.t.sol:GovernanceTest
+[31m[FAIL. Reason: Setup failed: Revert][0m setUp() (gas: 0)
+
+Encountered a total of [31m37[0m failing tests, [32m117[0m tests succeeded
